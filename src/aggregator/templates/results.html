@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Results for "{{ topic }}"</title>
+</head>
+<body>
+  <h1>Results for "{{ topic }}"</h1>
+  <ul>
+    {% for link in links %}
+      <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="/">Back to search</a>
+</body>
+</html>

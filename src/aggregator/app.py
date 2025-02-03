@@ -21,6 +21,9 @@ def index():
             'q': topic,
             'apiKey': NEWS_API_KEY,
             'language': 'en',
+            'sources': 'bbc-news, cbc-news', # here to put the sources of the news, u can find the ID from the newsapi.org ,should change it to a variable (like topic in q)
+            'from': '2021-01-01', # Date range for the articles, here is the form, should change it to a variable (like topic in q)
+            'to': '2021-01-31',
             'pageSize': 10  # Limit to 10 articles for now
         }
         

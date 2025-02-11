@@ -22,15 +22,22 @@ def index():
             api_url = 'https://newsapi.org/v2/everything'
             params = {
                 'q': topic,
-                'apiKey': 'a8df4da9d1404336829dc02e9d89de51',
+                'apiKey': NEWS_API_KEY,
+                # 'apiKey': 'a8df4da9d1404336829dc02e9d89de51',     <- remove hardcoded API key
                 'language': 'en',
-                # 'sources': 'bbc-news, cbc-news',
+                'sources': 'bbc-news, cbc-news',
                 'from_param': '2001-01-01',
                 'to': '2025-01-31',
                 'pageSize': 10
             }
+            
+            session = requests.Session()
+            response = session.get(api_url, params=params)
 
-            response = requests.get(api_url, params=params)
+            # Handle API failure
+            if response.status_code != 200:
+                return render_template('results.html', topic=topic, links=["Failed to fetch articles."])
+
             data = response.json()
 
             links = []
@@ -45,8 +52,13 @@ def index():
 
 def parse_article_data(url):
     article = Article(url)
-    article.download()
-    article.parse()
+    # Handle article parsing error
+    try:
+        article.download()
+        article.parse()
+    except Exception as e:
+        return {'error': f'Failed to parse article: {str(e)}'}
+
 
     return {
         'content': article.text,

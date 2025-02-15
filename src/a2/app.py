@@ -3,10 +3,9 @@ import requests
 
 app = Flask(__name__)
 
-# Your SerpAPI key – store this securely in production!
 API_KEY = "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d"
 
-# Home route that serves a simple HTML page
+# simple HTML page
 @app.route('/')
 def index():
     html_content = '''
@@ -78,15 +77,15 @@ def index():
     '''
     return render_template_string(html_content)
 
-# /search endpoint that queries SerpAPI for Google Search and Google News
+# /search endpoint that queries for Google Search and Google News
 @app.route('/search', methods=['GET'])
 def search():
-    # Get the keyword from query parameters
+    # Get the keyword for q
     keyword = request.args.get('q')
     if not keyword:
         return jsonify({'error': 'Missing query parameter "q"'}), 400
 
-    # Base URL for SerpAPI
+    # Base URL 
     base_url = "https://serpapi.com/search"
 
     # Parameters for Google Search
@@ -113,7 +112,7 @@ def search():
         response_search = requests.get(base_url, params=params_search)
         response_news = requests.get(base_url, params=params_news)
 
-        # Raise an error if status code is not 200
+        #  error if status code is not 200
         response_search.raise_for_status()
         response_news.raise_for_status()
 

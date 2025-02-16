@@ -1,81 +1,47 @@
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template
 import requests
+import json
+import os
+import logging
 
 app = Flask(__name__)
 
 API_KEY = "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d"
 
-# simple HTML page
+SEARCH_HISTORY_FILE = '4P02GroupProject/src/a2/search_history.json'
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+def save_search_history(keyword, results):
+    try:
+        if os.path.exists(SEARCH_HISTORY_FILE):
+            with open(SEARCH_HISTORY_FILE, 'r') as file:
+                history = json.load(file)
+        else:
+            history = []
+
+        # Extract links and sources from results
+        search_links = [{'link': item.get('link'), 'source': 'Google Search'} for item in results['google_search'].get('organic_results', [])]
+        news_links = [{'link': item.get('link'), 'source': 'Google News'} for item in results['google_news'].get('news_results', [])]
+
+        # Combine all links
+        all_links = search_links + news_links
+
+        # Insert new record at the beginning of the list
+        history.insert(0, {'keyword': keyword, 'results': all_links})
+
+        with open(SEARCH_HISTORY_FILE, 'w') as file:
+            json.dump(history, file, indent=4)
+        
+        logging.info(f"Search history saved for keyword: {keyword}")
+
+    except Exception as e:
+        logging.error(f"Failed to save search history: {e}")
+
 @app.route('/')
 def index():
-    html_content = '''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Keyword Search Aggregator</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 20px; }
-            input, button { padding: 10px; font-size: 16px; }
-            .result { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
-        </style>
-    </head>
-    <body>
-        <h1>Keyword Search Aggregator</h1>
-        <input type="text" id="keyword" placeholder="Enter keyword">
-        <button onclick="search()">Search</button>
-        <div id="results"></div>
-
-        <script>
-            function search() {
-                const keyword = document.getElementById('keyword').value.trim();
-                if (!keyword) {
-                    alert("Please enter a keyword.");
-                    return;
-                }
-                fetch('/search?q=' + encodeURIComponent(keyword))
-                    .then(response => response.json())
-                    .then(data => {
-                        const resultsDiv = document.getElementById('results');
-                        resultsDiv.innerHTML = "";
-
-                        // Display Google Search results if available
-                        if (data.google_search && data.google_search.organic_results) {
-                            let searchSection = document.createElement('div');
-                            searchSection.innerHTML = '<h2>Google Search Results</h2>';
-                            data.google_search.organic_results.forEach(item => {
-                                let div = document.createElement('div');
-                                div.className = 'result';
-                                div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.snippet || ''}</p>`;
-                                searchSection.appendChild(div);
-                            });
-                            resultsDiv.appendChild(searchSection);
-                        }
-
-                        // Display Google News results if available
-                        if (data.google_news && data.google_news.news_results) {
-                            let newsSection = document.createElement('div');
-                            newsSection.innerHTML = '<h2>Google News Results</h2>';
-                            data.google_news.news_results.forEach(item => {
-                                let div = document.createElement('div');
-                                div.className = 'result';
-                                div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.snippet || ''}</p>`;
-                                newsSection.appendChild(div);
-                            });
-                            resultsDiv.appendChild(newsSection);
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error fetching data:", error);
-                        alert("An error occurred while fetching data.");
-                    });
-            }
-        </script>
-    </body>
-    </html>
-    '''
-    return render_template_string(html_content)
+    return render_template('index.html')
 
 # /search endpoint that queries for Google Search and Google News
 @app.route('/search', methods=['GET'])
@@ -127,7 +93,21 @@ def search():
         "google_search": data_search,
         "google_news": data_news
     }
+    
+    # Save search history
+    save_search_history(keyword, aggregated_results)
+    
     return jsonify(aggregated_results)
+
+# New endpoint to get search history
+@app.route('/history', methods=['GET'])
+def get_history():
+    if os.path.exists(SEARCH_HISTORY_FILE):
+        with open(SEARCH_HISTORY_FILE, 'r') as file:
+            history = json.load(file)
+        return jsonify(history)
+    else:
+        return jsonify([])
 
 if __name__ == '__main__':
     app.run(debug=True)

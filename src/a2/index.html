@@ -14,6 +14,7 @@
     <h1>Search Aggregator</h1>
     <input type="text" id="keyword" placeholder="Enter keyword" style="width:300px; padding:5px;">
     <button id="searchBtn">Search</button>
+    <button id="historyBtn">View Search History</button>
 
     <div id="results" class="result-section"></div>
 
@@ -61,6 +62,24 @@
                 .catch(err => {
                     console.error(err);
                     alert("An error occurred while fetching data.");
+                });
+        });
+
+        document.getElementById('historyBtn').addEventListener('click', function() {
+            fetch('/history')
+                .then(response => response.json())
+                .then(history => {
+                    document.getElementById('results').innerHTML = '<h2>Search History</h2>';
+                    history.forEach(entry => {
+                        const div = document.createElement('div');
+                        div.className = 'result';
+                        div.innerHTML = `<strong>Keyword:</strong> ${entry.keyword}<br><strong>Results:</strong> ${JSON.stringify(entry.results)}`;
+                        document.getElementById('results').appendChild(div);
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("An error occurred while fetching search history.");
                 });
         });
     </script>

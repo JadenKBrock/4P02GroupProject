@@ -1,0 +1,1102 @@
+{
+    "search_metadata": {
+        "id": "67ab71e8c12f1fedd81c0b11",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/b6fcf81a43fddae2/67ab71e8c12f1fedd81c0b11.json",
+        "created_at": "2025-02-11 15:51:04 UTC",
+        "processed_at": "2025-02-11 15:51:04 UTC",
+        "google_news_url": "https://news.google.com/search?q=Trump+slaps+25%25+tariffs+on+steel+and+aluminum+imports+%27without+exceptions%27+&hl=en&gl=US",
+        "raw_html_file": "https://serpapi.com/searches/b6fcf81a43fddae2/67ab71e8c12f1fedd81c0b11.html",
+        "total_time_taken": 0.84
+    },
+    "search_parameters": {
+        "engine": "google_news",
+        "gl": "us",
+        "hl": "en",
+        "q": "Trump slaps 25% tariffs on steel and aluminum imports 'without exceptions' "
+    },
+    "news_results": [
+        {
+            "position": 1,
+            "title": "‘No exemptions, no exceptions’: Trump slaps 25% tariffs on steel, aluminium",
+            "source": {
+                "name": "Al Jazeera English",
+                "icon": "https://lh3.googleusercontent.com/l-Ps9rkWuApN8G3MB5uZC_a5G7iKCTITjMdpZFhm2rQf3U2M2Yr_KTYpzpmOPxDiUKgb9yN9ha8",
+                "authors": [
+                    "John Power"
+                ]
+            },
+            "link": "https://www.aljazeera.com/economy/2025/2/11/trump-slaps-25-tariffs-on-steel-aluminum-raising-new-trade-war-fears",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2025/02/AFP__20230928__932873226__v8__HighRes__TrumpAdministrationSteelTariffsAimsToProtectA-1739233893_5bcb66-1739241724.jpg?resize=1200%2C630&quality=80",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWxZbU16ZUdsRU5tSmhkME5LVFJDUkF4ajhCU2dLTWdhTklZS0dHZ28",
+            "date": "02/11/2025, 08:33 AM, +0000 UTC"
+        },
+        {
+            "position": 2,
+            "title": "Trump raises tariffs on aluminum, steel imports in latest trade war salvo",
+            "source": {
+                "name": "Reuters",
+                "icon": "https://lh3.googleusercontent.com/OzNZmYwP-Zl3sTWa8dzzyws9hou0ZihOGJ_-qanon-1iB5KwyqcHOwPxYZj54cGMZwD5qXui",
+                "authors": [
+                    "David Lawder",
+                    "Steve Holland",
+                    "Andrea Shalal-Esa"
+                ]
+            },
+            "link": "https://www.reuters.com/markets/asian-eu-steelmakers-shares-fall-after-trump-escalates-tariffs-2025-02-10/",
+            "thumbnail": "https://www.reuters.com/resizer/v2/KHMJRPA6EJLOBIKWE6ZY6MVTNM.jpg?auth=8a99d7686f8325489d944d5d29be39a9e8f5206650d5a3bbf1a157441e27f01d&height=1920&width=1920&quality=80&smart=true",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXJiR1JUTUhJMFEwTk9PVE5YVFJDcUJCaXFCQ2dLTWdZTlo0NUlxZ1k",
+            "date": "02/11/2025, 10:34 AM, +0000 UTC"
+        },
+        {
+            "position": 3,
+            "title": "Trump slaps 25% tariffs on steel and aluminium imports with ‘no exceptions’",
+            "source": {
+                "name": "South China Morning Post",
+                "icon": "https://lh3.googleusercontent.com/qAQhkAXo_pPfQ0kV4ksFzlQKPJvTof9Tu5aDFZWdHNWiubjetyL_Xpm8xEptsamHhGsxrSWR",
+                "authors": [
+                    "Robert F. Delaney"
+                ]
+            },
+            "link": "https://www.scmp.com/news/world/united-states-canada/article/3298138/trump-signs-executive-orders-slapping-25-tariffs-steel-and-aluminium-imports",
+            "thumbnail": "https://cdn.i-scmp.com/sites/default/files/styles/700x400/public/d8/images/canvas/2025/02/11/b1362e0b-5769-4dbb-80b0-fabfefe61100_3e132c9f.jpg?itok=ovODHNQA&v=1739229468",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNXZTRjh5ZW1ZelZFUkdWMjFPVFJDUUF4aThCU2dLTWdtUkFaU21IaWsyWUFN",
+            "date": "02/10/2025, 11:19 PM, +0000 UTC"
+        },
+        {
+            "position": 4,
+            "title": "Trump slaps 25% tariffs on steel and aluminum imports 'without exceptions'",
+            "source": {
+                "name": "CBC News",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Darren Major",
+                    "Catharine Tunney"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/politics/trump-steel-aluminum-canada-1.7455173",
+            "thumbnail": "https://i.cbc.ca/1.7455682.1739230631!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/trump.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTVabTgwTjFObGNXNXhWa3BIVFJDZkF4amlCU2dLTWdhTkpKaG9GZ28",
+            "date": "02/10/2025, 08:29 PM, +0000 UTC"
+        },
+        {
+            "position": 5,
+            "title": "Trump Slaps Sweeping 25% Tariffs on Steel and Aluminum Amid China Over Capacity",
+            "source": {
+                "name": "The China-Global South Project",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://chinaglobalsouth.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://chinaglobalsouth.com/2025/02/11/trump-slaps-sweeping-25-tariffs-on-steel-and-aluminum-amid-china-over-capacity/",
+            "thumbnail": "https://chinaglobalsouth.com/wp-content/uploads/2023/09/India_Chinese-Steel.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTBWMGg2ZWxjeWJIaDJlbk01VFJDdUF4akpCU2dLTWdZQk01YmhuZ2c",
+            "date": "02/11/2025, 02:07 AM, +0000 UTC"
+        },
+        {
+            "position": 6,
+            "title": "Here's the latest as Canada faces steel and aluminum tariffs from the United States",
+            "source": {
+                "name": "Yahoo Canada Finance",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://ca.finance.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://ca.finance.yahoo.com/news/heres-latest-canada-faces-steel-114249448.html",
+            "thumbnail": "https://s.yimg.com/ny/api/res/1.2/kDnrLB7.EFK3PgQ.lp86GA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://media.zenfs.com/en/cp_finance_889/a7d1e5a8c9ee3cf32bb9fa824ec79952",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVVaMU4yTm1wVmExWmxWMEZNVFJDckF4al9CQ2dLTWdZaEFwTHJxUWM",
+            "date": "02/11/2025, 03:24 PM, +0000 UTC"
+        },
+        {
+            "position": 7,
+            "title": "Trump announces 25% tariffs on steel and aluminum imports, raising trade war fears",
+            "source": {
+                "name": "조선일보",
+                "icon": "https://lh3.googleusercontent.com/-WgtipKQnV-mzLSqkX270DgDMzZAQllcNEDecRCHvscuvope6vjTCGl6kEuOfYZnIfPWLNxj5w"
+            },
+            "link": "https://www.chosun.com/english/industry-en/2025/02/11/BX6MD4ZOMFF5HM6VPF3YN3OVMQ/",
+            "thumbnail": "https://www.chosun.com/resizer/v2/6LG7UQEA4BHQLOMKOY2SNPCTFY.jpg?auth=c577d9b5b9c955f5db5b2de0b11e6b6ebd3a8f21bf6470d43b898c24ef8089e8&width=616",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNW1lbGgzZFV3M1lUaEZSRUZHVFJDeUFoam9CQ2dLTWdtTlVJeTJLT2loRXdF",
+            "date": "02/11/2025, 05:57 AM, +0000 UTC"
+        },
+        {
+            "position": 8,
+            "title": "Trump orders 25% tariffs on steel and aluminum — without exceptions for allies",
+            "source": {
+                "name": "New York Post ",
+                "icon": "https://lh3.googleusercontent.com/FBmNEg55AyjS01UGglfHSug5fD4qJyNNZ6QXqwDhQczAmw6zPz5fUoWm9AfOtz7Ty70Gg41A",
+                "authors": [
+                    "Steven Nelson"
+                ]
+            },
+            "link": "https://nypost.com/2025/02/10/us-news/trump-orders-25-tariffs-on-steel-and-aluminum-without-exceptions-for-allies/",
+            "thumbnail": "https://nypost.com/wp-content/uploads/sites/2/2025/02/u-s-president-donald-trump-98298539.jpg?w=1024",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUZSV1JRVjNSNE9IZ3hVa1pPVFJERUF4aW5CU2dLTWdB",
+            "date": "02/10/2025, 11:37 PM, +0000 UTC"
+        },
+        {
+            "position": 9,
+            "title": "Trump slaps 25% tariffs on steel and aluminum imports",
+            "source": {
+                "name": "Washington Examiner",
+                "icon": "https://lh3.googleusercontent.com/jkXKrRc1RfbpaBPu6coUxqdC1OUMdrNKy9EQh9C6KBi28y6FPnAaR9QDxA4FRizOpulP-1lMkg",
+                "authors": [
+                    "Naomi Lim",
+                    "Christian Datoc"
+                ]
+            },
+            "link": "https://www.washingtonexaminer.com/news/white-house/3315637/trump-puts-25-tariffs-steel-aluminum-imports/",
+            "thumbnail": "https://www.washingtonexaminer.com/wp-content/uploads/2025/02/AP25041819304929.webp",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNUhSa04wWVRBNGQyWllMVWRrVFJERUF4aW1CU2dLTWdrUkVwYW1LaWc5d3dJ",
+            "date": "02/10/2025, 10:56 PM, +0000 UTC"
+        },
+        {
+            "position": 10,
+            "title": "Just across the U.S. border, Americans voice concern, optimism on Trump's tariffs",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Chris Edwards"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/saskatchewan/canada-tariffs-minot-north-dakota-1.7455467",
+            "thumbnail": "https://i.cbc.ca/1.7455624.1739229570!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/minot-city-hall.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUdORVEzYnpSWFNEWkxMVUZEVFJDZkF4amlCU2dLTWdhRlVwREZIZ2s",
+            "date": "02/11/2025, 11:00 AM, +0000 UTC"
+        },
+        {
+            "position": 11,
+            "title": "Trump announces 25% tariffs on steel and aluminium imports",
+            "source": {
+                "name": "South China Morning Post",
+                "icon": "https://lh3.googleusercontent.com/qAQhkAXo_pPfQ0kV4ksFzlQKPJvTof9Tu5aDFZWdHNWiubjetyL_Xpm8xEptsamHhGsxrSWR",
+                "authors": [
+                    "Crystal Wu"
+                ]
+            },
+            "link": "https://www.scmp.com/video/world/3298143/donald-trump-slaps-25-tariffs-steel-and-aluminium-imports-no-exceptions",
+            "thumbnail": "https://i.ytimg.com/vi/w0HzBnjun7I/mqdefault.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTZhSGx0UjNKblJrbDBUSG93VFJDMEFSakFBaWdLTWdZTktaeW1GZ28",
+            "date": "02/11/2025, 01:30 AM, +0000 UTC"
+        },
+        {
+            "position": 12,
+            "title": "Breaking | Trump slaps 25% tariffs on steel and aluminium imports with ‘no exceptions’",
+            "source": {
+                "name": "South China Morning Post",
+                "icon": "https://lh3.googleusercontent.com/qAQhkAXo_pPfQ0kV4ksFzlQKPJvTof9Tu5aDFZWdHNWiubjetyL_Xpm8xEptsamHhGsxrSWR"
+            },
+            "link": "https://www.scmp.com/news/world/united-states-canada/article/3298138/trump-signs-executive-orders-slapping-25-tariffs-steel-and-aluminium-imports?utm_source=rss_feed",
+            "date": "02/10/2025, 11:19 PM, +0000 UTC"
+        },
+        {
+            "position": 13,
+            "title": "Hamilton steelworkers brace for business slowdown with Trump's 25% tariffs",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Samantha Beattie"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/hamilton/steelworkers-react-tariffs-trump-aluminum-1.7455446",
+            "thumbnail": "https://i.cbc.ca/1.7455458.1739226151!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/steel-worker-jose-quesada.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWhaM0l5V0hWSFRtUXRRVXhQVFJDZkF4amlCU2dLTWdZbFJwcnRuUWs",
+            "date": "02/11/2025, 09:00 AM, +0000 UTC"
+        },
+        {
+            "position": 14,
+            "title": "Here's the latest as Canada faces steel and aluminum tariffs from the United States",
+            "source": {
+                "name": "Yahoo Canada Finance",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://ca.finance.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://ca.finance.yahoo.com/news/heres-latest-canada-faces-steel-160513624.html",
+            "thumbnail": "https://s.yimg.com/ny/api/res/1.2/pROyCMOiOVzSwSfPgzk9MA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM5Ng--/https://media.zenfs.com/en/cp_finance_889/b9b0579da4ba68f0cb464bf9a0b9d530",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVZlazFxUVdaNWNGaFRTRkYxVFJDTUF4al9CQ2dLTWdZQmdJaldPQWM",
+            "date": "02/11/2025, 01:31 AM, +0000 UTC"
+        },
+        {
+            "position": 15,
+            "title": "Trump slaps 25% tariffs on steel and aluminium imports",
+            "source": {
+                "name": "Yahoo News UK",
+                "icon": "https://lh3.googleusercontent.com/2eiHe_a3bH_fW-lWaPjP9M7YDz1jKcvRxfiHEFvq21Eop7kkwTiWu0WCvF4-DHRv-lFEBL9Gkg"
+            },
+            "link": "https://uk.news.yahoo.com/trump-slaps-25-tariffs-steel-125739138.html",
+            "thumbnail": "https://s.yimg.com/uu/api/res/1.2/0XZ2sC2X7.TKcby9wLlYeg--~B/aD0xMDgwO3c9MTkyMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/video.thepressassociation.com/4c72858d154bd5cbf749ede5521d8ff2",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHdRWHBWZG5sVmQyNDFaVjlHVFJDZkF4ampCU2dLTWdhbFJZcnNyUVU",
+            "date": "02/11/2025, 12:57 PM, +0000 UTC"
+        },
+        {
+            "position": 16,
+            "title": "Trump is imposing tariffs on steel and aluminum — again. What have we learned from last time?",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Matthew Lapierre"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/montreal/steel-and-aluminum-tariff-1.7455466",
+            "thumbnail": "https://i.cbc.ca/1.5746963.1738279047!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/cda-tariffs-reax-20180531.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNW9RbUptYUVocFRqVTBja1pzVFJDZkF4amlCU2dLTWdiRkVZclZrQW8",
+            "date": "02/10/2025, 09:49 PM, +0000 UTC"
+        },
+        {
+            "position": 17,
+            "title": "Canadian businesses already feeling the effects of Trump's steel, aluminum tariff order",
+            "source": {
+                "name": "CBC News",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Jenna Benchetrit"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/business/steel-aluminum-industry-reaction-1.7455286",
+            "thumbnail": "https://i.cbc.ca/1.7439895.1739222940!/cumulusImage/httpImage/image.jpg_gen/derivatives/16x9_940/evraz-steelmaking-and-rolling-mills-regina.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWplRmcwY1ZwVGNXSnVOWGRoVFJDZkF4amlCU2dLTWdZQmdJRHpQQWM",
+            "date": "02/10/2025, 10:38 PM, +0000 UTC"
+        },
+        {
+            "position": 18,
+            "title": "The National | Trump puts 25% tariffs on steel, aluminum",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6643686",
+            "thumbnail": "https://i.cbc.ca/ais/6272b5c6-5e78-4c05-915d-0e36672e33d1,1714756287822/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C1%2C4537%2C2552%29%3BResize%3D%28620%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUJVbVoyYjNkaWEydHBVamRrVFJEZEFoanNCQ2dLTWdhWk1wNE5HUW8",
+            "date": "02/11/2025, 10:31 AM, +0000 UTC"
+        },
+        {
+            "position": 19,
+            "title": "Trudeau warns Vance about impact of U.S. steel and aluminum tariffs",
+            "source": {
+                "name": "CBC News",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Olivia Stefanovich",
+                    "Ashley Burke"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/politics/trudeau-vance-steel-aluminum-tariffs-1.7455853",
+            "thumbnail": "https://i.cbc.ca/1.7455863.1739278875!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/jd-vance-and-trudeau.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNXFSVTFvUlUwNU4wWlFhRE13VFJDZkF4amlCU2dLTWdrTlVZeEpvdWcxemdF",
+            "date": "02/11/2025, 01:37 PM, +0000 UTC"
+        },
+        {
+            "position": 20,
+            "title": "Trump signs executive orders on steel, aluminum tariffs",
+            "source": {
+                "name": "Inquirer.net",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://business.inquirer.net&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://business.inquirer.net/505945/trump-signs-executive-orders-on-steel-aluminum-tariffs",
+            "thumbnail": "https://business.inquirer.net/files/2025/02/Trump-Feb-10-1200x800.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNVFjR0V0TVY5Zk4wZElPVzE0VFJERUF4aW1CU2dLTWdB",
+            "date": "02/10/2025, 11:52 PM, +0000 UTC"
+        },
+        {
+            "position": 21,
+            "title": "Steel and aluminum tariffs: Who will they hit, and how will Canada respond?",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Kevin Maimann"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/steel-aluminum-tariffs-roundup-1.7455706",
+            "thumbnail": "https://i.cbc.ca/1.7455773.1739236893!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/usa-trump-tariffs.JPG",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXVRV2R6ZW1KNmVXNHdiVk5tVFJDZkF4amlCU2dLTWdhUkFaU21uZ2s",
+            "date": "02/11/2025, 02:45 AM, +0000 UTC"
+        },
+        {
+            "position": 22,
+            "title": "Trudeau says Canada will respond firmly to 'unacceptable' U.S. tariffs",
+            "source": {
+                "name": "CBC News",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Olivia Stefanovich",
+                    "Ashley Burke"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/politics/trudeau-says-canada-will-respond-firmly-to-unacceptable-u-s-tariffs-1.7455853",
+            "thumbnail": "https://i.cbc.ca/1.7455854.1739266586!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/ai-summit-business.JPG",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWtlbEpSYTFvemVUbGxiRTkyVFJDZkF4amlCU2dLTWdheEJZNnVFUXM",
+            "date": "02/11/2025, 11:31 AM, +0000 UTC"
+        },
+        {
+            "position": 23,
+            "title": "Trump slaps 25% tariff on foreign steel, aluminum",
+            "source": {
+                "name": "Global News",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://globalnews.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://globalnews.ca/video/11013300/trump-slaps-25-tariff-on-foreign-steel-aluminum",
+            "thumbnail": "https://media.globalnews.ca/videostatic/news/k3hp3ypca8-8dhhz9a0qw/250210-JACKSON.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNWpWa2RLTlVaSExUWjFTa00yVFJDZkF4ampCU2dLTWdB",
+            "date": "02/11/2025, 02:00 AM, +0000 UTC"
+        },
+        {
+            "position": 24,
+            "title": "Trump imposes 25% tariffs on all steel, aluminum imports",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6643625",
+            "thumbnail": "https://i.cbc.ca/ais/4a15223c-a855-45f4-af99-8beafb5d6ad1,1739236010378/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C0%2C1920%2C1080%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHROVlZ5Tld3NE4xUlhZa1JNVFJDZkF4amlCU2dLTWdZcEpack5uUWs",
+            "date": "02/11/2025, 03:10 AM, +0000 UTC"
+        },
+        {
+            "position": 25,
+            "title": "Effects of 25% steel, aluminum tariff unclear in Saskatchewan",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Alexander Quon"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/saskatchewan/carla-beck-steel-threat-1.7455132",
+            "thumbnail": "https://i.cbc.ca/1.7439895.1739222940!/cumulusImage/httpImage/image.jpg_gen/derivatives/16x9_940/evraz-steelmaking-and-rolling-mills-regina.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWplRmcwY1ZwVGNXSnVOWGRoVFJDZkF4amlCU2dLTWdZQmdJRHpQQWM",
+            "date": "02/10/2025, 11:43 PM, +0000 UTC"
+        },
+        {
+            "position": 26,
+            "title": "Shares of Chinese steelmakers slide as Trump's fresh tariffs add uncertainty on exports",
+            "source": {
+                "name": "Yahoo Canada Finance",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://ca.finance.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Amy Lv",
+                    "Lewis Jackson"
+                ]
+            },
+            "link": "https://ca.finance.yahoo.com/news/shares-chinese-steelmakers-slide-trumps-050633423.html",
+            "thumbnail": "https://s.yimg.com/ny/api/res/1.2/2Y9bXmWuXaZbJA6YBJQpoA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNg--/https://media.zenfs.com/en/reuters.com/9bc3be087c7c97eef5bab79808bb3669",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXZhV3B3YTJnNVVWRXdTVmR4VFJDcUF4al9CQ2dLTWdZWk1JcVF0QVE",
+            "date": "02/11/2025, 05:06 AM, +0000 UTC"
+        },
+        {
+            "position": 27,
+            "title": "What Trump’s steel, aluminum tariff threats could mean for Canada",
+            "source": {
+                "name": "Global News",
+                "icon": "https://lh3.googleusercontent.com/KWVw0vJBOwtB7Ottq74wZMazmr0xfhDxFYL8RM9JmTL0bKYdjueu6BWmT-g3dRlKlWFTEgPsUg",
+                "authors": [
+                    "Sean Previl"
+                ]
+            },
+            "link": "https://globalnews.ca/news/11012035/trump-steel-aluminum-tariffs-trade-explainer/",
+            "thumbnail": "https://globalnews.ca/wp-content/uploads/2025/02/steel-tariffs-hamilton.jpg?quality=85&strip=all",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNTFSbkZTYkdORlpFUk5lbXhJVFJDa0F4amJCU2dLTWdB",
+            "date": "02/10/2025, 11:17 PM, +0000 UTC"
+        },
+        {
+            "position": 28,
+            "title": "Trump slaps 25% tariffs on steel, aluminium, raising new trade war fears",
+            "source": {
+                "name": "Hiiraan Online",
+                "icon": "https://lh3.googleusercontent.com/AsnCQHgzwku5BSt_UogLAlGF-ckmisvmDwu_b8hDtC4wR8FMEjZ2OE_diX8UKn31pYWxxRUw",
+                "authors": [
+                    "John Power"
+                ]
+            },
+            "link": "https://www.hiiraan.com/news4/2025/Feb/200193/trump_slaps_25_tariffs_on_steel_aluminium_raising_new_trade_war_fears.aspx",
+            "thumbnail": "http://www.hiiraan.com/2025/images/Feb/2025211638748296089693079.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNWtWRUptY1dWWVYzTkRlQzFaVFJDMkFSaVdBaWdCTWdB",
+            "date": "02/11/2025, 05:17 AM, +0000 UTC"
+        },
+        {
+            "position": 29,
+            "title": "Eby: Plenty of demand for B.C. aluminum despite U.S. tariffs",
+            "source": {
+                "name": "Yahoo Canada Finance",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://ca.finance.yahoo.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Marcy Nicholson"
+                ]
+            },
+            "link": "https://ca.finance.yahoo.com/news/b-c-minister-says-rio-011139819.html",
+            "thumbnail": "https://s.yimg.com/ny/api/res/1.2/r2nUjlpwP5Hmpb9CDHKyDw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQzOQ--/https://media.zenfs.com/en/cp_finance_889/1c860c163cff2e2b2b12881404c9dcb6",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUVWRkJyUmtSalJ6VldjelpsVFJDM0F4aUFCU2dLTWdhdFJaRE9uUWc",
+            "date": "02/11/2025, 04:15 AM, +0000 UTC"
+        },
+        {
+            "position": 30,
+            "title": "Trump Slaps 25% Tariffs on Steel, Aluminum Imports",
+            "source": {
+                "name": "Newser",
+                "icon": "https://lh3.googleusercontent.com/gc-NWQyvjynMzjVxP0LFP2JuSWCBlikBaF2Dsw5GyorE7QCVmJ1rVl6VyhU0pUZe2FB-ZILELw",
+                "authors": [
+                    "Evann Gastaldo"
+                ]
+            },
+            "link": "https://www.newser.com/story/363992/trump-25-steel-aluminum-tariffs-coming-monday.html",
+            "thumbnail": "https://img2-azrcdn.newser.com/image/1591323-11-20250210174454.jpeg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNHhaekEzYVVVelJFSTBRMjE0VFJDM0FSaVRBaWdCTWdB",
+            "date": "02/10/2025, 08:30 AM, +0000 UTC"
+        },
+        {
+            "position": 31,
+            "title": "Canada waits to see if Trump will follow through on steel and aluminum tariff threat",
+            "source": {
+                "name": "MSN",
+                "icon": "https://lh3.googleusercontent.com/uMAqsUnDVts6wmlmIyem8rGeBkazc8QwnCTHmpZBM6RDf1-qTi2eU4uyUBz2QAVMRWx987Ecwto",
+                "authors": [
+                    "Darren Major"
+                ]
+            },
+            "link": "https://www.msn.com/en-ca/politics/government/trump-slaps-25-tariffs-on-steel-and-aluminum-imports-without-exceptions/ar-AA1yM1cf?ocid=TobArticle",
+            "thumbnail": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1yLwbA.img?w=768&h=459&m=6",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUhZMVJZVjFSUFdWUjNUM3BDVFJDc0F4ak1CU2dLTWdiRklaalZGQW8",
+            "date": "02/11/2025, 12:48 AM, +0000 UTC"
+        },
+        {
+            "position": 32,
+            "title": "Trump slaps 25% tariffs on steel and aluminum imports; impact on Sask. uncertain",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6643477",
+            "thumbnail": "https://i.cbc.ca/ais/4a85d1e2-92b1-4b18-a181-168e0200d164,1739234870057/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C0%2C1604%2C902%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTVlWGhqVFVsMGN6RlVNMGxVVFJDZkF4amlCU2dLTWdZQkFJU2tEUWs",
+            "date": "02/11/2025, 01:21 AM, +0000 UTC"
+        },
+        {
+            "position": 33,
+            "title": "Trump Slaps 25% Tariffs on Steel, Aluminum Imports",
+            "source": {
+                "name": "KBS WORLD Radio News",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://world.kbs.co.kr&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://world.kbs.co.kr/service/news_view.htm?lang=e&Seq_Code=190872",
+            "date": "02/10/2025, 11:13 PM, +0000 UTC"
+        },
+        {
+            "position": 34,
+            "title": "Trump orders 25% tariffs on all steel and aluminum imports",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6643644",
+            "thumbnail": "https://i.cbc.ca/ais/d21f118f-6dd8-4288-ad76-c6ad25116c32,1739232639533/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C245%2C4677%2C2630%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNVFjRE5aZUdwdVNEZE5hM2xXVFJDZkF4amlCU2dLTWdrbEVvck1OYVkxNVFJ",
+            "date": "02/10/2025, 10:17 PM, +0000 UTC"
+        },
+        {
+            "position": 35,
+            "title": "Tariff truce upended as Trump takes aim at Canadian steel and aluminum imports",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6643617",
+            "thumbnail": "https://i.cbc.ca/ais/9e665571-ec34-490e-8ae3-5eba26340d20,1739242231503/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C0%2C1920%2C1080%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNW9iak0wTFVOV2IzTmZYM0JGVFJDZkF4amlCU2dLTWdB",
+            "date": "02/11/2025, 03:39 AM, +0000 UTC"
+        },
+        {
+            "position": 36,
+            "title": "Message to U.S. lawmakers is ‘mutually assured damage’ from tariffs, Eby says",
+            "source": {
+                "name": "Global News",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://globalnews.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Simon Little"
+                ]
+            },
+            "link": "https://globalnews.ca/news/11013320/eby-premiers-trip-tariffs/",
+            "thumbnail": "https://globalnews.ca/wp-content/uploads/2025/02/eby-yvr.png",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXdVSGxEVEMxV1JXdFBTbE5rVFJDZkF4ampCU2dLTWdhbFZaYk5KUWc",
+            "date": "02/11/2025, 03:17 AM, +0000 UTC"
+        },
+        {
+            "position": 37,
+            "title": "Trump slaps 25% tariffs on steel and aluminium imports",
+            "source": {
+                "name": "MSN",
+                "icon": "https://lh3.googleusercontent.com/uMAqsUnDVts6wmlmIyem8rGeBkazc8QwnCTHmpZBM6RDf1-qTi2eU4uyUBz2QAVMRWx987Ecwto",
+                "authors": [
+                    "Josh Boak"
+                ]
+            },
+            "link": "https://www.msn.com/en-gb/money/other/trump-slaps-25-tariffs-on-steel-and-aluminium-imports/ar-AA1yNFGl",
+            "thumbnail": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1yNNa9.img?w=640&h=426&m=6",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNU9TMGs1UlV4TVVVSXRiVGxwVFJDcUF4aUFCU2dLTWdZdFE1U09KUWc",
+            "date": "02/11/2025, 09:13 AM, +0000 UTC"
+        },
+        {
+            "position": 38,
+            "title": "Why Trump wants tariffs on steel and aluminum — again | About That",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6643516",
+            "thumbnail": "https://i.cbc.ca/ais/6e43364f-9c3e-4d95-a0c4-adabed6c0ddf,1739235792122/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C0%2C1920%2C1080%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNUVNSHB1U21kR2JGVnhTelp5VFJDZkF4amlCU2dLTWdB",
+            "date": "02/11/2025, 01:06 AM, +0000 UTC"
+        },
+        {
+            "position": 39,
+            "title": "Minister says B.C. aluminum smelter confident it will find non-U.S. aluminum buyers",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Marcy Nicholson"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/british-columbia/aluminum-smelter-us-tariffs-1.7455814",
+            "thumbnail": "https://i.cbc.ca/1.7455818.1739244807!/cumulusImage/httpImage/image.jpg_gen/derivatives/16x9_940/kitimat-lng-and-rio-tinto.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNVJTSE5sVlVKQlRrcGlNWEZ0VFJDZkF4amlCU2dLTWdNQmdCSQ",
+            "date": "02/11/2025, 04:43 AM, +0000 UTC"
+        },
+        {
+            "position": 40,
+            "title": "Danielle Smith to join premiers in Washington amid U.S. tariff threats",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Lisa Johnson"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/edmonton/danielle-smith-to-join-premiers-in-washington-amid-u-s-tariff-threats-1.7455754",
+            "thumbnail": "https://i.cbc.ca/1.7408165.1733960093!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_940/alta-sovereignty-industry-20241127.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVFjM1J4ZWxVNFJXSjZTakZOVFJDZkF4amlCU2dLTWdhcFpZN05xUVk",
+            "date": "02/11/2025, 01:46 AM, +0000 UTC"
+        },
+        {
+            "position": 41,
+            "title": "Trump signs executive orders slapping 25% tariffs on steel and aluminium imports",
+            "source": {
+                "name": "MSN",
+                "icon": "https://lh3.googleusercontent.com/uMAqsUnDVts6wmlmIyem8rGeBkazc8QwnCTHmpZBM6RDf1-qTi2eU4uyUBz2QAVMRWx987Ecwto",
+                "authors": [
+                    "Robert F. Delaney"
+                ]
+            },
+            "link": "https://www.msn.com/en-xl/news/other/donald-trump-slaps-25-tariffs-on-steel-and-aluminium-imports-with-no-exceptions/ar-AA1yMoMG?ocid=finance-verthp-feeds",
+            "thumbnail": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1yMpS3.img?w=768&h=511&m=6",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNTZaR05DT1VkWlJGRlhUSEZSVFJERUF4aW5CU2dLTWdtQklJcXFNU1JVcFFJ",
+            "date": "02/11/2025, 04:17 AM, +0000 UTC"
+        },
+        {
+            "position": 42,
+            "title": "Trump to announce 25% tariffs on steel and aluminum on Monday",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6642193",
+            "thumbnail": "https://i.cbc.ca/ais/8eaccb68-77f8-4672-8123-9f7d1688befb,1739152055099/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C0%2C7617%2C4284%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXVTblo0V0dkRWREVnhTMHRwVFJDZkF4amlCU2dLTWdB",
+            "date": "02/10/2025, 09:06 AM, +0000 UTC"
+        },
+        {
+            "position": 43,
+            "title": "Trump Slaps 25% Tariffs On All Steel, Aluminium Imports",
+            "source": {
+                "name": "TVCNews",
+                "icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.tvcnews.tv&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.tvcnews.tv/2025/02/trump-slaps-25-tariffs-on-all-steel-aluminium-imports/",
+            "thumbnail": "https://www.tvcnews.tv/wp-content/uploads/2025/02/New-Project-2025-02-11T084437.153-600x375.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTBXbkZmVGxVMVZVSkxSa0pYVFJEM0FoallCQ2dLTWdhTkVZYUhFZ3M",
+            "date": "02/11/2025, 07:43 AM, +0000 UTC"
+        },
+        {
+            "position": 44,
+            "title": "Canada Plans To Respond To Trump's 25% Steel Tariffs: 'Entirely Unjustified'",
+            "source": {
+                "name": "Inkl",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.inkl.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Luke Funk"
+                ]
+            },
+            "link": "https://www.inkl.com/news/canada-plans-to-respond-to-trump-s-25-steel-tariffs-entirely-unjustified",
+            "thumbnail": "https://d.ibtimes.com/en/full/4581631/donald-trump-warned-he-will-impose-25-percent-tariffs-imports-steel-aluminium.jpg?w=736&f=de2892a94ab4fd7ba9c01114ea513027",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNXRja2M1TlVad2VuSlFYMUV5VFJERUF4aW5CU2dLTWd1ZEVZYnJFT2hiMHlnUGRB",
+            "date": "02/11/2025, 01:31 PM, +0000 UTC"
+        },
+        {
+            "position": 45,
+            "title": "Trump slaps 25% tariff on all steel, aluminium imports",
+            "source": {
+                "name": "Vanguard",
+                "icon": "https://lh3.googleusercontent.com/Ut--NSfwKpz5Qo2M9rSUAXvcHXxVLAHkblwhcFxcsxPSuDD3k4ol4mL8uAg29fHND8In0TvdIuU"
+            },
+            "link": "https://www.vanguardngr.com/2025/02/trump-slaps-25-tariff-on-all-steel-aluminium-imports/",
+            "thumbnail": "https://cdn.vanguardngr.com/wp-content/uploads/2025/02/AFP__20250206__36X84VG__v1__Preview__UsPoliticsTrump.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUlNREZzTUdGWlRsVTVRMDlSVFJERUF4aW1CU2dLTWdZbEZvTHNsUW8",
+            "date": "02/11/2025, 12:15 PM, +0000 UTC"
+        },
+        {
+            "position": 46,
+            "title": "Trump slaps 25% tariffs on steel and aluminium imports",
+            "source": {
+                "name": "BreakingNews.ie",
+                "icon": "https://lh3.googleusercontent.com/OuXkDV5aCGPdjFYMJfqyzc2kUeYi3ZSsm5S6mULSmZgLxleNiIqQsZZBdtDCKzexypVs4JGZsA",
+                "authors": [
+                    "Josh Boak"
+                ]
+            },
+            "link": "https://www.breakingnews.ie/world/trump-slaps-25-tariffs-on-steel-and-aluminium-imports-1728538.html",
+            "thumbnail": "https://img.resized.co/breaking-news/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL2ltYWdlcy5icmVha2luZ25ld3MuaWVcXFwvcHJvZFxcXC91cGxvYWRzXFxcLzIwMjVcXFwvMDJcXFwvMTEwODU3MjNcXFwvYWRmODFiYzRlYmEzNGNjNWJlMmY3MTRiZDJiZGJiY2QuanBnXCIsXCJ3aWR0aFwiOm51bGwsXCJoZWlnaHRcIjozNjAsXCJkZWZhdWx0XCI6XCJodHRwczpcXFwvXFxcL3d3dy5icmVha2luZ25ld3MuaWVcXFwvaW1hZ2VzXFxcL25vLWltYWdlLnBuZ1wiLFwib3B0aW9uc1wiOntcIm91dHB1dFwiOlwid2VicFwifX0iLCJoYXNoIjoiYmU5NDAzMjA4OTlhMWM2MGExYjU2ZjJlMTk5ZGYxZTFmYmI3YmY3OSJ9/adf81bc4eba34cc5be2f714bd2bdbbcd.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDBjbnBMVEUxRVdWZFhNbmRLVFJDM0FSaVRBaWdCTWdhcFpZN05MUWM",
+            "date": "02/11/2025, 09:07 AM, +0000 UTC"
+        },
+        {
+            "position": 47,
+            "title": "‘Stand up’: Turnbull’s Trump advice to PM",
+            "source": {
+                "name": "Yahoo Finance Australia",
+                "icon": "https://lh3.googleusercontent.com/jQhYRXqwsGeNZIg8khsyw-nMszRVaA6wBX8RrMgqjVuFH5raBS6AHoXpGxTnHH7vDSb7hCgQLA",
+                "authors": [
+                    "Joseph Olbrycht-Palmer",
+                    "Duncan Evans",
+                    "Jessica Wang"
+                ]
+            },
+            "link": "https://au.finance.yahoo.com/news/trump-hits-aussies-shock-tariff-230234179.html",
+            "thumbnail": "https://s.yimg.com/ny/api/res/1.2/D58_Urk6dlb0QNGgALQHPA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/nca_newswire_finance_105/f7a00dee3619bdbfc8f36a2e7780a3f5",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNU9SMjlQVTJFeVZtcGxXV0pWVFJEb0FoaUFCU2dLTWdZdFZZaXVMUVU",
+            "date": "02/10/2025, 10:42 PM, +0000 UTC"
+        },
+        {
+            "position": 48,
+            "title": "S. Korean Steel, Aluminum Exports Hit with 25% Tariffs Starting in March",
+            "source": {
+                "name": "KBS WORLD Radio News",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://world.kbs.co.kr&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://world.kbs.co.kr/service/news_view.htm?lang=e&Seq_Code=190889",
+            "date": "02/11/2025, 06:45 AM, +0000 UTC"
+        },
+        {
+            "position": 49,
+            "title": "Donald Trump sparks tariff trade war as EU threatens 'firm and proportionate' retaliation to US steel levies",
+            "source": {
+                "name": "Inkl",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.inkl.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Nicholas Cecil"
+                ]
+            },
+            "link": "https://www.inkl.com/news/donald-trump-sparks-tariff-trade-war-as-eu-threatens-firm-and-proportionate-retaliation-to-us-steel-levies",
+            "thumbnail": "https://images.inkl.com/s3/article/lead_image/21539580/Donald-Trump-8h3vlfiz.jpeg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVBkRkZqUjNZelkyVmZSMmcwVFJERUF4aW5CU2dLTWdZbEJaU3RsUW8",
+            "date": "02/11/2025, 09:08 AM, +0000 UTC"
+        },
+        {
+            "position": 50,
+            "title": "Trump slaps 25% tariffs on steel, aluminum, raising new trade war fears",
+            "source": {
+                "name": "Inkl",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.inkl.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.inkl.com/news/trump-slaps-25-tariffs-on-steel-aluminum-raising-new-trade-war-fears",
+            "thumbnail": "https://www.aljazeera.com/wp-content/uploads/2025/02/AFP__20230928__932873226__v8__HighRes__TrumpAdministrationSteelTariffsAimsToProtectA-1739233893.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXdVREJDUkdoWldrVkNMV2s1VFJERUF4aW1CU2dLTWdZTkVZYUhsZ28",
+            "date": "02/11/2025, 02:22 AM, +0000 UTC"
+        },
+        {
+            "position": 51,
+            "title": "Ford heads to Washington Tuesday to meet with U.S. lawmakers, business leaders",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/toronto/ford-heads-to-washington-1.7455860",
+            "thumbnail": "https://i.cbc.ca/1.7438443.1737568884!/cumulusImage/httpImage/image.jpg_gen/derivatives/16x9_940/ford-mbot.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHpaa2RFWDFNd1NtaG5UREJDVFJDZkF4amlCU2dLTWdhSlVwUVNKUWM",
+            "date": "02/11/2025, 01:13 PM, +0000 UTC"
+        },
+        {
+            "position": 52,
+            "title": "The National | Trump plans steel tariffs worldwide",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6642282",
+            "thumbnail": "https://i.cbc.ca/ais/6272b5c6-5e78-4c05-915d-0e36672e33d1,1714756287822/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C1%2C4537%2C2552%29%3BResize%3D%28620%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUJVbVoyYjNkaWEydHBVamRrVFJEZEFoanNCQ2dLTWdhWk1wNE5HUW8",
+            "date": "02/10/2025, 07:10 AM, +0000 UTC"
+        },
+        {
+            "position": 53,
+            "title": "US President Donald Trump signs executive orders on steel, aluminium tariffs",
+            "source": {
+                "name": "New Zealand Herald",
+                "icon": "https://lh3.googleusercontent.com/YAv8mIEGjjQ_ZQJjCe_26eldUCL1fWuLxCBSW8-yaUWR6lUtnmnrqNQ1bBc7yZ4jLGH8T0fDDB0"
+            },
+            "link": "https://www.nzherald.co.nz/business/us-president-donald-trump-signs-executive-orders-on-steel-aluminium-tariffs/7BWNJAMZ25F6JH2EKVYPXUT4NY/",
+            "thumbnail": "https://www.nzherald.co.nz/resizer/v2/EFMRZI5KE5AQLMAEONH22AW2UA.jpg?auth=bc3b4fae122cda0186fe767eddc002862bb683835ce39c3326758c723ee1d84f&width=576&height=613&quality=70&smart=true",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iI0NnNXNSMDExVEU4NGJWSldWVkpRVFJDN0JCaVpCQ2dLTWdB",
+            "date": "02/10/2025, 11:29 PM, +0000 UTC"
+        },
+        {
+            "position": 54,
+            "title": "Trump Signs Executive Orders On Steel, Aluminium Tariffs",
+            "source": {
+                "name": "BusinessToday",
+                "icon": "https://lh3.googleusercontent.com/1RXxMbX4b88K5lgeNHBMhIz-fnOEgHXOgJ0So2TWN-_1sSHjmb35dg5zq_YpZ0XBqaFaVZs9aA"
+            },
+            "link": "https://www.businesstoday.com.my/2025/02/11/trump-signs-executive-orders-on-steel-aluminium-tariffs/",
+            "thumbnail": "https://www.businesstoday.com.my/wp-content/uploads/2024/11/trump-the-president.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDNSbXRRVWpoV1NqbHhWRkk0VFJDdkF4aThCU2dLTWdZaE5aTHNtUWs",
+            "date": "02/11/2025, 01:29 AM, +0000 UTC"
+        },
+        {
+            "position": 55,
+            "title": "A timeline of US-China tit-for-tat tariffs since Trump's first term",
+            "source": {
+                "name": "MSN",
+                "icon": "https://lh3.googleusercontent.com/uMAqsUnDVts6wmlmIyem8rGeBkazc8QwnCTHmpZBM6RDf1-qTi2eU4uyUBz2QAVMRWx987Ecwto",
+                "authors": [
+                    "Simina Mistreanu"
+                ]
+            },
+            "link": "https://www.msn.com/en-gb/money/other/a-timeline-of-us-china-tit-for-tat-tariffs-since-trump-s-first-term/ar-AA1yJW4Y",
+            "thumbnail": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1yJYma.img?w=800&h=415&q=60&m=2&f=jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUJhVUpIV1Rnek5VWktTMk5MVFJDZkF4anVCQ2dLTWdZVms0eEl1UVU",
+            "date": "02/10/2025, 01:07 PM, +0000 UTC"
+        },
+        {
+            "position": 56,
+            "title": "Trump signs executive orders on steel, aluminium tariffs",
+            "source": {
+                "name": "Free Malaysia Today",
+                "icon": "https://lh3.googleusercontent.com/VeEEUTIInd5jXV5BGMYy5bPe1E8fWaIDdDPQQ_YYSUcglfut_B6csoYeeI71PSRel1xh4uDXmw"
+            },
+            "link": "https://www.freemalaysiatoday.com/category/business/2025/02/11/trump-signs-executive-orders-on-steel-aluminum-tariffs/",
+            "thumbnail": "https://media.freemalaysiatoday.com/wp-content/uploads/2025/02/3274a867-donald-trump-10.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTFSMGxKU1VNMUxYcDBiRkkxVFJDMkF4aTlCU2dLTWdZMUk0Z1RGUW8",
+            "date": "02/10/2025, 11:52 PM, +0000 UTC"
+        },
+        {
+            "position": 57,
+            "title": "Trump’s issues new tariff’s Monday Feb 10, 2025",
+            "source": {
+                "name": "Q Country 91.5FM",
+                "icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://qcountryfm.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Shelly Thompson"
+                ]
+            },
+            "link": "https://qcountryfm.ca/2025/02/10/trumps-issues-new-tariffs-monday-feb-10-2025/",
+            "thumbnail": "https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3178/files/2024/07/generic-news-banner.png",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNW9kVWxPTVRKalVFWldSRFJoVFJDb0FSaXNBaWdCTWdtTmdZenBQT1ZiTFFJ",
+            "date": "02/10/2025, 11:43 PM, +0000 UTC"
+        },
+        {
+            "position": 58,
+            "title": "End Times Headline News. February 11 2025",
+            "source": {
+                "name": "substack.com",
+                "icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://substack.com&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://substack.com/home/post/p-156886849?utm_campaign=post&utm_medium=web",
+            "thumbnail": "https://substackcdn.com/image/youtube/w_728,c_limit/TK48to74q-g",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWpkMFZMUzA1WVgwZE5WekZGVFJDb0FSaXJBaWdCTWdZQkFJcERBZzA",
+            "date": "02/11/2025, 06:52 AM, +0000 UTC"
+        },
+        {
+            "position": 59,
+            "title": "Missing 32-year-old woman found: Winnipeg police",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/manitoba/winnipeg-north-end-missing-person-1.7454635",
+            "thumbnail": "https://i.cbc.ca/1.7006869.1720551026!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_940/mba-safety-20230706.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNHpPVEJOVFdoa2VEUndXVzVEVFJDZkF4amlCU2dLTWdZMUZJYVFrUWM",
+            "date": "02/09/2025, 01:48 PM, +0000 UTC"
+        },
+        {
+            "position": 60,
+            "title": "Trump promises a 25% tariff on products from Mexico, Canada | Power & Politics",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/player/play/video/9.6574557",
+            "thumbnail": "https://i.cbc.ca/ais/7d56b70a-7931-4762-8a26-3e54d453afc3,1732581694439/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C0%2C1920%2C1080%29%3BResize%3D%281180%29",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNU9jamRtWVRGNlpGQm5VMHRFVFJDZkF4amlCU2dLTWdhdFZJaXZLUWM",
+            "date": "11/25/2024, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 61,
+            "title": "Donald Trump threatens 25% tariff on products from Canada, Mexico",
+            "source": {
+                "name": "CBC News",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Alexander Panetta"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/world/trump-tariffs-25-canada-mexico-1.7393160",
+            "thumbnail": "https://i.cbc.ca/1.7390808.1732667306!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/trump.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNWtiR3hIY2pVM1NUbGxXbUV5VFJDZkF4amlCU2dLTWdhbFpZNE1MZ2M",
+            "date": "11/25/2024, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 62,
+            "title": "Boy hit by a car suffers 'life-altering' injuries in southwest Calgary",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/calgary/boy-life-altering-injuries-hit-by-car-1.7410709",
+            "thumbnail": "https://i.cbc.ca/1.6759909.1681517484!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/calgary-police-service.JPG",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXZjbWhhYWpnd2EyOWxhVmN0VFJDZkF4amlCU2dLTWdZQlZJWnBPZ1E",
+            "date": "12/13/2024, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 63,
+            "title": "Fatal fishing accident caused by hydraulic boom, says P.E.I. Workers Compensation Board",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Kevin Yarr"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/prince-edward-island/pei-north-lake-fishing-fatal-cause-1.7249696",
+            "thumbnail": "https://i.cbc.ca/1.3986597.1656347824!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/pei-workers-compensation-board.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXROelJvYkVGamR6SXpVbTVpVFJDZkF4amlCU2dLTWdZbG9vNHVPUVU",
+            "date": "06/28/2024, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 64,
+            "title": "Crew member in 'critical but stable' condition after Iqaluit barge accident on Friday",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/north/iqaluit-barge-accident-crew-member-injury-1.7012080",
+            "thumbnail": "https://i.cbc.ca/1.7011407.1698607279!/fileImage/httpImage/image.jpeg_gen/derivatives/16x9_940/iqaluit-sealift.jpeg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNDBRblZHZDJvNGRGQkdRbTV3VFJDZkF4amlCU2dLTWdZNW9JenpQQVU",
+            "date": "10/29/2023, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 65,
+            "title": "Charlottetown police warn of counterfeit bills",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Emma Clow"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/prince-edward-island/pei-charlottetown-counterfeit-bills-1.6879479",
+            "thumbnail": "https://i.cbc.ca/1.6879528.1686942418!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/counterfeit-100.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNHlYMlZqVmxCRk9HdHNWV3g1VFJDZkF4amlCU2dLTWdrQkVZNEJyLVU4UmdJ",
+            "date": "06/16/2023, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 66,
+            "title": "Oneida Nation of the Thames grapples with COVID outbreak",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/london/oneida-nation-of-the-thames-grapples-with-covid-outbreak-1.5864866",
+            "thumbnail": "https://i.cbc.ca/1.4568235.1610359228!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/oneida-nation-of-the-thames.JPG",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNW5NREpNWjBGbWVsOVZhbnBrVFJDZkF4amlCU2dLTWdNTlVBQQ",
+            "date": "01/07/2021, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 67,
+            "title": "Timmins man charged after ordering brass knuckles online",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/sudbury/timmins-man-brass-knuckles-1.4384855",
+            "thumbnail": "https://i.cbc.ca/1.4384868.1509656751!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/brass-knuckles.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVBibVJUVDBSdVgwOTBjSEZoVFJDZkF4amlCU2dLTWdZZEVvWVJIUWs",
+            "date": "11/02/2017, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 68,
+            "title": "Belleisle Farms brand coleslaw recalled due to Listeria",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/new-brunswick/listeria-cole-slaw-belleisle-farms-1.4829559",
+            "thumbnail": "https://i.cbc.ca/1.4829590.1537366623!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/belleisle-brand-cole-slaw.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iMkNnNWtMV1ZhTVROQ1ZWcDVhalJVVFJDZkF4amlCU2dLTWd1VkE0Q05pU0dhNUVxVndB",
+            "date": "09/19/2018, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 69,
+            "title": "Matsos out as Sudbury Wolves head coach",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/sudbury/wolves-part-ways-with-matsos-1.4129021",
+            "thumbnail": "https://i.cbc.ca/1.4043974.1490716691!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/dave-matsos.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXlTVUZGZW5sVU9FRmllVTFFVFJDZkF4amlCU2dLTWdZaFpwQU1MZ2M",
+            "date": "05/24/2017, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 70,
+            "title": "Stony Mountain in lockdown as staff carry out 'exceptional search'",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/manitoba/stony-mountain-lockdown-1.3714542",
+            "thumbnail": "https://i.cbc.ca/1.1862283.1379699910!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/stony-mountain-institution.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iJ0NnNDJiVFZIWTNWbk1qbFBWM2g2VFJDZkF4amlCU2dLTWdNaFJCQQ",
+            "date": "08/09/2016, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 71,
+            "title": "Halifax steroid smuggler Greg Austin Doucette fined $50K",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/nova-scotia/halifax-steroid-smuggler-greg-austin-doucette-fined-50k-1.2627354",
+            "thumbnail": "https://i.cbc.ca/1.2627362.1398882780!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/greg-mutant-doucette-poses-in-a-youtube-video.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNW9RbnB6UVdKQ1lXbHFkRlJtVFJDZkF4amlCU2dLTWdhbEJKU09rUW8",
+            "date": "04/30/2014, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 72,
+            "title": "Second-hand style for students",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/saskatoon/second-hand-style-for-students-1.2750880",
+            "thumbnail": "https://i.cbc.ca/1.2750899.1409343522!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_1180/amanda-burant-value-village.JPG?im=",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iL0NnNHRTVTVtZFVSVmFXZGZkMUUxVFJDZkF4amlCU2dLTWdrQkFJeXlJS1hRUUFN",
+            "date": "09/02/2014, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 73,
+            "title": "Snow from plow train bowls over spectators near St. Thomas, Ont.",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+                "authors": [
+                    "Andrea Bellemare"
+                ]
+            },
+            "link": "https://www.cbc.ca/news/canada/kitchener-waterloo/snow-from-plow-train-bowls-over-spectators-near-st-thomas-ont-1.2963159",
+            "thumbnail": "https://i.cbc.ca/1.2963236.1424361540!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_940/snow-plow-train.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNU9aM1ZVT0V4TU1tNUJkVXRDVFJDZkF4amlCU2dLTWdhaFZaRHNvUWc",
+            "date": "02/19/2015, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 74,
+            "title": "Arrest made in slaying of Winnipeg model",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/manitoba/arrest-made-in-slaying-of-winnipeg-model-1.1383774",
+            "thumbnail": "https://i.cbc.ca/1.1413233.1378978407!/httpImage/image.jpg_gen/derivatives/16x9_940/li-model-john-felix.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNXNhMkV6ZUVoWVNGVjRWVWRWVFJDZkF4amlCU2dLTWdhbFZZTE1xUVE",
+            "date": "01/11/2013, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 75,
+            "title": "Iqaluit unveils proposed new dog bylaw",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/north/iqaluit-unveils-proposed-new-dog-bylaw-1.1361257",
+            "thumbnail": "https://i.cbc.ca/ais/1.425861,1717149395380/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C1%2C620%2C348%29%3BResize%3D620",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNTRXRTh3ZEdobGFrSlBWbXBuVFJEY0FoanNCQ2dLTWdZeEpaaXZtUWs",
+            "date": "07/13/2013, 07:00 AM, +0000 UTC"
+        },
+        {
+            "position": 76,
+            "title": "Driver who killed woman fined $2k",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/sudbury/driver-who-killed-woman-fined-2k-1.1025371",
+            "thumbnail": "https://i.cbc.ca/1.1968921.1381467989!/httpImage/image.jpg_gen/derivatives/16x9_940/hi-kent-court-apts-852.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNUJiRmQ2UmxkUmFEZHBNRFpVVFJDZkF4amlCU2dLTWdZMWtKRDFRQVk",
+            "date": "11/17/2011, 08:00 AM, +0000 UTC"
+        },
+        {
+            "position": 77,
+            "title": "Toxic hogweed creeps across Nova Scotia",
+            "source": {
+                "name": "CBC.ca",
+                "icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cbc.ca&client=NEWS_360&size=96&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+            },
+            "link": "https://www.cbc.ca/news/canada/nova-scotia/toxic-hogweed-creeps-across-nova-scotia-1.923791",
+            "thumbnail": "https://i.cbc.ca/1.2078043.1439489162!/httpImage/image.jpg_gen/derivatives/16x9_940/hogweed2topjpg-1.jpg",
+            "thumbnail_small": "https://news.google.com/api/attachments/CC8iK0NnNVZZVzlxVkRsSE5DMHplRnBKVFJDZkF4amlCU2dLTWdZQk01QUhHZ2c",
+            "date": "07/12/2010, 07:00 AM, +0000 UTC"
+        }
+    ],
+    "menu_links": [
+        {
+            "title": "U.S.",
+            "topic_token": "CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE"
+        },
+        {
+            "title": "World",
+            "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB"
+        },
+        {
+            "title": "Your local news",
+            "topic_token": "CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE"
+        },
+        {
+            "title": "Business",
+            "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXlnQVAB",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXlnQVAB"
+        },
+        {
+            "title": "Technology",
+            "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB"
+        },
+        {
+            "title": "Entertainment",
+            "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNREpxYW5RU0FtVnVHZ0pWVXlnQVAB",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNREpxYW5RU0FtVnVHZ0pWVXlnQVAB"
+        },
+        {
+            "title": "Sports",
+            "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB"
+        },
+        {
+            "title": "Science",
+            "topic_token": "CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXlnQVAB",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXlnQVAB"
+        },
+        {
+            "title": "Health",
+            "topic_token": "CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ",
+            "serpapi_link": "https://serpapi.com/search.json?engine=google_news&gl=us&topic_token=CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+from flask import Flask, request, jsonify, render_template
+import requests
+import json
+import os
+import logging
+
+app = Flask(__name__)
+
+# Get the API key and use default key if unsuccessful, helps with removing the need to hardcode an API key
+API_KEY = os.getenv("SERP_API_KEY", "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d")
+
+SEARCH_HISTORY_FILE = 'search_history.json'
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+def save_search_history(keyword, results):
+    try:
+        if os.path.exists(SEARCH_HISTORY_FILE):
+            with open(SEARCH_HISTORY_FILE, 'r') as file:
+                history = json.load(file)
+        else:
+            history = []
+
+        # Extract links and sources from results
+        search_links = [{'link': item.get('link'), 'source': 'Google Search'} for item in results['google_search'].get('organic_results', [])]
+        news_links = [{'link': item.get('link'), 'source': 'Google News'} for item in results['google_news'].get('news_results', [])]
+
+        # Combine all links
+        all_links = search_links + news_links
+
+        # Insert new record at the beginning of the list
+        history.insert(0, {'keyword': keyword, 'results': all_links})
+
+        with open(SEARCH_HISTORY_FILE, 'w') as file:
+            json.dump(history, file, indent=4)
+        
+        logging.info(f"Search history saved for keyword: {keyword}")
+
+    except Exception as e:
+        logging.error(f"Failed to save search history: {e}")
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# /search endpoint that queries for Google Search and Google News
+@app.route('/search', methods=['GET'])
+def search():
+    # Get the keyword for q
+    keyword = request.args.get('q')
+    if not keyword:
+        return jsonify({'error': 'Missing query parameter "q"'}), 400
+
+    # Base URL 
+    base_url = "https://serpapi.com/search"
+
+    # Parameters for Google Search
+    params_search = {
+        "engine": "google",
+        "q": keyword,
+        "gl": "us",
+        "hl": "en",
+        "num": 10,
+        "api_key": API_KEY
+    }
+
+    # Parameters for Google News
+    params_news = {
+        "engine": "google_news",
+        "q": keyword,
+        "gl": "us",
+        "hl": "en",
+        "api_key": API_KEY
+    }
+
+    try:
+        # Make the requests to both endpoints
+        response_search = requests.get(base_url, params=params_search)
+        response_news = requests.get(base_url, params=params_news)
+
+        #  error if status code is not 200
+        response_search.raise_for_status()
+        response_news.raise_for_status()
+
+        data_search = response_search.json()
+        data_news = response_news.json()
+
+    except requests.RequestException as e:
+        return jsonify({'error': f"Error contacting SerpAPI: {e}"}), 500
+    except requests.exceptions.HTTPError as http_e:
+        return jsonify({'error': f"Failed HTTP: {e}"}), 500
+    except Exception as error:
+        return jsonify({'error': f"An unexpected error occured: {error}"}), 500
+
+    # Aggregate results
+    aggregated_results = {
+        "google_search": data_search,
+        "google_news": data_news
+    }
+    
+    # Save search history
+    save_search_history(keyword, aggregated_results)
+    
+    return jsonify(aggregated_results)
+
+# New endpoint to get search history
+@app.route('/history', methods=['GET'])
+def get_history():
+    if os.path.exists(SEARCH_HISTORY_FILE):
+        with open(SEARCH_HISTORY_FILE, 'r') as file:
+            history = json.load(file)
+        return jsonify(history)
+    else:
+        return jsonify([])
+
+if __name__ == '__main__':
+    app.run(debug=True)

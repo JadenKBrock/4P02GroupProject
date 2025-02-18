@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Aggregator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; text-align: center; }
+        input { width: 80%; padding: 10px; margin-bottom: 10px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        .result-section { margin-top: 20px; text-align: left; }
+        .result { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+	<div class="container">
+		<h1>Search Aggregator</h1>
+		<input type="text" id="keyword" placeholder="Enter keyword" style="width:300px; padding:5px;">
+		<button id="searchBtn">Search</button>
+		<button id="historyBtn">View Search History</button>
+
+		<div id="results" class="result-section"></div>
+	</div>
+
+    <script>
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const keyword = document.getElementById('keyword').value.trim();
+            if (!keyword) {
+                alert("Please enter a keyword.");
+                return;
+            }
+
+            // Call the backend API with the keyword
+            fetch('/search?q=' + encodeURIComponent(keyword))
+                .then(response => response.json())
+                .then(data => {
+                    // Clear previous results
+                    document.getElementById('results').innerHTML = '';
+
+                    // Render Google Search results
+                    if (data.google_search && data.google_search.organic_results) {
+                        const searchSection = document.createElement('div');
+                        searchSection.innerHTML = '<h2>Google Search Results</h2>';
+                        data.google_search.organic_results.forEach(item => {
+                            const div = document.createElement('div');
+                            div.className = 'result';
+                            div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.snippet || ''}</p>`;
+                            searchSection.appendChild(div);
+                        });
+                        document.getElementById('results').appendChild(searchSection);
+                    }
+
+                    // Render Google News results
+                    if (data.google_news && data.google_news.news_results) {
+                        const newsSection = document.createElement('div');
+                        newsSection.innerHTML = '<h2>Google News Results</h2>';
+                        data.google_news.news_results.forEach(item => {
+                            const div = document.createElement('div');
+                            div.className = 'result';
+                            div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.snippet || ''}</p>`;
+                            newsSection.appendChild(div);
+                        });
+                        document.getElementById('results').appendChild(newsSection);
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("An error occurred while fetching data.");
+                });
+        });
+
+        document.getElementById('historyBtn').addEventListener('click', function() {
+            fetch('/history')
+                .then(response => response.json())
+                .then(history => {
+                    document.getElementById('results').innerHTML = '<h2>Search History</h2>';
+                    history.forEach(entry => {
+                        const div = document.createElement('div');
+                        div.className = 'result';
+                        div.innerHTML = `<strong>Keyword:</strong> ${entry.keyword}<br><strong>Results:</strong> ${JSON.stringify(entry.results)}`;
+                        document.getElementById('results').appendChild(div);
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("An error occurred while fetching search history.");
+                });
+        });
+    </script>
+</body>
+</html>

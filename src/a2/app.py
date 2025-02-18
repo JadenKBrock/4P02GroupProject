@@ -90,7 +90,7 @@ def search():
         return jsonify({'error': f"Error contacting SerpAPI: {e}"}), 500
     except requests.exceptions.HTTPError as http_e:
         return jsonify({'error': f"Failed HTTP: {e}"}), 500
-    except Exception error:
+    except requests.Exception as error:
         return jsonify({'error': f"An unexpected error occured: {error}"}), 500
 
     # Aggregate results

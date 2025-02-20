@@ -1,57 +1,46 @@
 <?php
-$page_title = "Dashboard";
+$page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 include "./views/header.php";
 ?>
 
-<h1>Welcome to Article Helper</h1>
-<h3> Making Writing Easier.</h3>
-
-<div class="searchbar" id="searchBar">
-    <input type="text" class="searchbar__input" name="q" placeholder="Search Contents">
-    <select id="filterDropdown" class="searchbar__filter">
-        <option value="title">Sort by Title</option>
-        <option value="date">Sort by Date Added</option>
-        <option value="tags">Sort by Tags</option>
-    </select>
-    <button type="submit" class="searchbar_button">
-        <i class="material-icons">search</i>
-    </button>
-</div>
-
-
-<button id="generateBtn">Generate More</button>
-<div class="card-container" id="cardContainer">
-    <article class="card">
-        <div class="card-content">
-            <h3>Card 1: Business</h3>
-            <p>words words words words And more words :) </p>
-            <a href="#" class="btn">Read more</a>
-            <p>Published on: 2025-02-06</p>
-            <div class="tags-container"></div>
+<header>
+        <h1>News Portal</h1>
+        <div class="header-right">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search articles...">
+                <button id="search-btn">Search</button>
+            </div>
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Sign Up</button>
         </div>
-    </article>
+    </header>
 
-    <article class="card">
-        <div class="card-content">
-            <h3>Card 2: Travel</h3>
-            <p>words words words words And more words :) </p>
-            <a href="#" class="btn">Read more</a>
-            <p>Published on: 2025-02-06</p>
-            <div class="tags-container"></div>
-        </div>
-    </article>
+    <main>
+        <section id="news-container" class="news-grid"></section>
 
-    <article class="card">
-        <div class="card-content">
-            <h3>Card 3: Lifestyle</h3>
-            <p>words words words words And more words :) </p>
-            <a href="#" class="btn">Read more</a>
-            <p>Published on: 2025-02-06</p>
-            <div class="tags-container"></div>
-        </div>
-    </article>
-</div>
+        <aside class="sidebar">
+            <h2>Filter News</h2>
+            <button id="business-btn" class="category-btn">Business</button>
+            <button id="influencer-btn" class="category-btn">Influencer</button>
+
+            <div id="business-filters" class="filter-section">
+                <h3>Business Topics</h3>
+                <button class="tag-btn" data-type="businessTopics">Tech Industry</button>
+                <button class="tag-btn" data-type="businessTopics">Stock Market</button>
+                <button class="tag-btn" data-type="businessTopics">Marketing</button>
+            </div>
+
+            <div id="influencer-filters" class="filter-section hidden">
+                <h3>Influencer Topics</h3>
+                <button class="tag-btn" data-type="influencerTopics">Social Media</button>
+                <button class="tag-btn" data-type="influencerTopics">Lifestyle</button>
+                <button class="tag-btn" data-type="influencerTopics">Fitness</button>
+            </div>
+
+            <button id="clear-btn">Clear Filters</button>
+        </aside>
+    </main>
 
 <?php
 $page_scripts = ["dashboard_script.js"];

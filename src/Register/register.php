@@ -36,6 +36,20 @@ $con = new mysqli("localhost", "root", "Tsj123456+", "4p02_group_login_db");
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 } else {
+    // Check if search_table exists, if not, create it
+    $check_table_sql = "SHOW TABLES LIKE 'search_table'";
+    $result = $con->query($check_table_sql);
+    if ($result->num_rows == 0) {
+        // Table does not exist, create it
+        $create_search_table_sql = "CREATE TABLE search_table (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            table_name VARCHAR(255) NOT NULL
+        )";
+        if ($con->query($create_search_table_sql) !== TRUE) {
+            die("Error creating search_table: " . $con->error);
+        }
+    }
+
     $stmt = $con->prepare("SELECT * FROM login WHERE username = ? OR email = ?");
     $stmt->bind_param("ss", $username, $email);
     $stmt->execute();
@@ -44,12 +58,44 @@ if ($con->connect_error) {
         echo "Username or email already exists.";
     } else {
         $stmt = $con->prepare("INSERT INTO login (first_name, last_name, email, username, password) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $first_name, $lastn_name, $email, $username, $password);
+        $stmt->bind_param("sssss", $first_name, $last_name, $email, $username, $password);
         if ($stmt->execute()) {
-            header("Location: ../Login/index.html");
-            echo "Registration successful.";
+            // create a new table for user history
+            $user_id = $con->insert_id; // get the primary key of the inserted row
+            $table_name = "user_{$user_id}_history";
+            $create_table_sql = "CREATE TABLE $table_name (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                keyword VARCHAR(255),
+                results JSON,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )";
+            
+            if ($con->query($create_table_sql) === TRUE) {
+                // Insert the table name into search_table
+                $insert_table_name_sql = "INSERT INTO search_table (table_name) VALUES (?)";
+                $stmt_insert = $con->prepare($insert_table_name_sql);
+                $stmt_insert->bind_param("s", $table_name);
+                if ($stmt_insert->execute()) {
+                    // Update the login table with the search table name
+                    $update_login_sql = "UPDATE login SET search_table = ? WHERE User_ID = ?";
+                    $stmt_update = $con->prepare($update_login_sql);
+                    $stmt_update->bind_param("si", $table_name, $user_id);
+                    if ($stmt_update->execute()) {
+                        echo "Registration successful.";
+                        header("Location: ../Login/index.html"); // redirect to login page
+                        exit();
+                    } else {
+                        echo "Error updating login table: " . $stmt_update->error;
+                    }
+                } else {
+                    echo "Error inserting table name into search_table: " . $stmt_insert->error;
+                }
+            } else {
+                echo "Error creating user history table: " . $con->error;
+            }
         } else {
             echo "Error: " . $stmt->error;
         }
     }
 }
+

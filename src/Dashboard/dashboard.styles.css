@@ -1,0 +1,319 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f1e9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    background: #594a3a;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Header Navigation */
+.header-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-nav button {
+    background: #a67c52;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+.header-nav button:hover {
+    background: #8a5a3b;
+}
+
+/* User Selector Dropdown in Header */
+.user-selector {
+    position: relative;
+}
+
+#user-selector-btn {
+    padding: 8px 16px;
+    background: #a67c52;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+#user-selector-btn:hover {
+    background: #8a5a3b;
+}
+
+#user-options {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.user-option {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    background: #ded1c1;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+    color: #333;
+}
+
+.user-option:hover {
+    background: #c0b9a3;
+}
+
+/* Arrow Icon Styling */
+.arrow-icon {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: middle;
+    color: white; /* Ensures the arrow icon is white */
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.search-container input {
+    border: none;
+    padding: 8px;
+    width: 220px;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+    color: #333;
+}
+
+.search-container input::placeholder {
+    color: #333;
+}
+
+.search-container button {
+    background: #a67c52;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+/* Role Selector Dropdown in Sidebar */
+.role-selector {
+    margin: 15px 0;
+    position: relative;
+}
+
+#role-selector-btn {
+    width: 100%;
+    padding: 10px;
+    background: #a67c52;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#role-selector-btn:hover {
+    background: #8a5a3b;
+}
+
+#role-options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.role-option {
+    width: 100%;
+    padding: 10px;
+    background: #ded1c1;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+.role-option:hover {
+    background: #c0b9a3;
+}
+
+/* Sort Filter */
+.sort-filter {
+    margin: 15px 0;
+}
+
+.sort-filter label {
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.sort-filter select {
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #8a5a3b;
+    border-radius: 4px;
+    background: #ded1c1;
+    color: #333;
+}
+
+/* Content Generator Section */
+.content-generator {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+}
+
+.content-generator h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.content-generator input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #8a5a3b;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.content-generator button {
+    width: 100%;
+    padding: 8px;
+    background: #a67c52;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.content-generator button:hover {
+    background: #8a5a3b;
+}
+
+/* Generator Filters (Hot Topics) */
+.generator-filters {
+    margin-top: 15px;
+}
+
+.generator-filters p {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.gen-filter {
+    background: #a67c52;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.gen-filter:hover {
+    background: #8a5a3b;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    padding: 20px 30px;
+}
+
+/* News Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    background: #ded1c1;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/* General Buttons */
+button {
+    background: #a67c52;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #8a5a3b;
+}
+
+button.active {
+    background: #8a5a3b;
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}

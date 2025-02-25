@@ -6,9 +6,10 @@ import logging
 
 app = Flask(__name__)
 
-API_KEY = "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d"
+# Get the API key and use default key if unsuccessful, helps with removing the need to hardcode an API key
+API_KEY = os.getenv("SERP_API_KEY", "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d")
 
-SEARCH_HISTORY_FILE = '4P02GroupProject/src/a2/search_history.json'
+SEARCH_HISTORY_FILE = 'search_history.json'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -87,6 +88,10 @@ def search():
 
     except requests.RequestException as e:
         return jsonify({'error': f"Error contacting SerpAPI: {e}"}), 500
+    except requests.exceptions.HTTPError as http_e:
+        return jsonify({'error': f"Failed HTTP: {e}"}), 500
+    except requests.Exception as error:
+        return jsonify({'error': f"An unexpected error occured: {error}"}), 500
 
     # Aggregate results
     aggregated_results = {

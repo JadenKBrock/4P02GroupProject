@@ -1,57 +1,95 @@
 <?php
-$page_title = "Dashboard";
+$page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 include "./views/header.php";
 ?>
 
-<h1>Welcome to Article Helper</h1>
-<h3> Making Writing Easier.</h3>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Portal</title>
+  <link rel="stylesheet" href="dashboard.styles.css">
+</head>
+<body>
 
-<div class="searchbar" id="searchBar">
-    <input type="text" class="searchbar__input" name="q" placeholder="Search Contents">
-    <select id="filterDropdown" class="searchbar__filter">
-        <option value="title">Sort by Title</option>
-        <option value="date">Sort by Date Added</option>
-        <option value="tags">Sort by Tags</option>
-    </select>
-    <button type="submit" class="searchbar_button">
-        <i class="material-icons">search</i>
-    </button>
-</div>
-
-
-<button id="generateBtn">Generate More</button>
-<div class="card-container" id="cardContainer">
-    <article class="card">
-        <div class="card-content">
-            <h3>Card 1: Business</h3>
-            <p>words words words words And more words :) </p>
-            <a href="#" class="btn">Read more</a>
-            <p>Published on: 2025-02-06</p>
-            <div class="tags-container"></div>
+  <header>
+    <h1>News Portal</h1>
+    <nav class="header-nav">
+      <button id="about-btn">About Us</button>
+      <button id="faq-btn">FAQ</button>
+      <button id="contact-btn">Contact Us</button>
+      <div class="user-selector">
+        <button id="user-selector-btn">
+          Users <span class="arrow-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
+            </svg>
+          </span>
+        </button>
+        <div id="user-options" class="user-options hidden">
+          <button id="login-btn" class="user-option">Login</button>
+          <button id="signup-btn" class="user-option">Sign Up</button>
         </div>
-    </article>
+      </div>
+    </nav>
+  </header>
 
-    <article class="card">
-        <div class="card-content">
-            <h3>Card 2: Travel</h3>
-            <p>words words words words And more words :) </p>
-            <a href="#" class="btn">Read more</a>
-            <p>Published on: 2025-02-06</p>
-            <div class="tags-container"></div>
-        </div>
-    </article>
+  <main>
+    <section id="news-container" class="news-grid"></section>
 
-    <article class="card">
-        <div class="card-content">
-            <h3>Card 3: Lifestyle</h3>
-            <p>words words words words And more words :) </p>
-            <a href="#" class="btn">Read more</a>
-            <p>Published on: 2025-02-06</p>
-            <div class="tags-container"></div>
+    <aside class="sidebar">
+      <h2>Filter News</h2>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search articles...">
+        <button id="search-btn">Search</button>
+      </div>
+
+      <!-- Role Selector Dropdown -->
+      <div class="role-selector">
+        <button id="role-selector-btn">
+          Choose your audience/role <span class="arrow-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
+            </svg>
+          </span>
+        </button>
+        <div id="role-options" class="role-options hidden">
+          <button id="role-business-btn" class="role-option">Business</button>
+          <button id="role-influencer-btn" class="role-option">Influencer</button>
         </div>
-    </article>
-</div>
+      </div>
+
+      <!-- New Sort Filter -->
+      <div class="sort-filter">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="desc" selected>Date:Most Recent</option>
+          <option value="asc">Date:Oldest</option>
+          <option value="asc">Relevance</option>
+        </select>
+      </div>
+
+      <button id="clear-btn">Clear Filters</button>
+
+      <!-- New Content Generator Section -->
+      <div class="content-generator">
+        <h2>Generate Content</h2>
+        <input type="text" id="generate-input" placeholder="Enter news ideas...">
+        <button id="generate-btn">Generate</button>
+        <div class="generator-filters">
+          <p>Hot Topics:</p>
+          <button class="gen-filter" data-keyword="politics">Politics</button>
+          <button class="gen-filter" data-keyword="technology">Technology</button>
+          <button class="gen-filter" data-keyword="sports">Sports</button>
+          <button class="gen-filter" data-keyword="entertainment">Entertainment</button>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+
+  <script src="dashboard.script.js"></script>
+</body>
 
 <?php
 $page_scripts = ["dashboard_script.js"];

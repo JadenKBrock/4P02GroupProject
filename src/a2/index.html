@@ -6,17 +6,22 @@
     <title>Data Aggregator</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        .result-section { margin-top: 20px; }
+        .container { max-width: 600px; margin: auto; text-align: center; }
+        input { width: 80%; padding: 10px; margin-bottom: 10px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        .result-section { margin-top: 20px; text-align: left; }
         .result { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <h1>Search Aggregator</h1>
-    <input type="text" id="keyword" placeholder="Enter keyword" style="width:300px; padding:5px;">
-    <button id="searchBtn">Search</button>
-    <button id="historyBtn">View Search History</button>
+	<div class="container">
+		<h1>Search Aggregator</h1>
+		<input type="text" id="keyword" placeholder="Enter keyword" style="width:300px; padding:5px;">
+		<button id="searchBtn">Search</button>
+		<button id="historyBtn">View Search History</button>
 
-    <div id="results" class="result-section"></div>
+		<div id="results" class="result-section"></div>
+	</div>
 
     <script>
         document.getElementById('searchBtn').addEventListener('click', function() {

@@ -26,8 +26,8 @@ include "./views/header.php";
             </svg>
           </span>
         </button>
-        <div id="user-options" class="user-options hidden">
-          <button id="login-btn" class="user-option">Login</button>
+        <div id="user-options" class="user-options">
+          <button id="login-btn" class="user-option" onclick="window.location.href='login.php'">Login</button>
           <button id="signup-btn" class="user-option">Sign Up</button>
         </div>
       </div>
@@ -89,11 +89,11 @@ include "./views/header.php";
   </main>
 
   <script src="dashboard.script.js"></script>
+        include "./views/footer.php";
 </body>
+</html>
 
 <?php
-$page_scripts = ["dashboard_script.js"];
-include "./views/footer.php";
-?>
+
 
 

@@ -3,8 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from langdetect import detect
+from deepseek.model import DeepSeekModel  # Adjust the import as needed
 
-# --- Optional: Web scraping functions if using a URL ---
+# --- Web scraping functions (if using URL input) ---
 def get_clean_content(url):
     try:
         headers = {'User-Agent': 'Mozilla/5.0'}
@@ -36,16 +37,9 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
-# --- Load your DeepSeek model ---
-# Ensure you have DeepSeek installed and adjust the import below as needed.
-try:
-    from deepseek.model import DeepSeekModel  # Hypothetical import; update based on your installation.
-except ImportError:
-    print("Error: Could not import DeepSeekModel. Please verify that DeepSeek is installed correctly.")
-    exit()
-
-# Specify the absolute path to your trained DeepSeek model checkpoint.
-model_path = "C:/absolute/path/to/your/trained/deepseek_model.ckpt"  # Update this path and filename as needed.
+# --- Connect DeepSeek ---
+# Update this path to the absolute path of your trained DeepSeek model checkpoint.
+model_path = "C:/absolute/path/to/your/trained/deepseek_model.ckpt"
 
 if not os.path.exists(model_path):
     print("Error: The model file does not exist at the specified path. Please verify the path and filename.")
@@ -57,21 +51,19 @@ except Exception as e:
     print("Error loading model:", e)
     exit()
 
-# --- Function to process the article ---
+# --- Process article and generate posts ---
 def process_article(article_text):
     prompt = (
-        "Summarize the following news article and convert it into three different social media posts for Twitter(X), Facebook, and Instagram. "
-        "Each post should be tailored to fit the platform's style and audience expectations. "
+        "Summarize the following news article and convert it into three different social media posts for Twitter(X), "
+        "Facebook, and Instagram. Each post should be tailored to fit the platform's style and audience expectations. "
         "Twitter should be short and snappy (max 280 characters), Facebook should provide more context and encourage discussion, "
         "and Instagram should have a catchy caption with engaging hashtags.\n\n"
         "News Article:\n" + article_text
     )
-    # Adjust max_tokens and any other generation parameters as needed.
-    output = model.generate(prompt, max_tokens=300)
-    return output
+    return model.generate(prompt, max_tokens=300)
 
-# --- Dynamic Article Retrieval ---
-choice = input("Enter 'url' to fetch an article from a URL or 'text' to paste the article text manually: ").strip().lower()
+# --- Dynamic article retrieval ---
+choice = input("Enter 'url' to fetch an article from a URL or 'text' to paste the article text: ").strip().lower()
 
 if choice == 'url':
     url = input("Enter the URL of the news article: ").strip()
@@ -83,7 +75,6 @@ else:
     print("Invalid choice. Exiting.")
     exit()
 
-# --- Generate and display the social media posts ---
 result = process_article(article_text)
 
 print("\nGenerated Social Media Posts:")

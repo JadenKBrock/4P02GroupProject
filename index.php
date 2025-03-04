@@ -27,7 +27,7 @@ include "./views/header.php";
           </span>
         </button>
         <div id="user-options" class="user-options hidden">
-          <button id="login-btn" class="user-option">Login</button>
+          <button id="login-btn" class="user-option" onclick="window.location.href='login.php'">Login</button>
           <button id="signup-btn" class="user-option">Sign Up</button>
         </div>
       </div>

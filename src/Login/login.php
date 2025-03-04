@@ -1,4 +1,6 @@
 <?php
+ob_start(); // 启用输出缓冲
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -13,7 +15,20 @@ if($con->connect_error) {
     if($stmt_result->num_rows > 0) {
         $data = $stmt_result->fetch_assoc();
         if($data['password'] === $password) {
-            echo "Login success";
+            session_start();
+            $_SESSION['user_id'] = $data['id']; // assume that the primary key of the login table is 'id'
+
+            // 向 Flask 应用发送 user_id
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "http://127.0.0.1:5000/set_user_id");
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('user_id' => $data['id'])));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            header("Location: http://127.0.0.1:5000");
+            exit();
         } else {
             echo "Invalid email or password";
         }

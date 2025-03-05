@@ -1,6 +1,6 @@
 <?php
 //$base_url = "http://localhost:8080/";
-$base_url = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/";
+$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 session_start();
 

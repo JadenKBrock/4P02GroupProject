@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".gen-filter").forEach(button => {
     button.addEventListener("click", () => {
       const keyword = button.getAttribute("data-keyword");
-      generateContentByKeyword(keyword);
+      generateContentByKAeyword(keyword);
     });
   });
 

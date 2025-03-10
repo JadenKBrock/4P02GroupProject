@@ -6,7 +6,7 @@ name: Build and deploy PHP app to Azure Web App - Group9Website
 on:
   push:
     branches:
-      - deploy
+      - website-makeover
   workflow_dispatch:
 
 jobs:
@@ -64,9 +64,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8554F92FA32347F388370B95D57EB916 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F6CBCAB72928446FB5C133FEE3A600AF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1FBE6BB660924583A324B5F1892E5532 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C1DE3CFD5BD9471387AD65AA231C2E6C }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3DC3E2A5D22B46EBBC1FFC697D97A938 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_61336C5F098246C4B7428A884835FF62 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3

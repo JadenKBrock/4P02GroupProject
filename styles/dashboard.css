@@ -1,104 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f1e9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
-
-/* Header */
-header {
-    background: #594a3a;
-    color: white;
-    padding: 20px 30px;
+/* Main Layout */
+.main-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
+/* News Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-grow: 1;
+    padding-right: 20px;
 }
 
-/* Header Navigation */
-.header-nav {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.header-nav button {
-    background: #a67c52;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s;
-    border-radius: 4px;
-}
-
-.header-nav button:hover {
-    background: #8a5a3b;
-}
-
-/* User Selector Dropdown in Header */
-.user-selector {
-    position: relative;
-}
-
-#user-selector-btn {
-    padding: 8px 16px;
-    background: #a67c52;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s;
-    border-radius: 4px;
-}
-
-#user-selector-btn:hover {
-    background: #8a5a3b;
-}
-
-#user-options {
-    position: absolute;
-    top: 110%;
-    right: 0;
+/* Sidebar */
+.sidebar {
+    width: 320px;
     background: #ded1c1;
-    border: 2px solid #8a5a3b;
+    padding: 20px;
     border-radius: 4px;
-    z-index: 10;
 }
 
-.user-option {
-    display: block;
-    width: 100%;
-    padding: 8px 16px;
-    background: #ded1c1;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s;
-    color: #333;
-}
-
-.user-option:hover {
-    background: #c0b9a3;
-}
-
-/* Arrow Icon Styling */
-.arrow-icon {
-    display: inline-block;
-    margin-left: 4px;
-    vertical-align: middle;
-    color: white; /* Ensures the arrow icon is white */
-}
 
 /* Search Bar */
 .search-container {
@@ -267,53 +188,3 @@ header h1 {
     background: #8a5a3b;
 }
 
-/* Main Layout */
-main {
-    display: flex;
-    padding: 20px 30px;
-}
-
-/* News Grid */
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    flex-grow: 1;
-    padding-right: 20px;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 320px;
-    background: #ded1c1;
-    padding: 20px;
-    border-radius: 4px;
-}
-
-/* General Buttons */
-button {
-    background: #a67c52;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    margin-top: 10px;
-    display: block;
-    width: 100%;
-    font-size: 14px;
-    transition: background 0.2s;
-    border-radius: 4px;
-}
-
-button:hover {
-    background: #8a5a3b;
-}
-
-button.active {
-    background: #8a5a3b;
-}
-
-/* Hidden Elements */
-.hidden {
-    display: none;
-}

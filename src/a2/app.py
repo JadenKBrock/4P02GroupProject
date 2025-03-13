@@ -1,58 +1,92 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template_string
 import requests
-import json
-import os
-import logging
 
 app = Flask(__name__)
 
-# Get the API key and use default key if unsuccessful, helps with removing the need to hardcode an API key
-API_KEY = os.getenv("SERP_API_KEY", "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d")
+# Your SerpAPI key – store this securely in production!
+API_KEY = "56c5026acbe60bebb9eb0a8351618ac5ce5adc2981c9f4e97f059b8b8ea8299d"
 
-SEARCH_HISTORY_FILE = 'search_history.json'
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-
-def save_search_history(keyword, results):
-    try:
-        if os.path.exists(SEARCH_HISTORY_FILE):
-            with open(SEARCH_HISTORY_FILE, 'r') as file:
-                history = json.load(file)
-        else:
-            history = []
-
-        # Extract links and sources from results
-        search_links = [{'link': item.get('link'), 'source': 'Google Search'} for item in results['google_search'].get('organic_results', [])]
-        news_links = [{'link': item.get('link'), 'source': 'Google News'} for item in results['google_news'].get('news_results', [])]
-
-        # Combine all links
-        all_links = search_links + news_links
-
-        # Insert new record at the beginning of the list
-        history.insert(0, {'keyword': keyword, 'results': all_links})
-
-        with open(SEARCH_HISTORY_FILE, 'w') as file:
-            json.dump(history, file, indent=4)
-        
-        logging.info(f"Search history saved for keyword: {keyword}")
-
-    except Exception as e:
-        logging.error(f"Failed to save search history: {e}")
-
+# Home route that serves a simple HTML page
 @app.route('/')
 def index():
-    return render_template('index.html')
+    html_content = '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Keyword Search Aggregator</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            input, button { padding: 10px; font-size: 16px; }
+            .result { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        </style>
+    </head>
+    <body>
+        <h1>Keyword Search Aggregator</h1>
+        <input type="text" id="keyword" placeholder="Enter keyword">
+        <button onclick="search()">Search</button>
+        <div id="results"></div>
 
-# /search endpoint that queries for Google Search and Google News
+        <script>
+            function search() {
+                const keyword = document.getElementById('keyword').value.trim();
+                if (!keyword) {
+                    alert("Please enter a keyword.");
+                    return;
+                }
+                fetch('/search?q=' + encodeURIComponent(keyword))
+                    .then(response => response.json())
+                    .then(data => {
+                        const resultsDiv = document.getElementById('results');
+                        resultsDiv.innerHTML = "";
+
+                        // Display Google Search results if available
+                        if (data.google_search && data.google_search.organic_results) {
+                            let searchSection = document.createElement('div');
+                            searchSection.innerHTML = '<h2>Google Search Results</h2>';
+                            data.google_search.organic_results.forEach(item => {
+                                let div = document.createElement('div');
+                                div.className = 'result';
+                                div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.snippet || ''}</p>`;
+                                searchSection.appendChild(div);
+                            });
+                            resultsDiv.appendChild(searchSection);
+                        }
+
+                        // Display Google News results if available
+                        if (data.google_news && data.google_news.news_results) {
+                            let newsSection = document.createElement('div');
+                            newsSection.innerHTML = '<h2>Google News Results</h2>';
+                            data.google_news.news_results.forEach(item => {
+                                let div = document.createElement('div');
+                                div.className = 'result';
+                                div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><p>${item.snippet || ''}</p>`;
+                                newsSection.appendChild(div);
+                            });
+                            resultsDiv.appendChild(newsSection);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching data:", error);
+                        alert("An error occurred while fetching data.");
+                    });
+            }
+        </script>
+    </body>
+    </html>
+    '''
+    return render_template_string(html_content)
+
+# /search endpoint that queries SerpAPI for Google Search and Google News
 @app.route('/search', methods=['GET'])
 def search():
-    # Get the keyword for q
+    # Get the keyword from query parameters
     keyword = request.args.get('q')
     if not keyword:
         return jsonify({'error': 'Missing query parameter "q"'}), 400
 
-    # Base URL 
+    # Base URL for SerpAPI
     base_url = "https://serpapi.com/search"
 
     # Parameters for Google Search
@@ -61,7 +95,7 @@ def search():
         "q": keyword,
         "gl": "us",
         "hl": "en",
-        "num": 10,
+        "num": 5,
         "api_key": API_KEY
     }
 
@@ -79,7 +113,7 @@ def search():
         response_search = requests.get(base_url, params=params_search)
         response_news = requests.get(base_url, params=params_news)
 
-        #  error if status code is not 200
+        # Raise an error if status code is not 200
         response_search.raise_for_status()
         response_news.raise_for_status()
 
@@ -88,31 +122,49 @@ def search():
 
     except requests.RequestException as e:
         return jsonify({'error': f"Error contacting SerpAPI: {e}"}), 500
-    except requests.exceptions.HTTPError as http_e:
-        return jsonify({'error': f"Failed HTTP: {e}"}), 500
-    except requests.Exception as error:
-        return jsonify({'error': f"An unexpected error occured: {error}"}), 500
 
+#Old results
     # Aggregate results
-    aggregated_results = {
-        "google_search": data_search,
-        "google_news": data_news
-    }
-    
-    # Save search history
-    save_search_history(keyword, aggregated_results)
-    
-    return jsonify(aggregated_results)
+    #aggregated_results = {
+     #   "google_search": data_search,
+      #  "google_news": data_news
+    #}
 
-# New endpoint to get search history
-@app.route('/history', methods=['GET'])
-def get_history():
-    if os.path.exists(SEARCH_HISTORY_FILE):
-        with open(SEARCH_HISTORY_FILE, 'r') as file:
-            history = json.load(file)
-        return jsonify(history)
-    else:
-        return jsonify([])
+    #transforming into list format
+    google_search_results=data_search.get("organic_results",[])
+    google_news_results=data_news.get("news_results",[])
+
+    #Just the link
+    google_search_links=[result.get("link") for result in google_search_results if result.get("link")]
+    google_news_links=[result.get("link") for result in google_news_results if result.get("link")]
+
+    #keeps results at 5 cause there is no official parameter
+    google_news_links=google_news_links[:5]
+    
+    combined_links=google_search_links+google_news_links
+
+    print(type(combined_links))
+    print(combined_links)
+    
+    return jsonify(combined_links)
+
+    '''
+    #Seaparate results
+    aggregated_results={
+        "google_search_results":google_search_results,
+        "google_news_results":google_news_results
+    }
+
+    #combine lists
+    combined_results=google_search_results+google_news_results
+
+    print(type(combined_results))
+    print(combined_results)
+    
+
+    return jsonify(combined_results)'
+    '''
+
 
 if __name__ == '__main__':
     app.run(debug=True)

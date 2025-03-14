@@ -18,7 +18,11 @@
     background: #ded1c1;
     padding: 20px;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
 
 
 /* Search Bar */
@@ -190,11 +194,11 @@
 
 /* Newsletter Scheduler */
 .newsletter-scheduler {
-    margin-top: 20px;
+    width: 100%;
+    background: #f8f5f1;
     padding: 15px;
-    background: #ded1c1;
-    border: 2px solid #8a5a3b;
     border-radius: 4px;
+    margin-top: 20px;
 }
 
 .newsletter-scheduler h2 {

@@ -128,25 +128,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  applyFilters();
-});
+  document.getElementById("schedule-frequency").addEventListener("change", function () {
+    const customDateTime = document.getElementById("custom-date-time");
+    customDateTime.classList.toggle("hidden", this.value !== "custom");
+  });
+  
+  document.getElementById("set-schedule-btn").addEventListener("click", function () {
+    const frequency = document.getElementById("schedule-frequency").value;
+    let customDate = "";
+    let customTime = "";
+  
+    if (frequency === "custom") {
+        customDate = document.getElementById("custom-date").value;
+        customTime = document.getElementById("custom-time").value;
+        if (!customDate || !customTime) {
+            alert("Please select a valid date and time.");
+            return;
+        }
+    }
+  });
 
-document.getElementById("schedule-frequency").addEventListener("change", function () {
-  const customDateTime = document.getElementById("custom-date-time");
-  customDateTime.classList.toggle("hidden", this.value !== "custom");
-});
-
-document.getElementById("set-schedule-btn").addEventListener("click", function () {
-  const frequency = document.getElementById("schedule-frequency").value;
-  let customDate = "";
-  let customTime = "";
-
-  if (frequency === "custom") {
-      customDate = document.getElementById("custom-date").value;
-      customTime = document.getElementById("custom-time").value;
-      if (!customDate || !customTime) {
-          alert("Please select a valid date and time.");
-          return;
-      }
-  }
+  applyFilters();  
 });

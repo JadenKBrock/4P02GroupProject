@@ -61,11 +61,6 @@ include "./views/header.php";
           <button class="gen-filter" data-keyword="entertainment">Entertainment</button>
         </div>
       </div>
-
-    </aside>
-
-    <automated_scheduler>
-      <aside class="sidebar">
       <h2>Newsletter Scheduler</h2>
       <label for="schedule-frequency">Select Frequency:</label>
       <select id="schedule-frequency">
@@ -84,7 +79,6 @@ include "./views/header.php";
       <button id="set-schedule-btn">Set Schedule</button>
       <p id="schedule-status"></p>
     </aside>
-  </automated_scheduler>
   </main>
 
 <?php

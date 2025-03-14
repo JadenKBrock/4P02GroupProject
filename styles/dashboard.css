@@ -188,12 +188,54 @@
     background: #8a5a3b;
 }
 
-/* scheduler */
+/* Newsletter Scheduler */
 .newsletter-scheduler {
     margin-top: 20px;
-    padding: 10px;
+    padding: 15px;
     background: #ded1c1;
     border: 2px solid #8a5a3b;
     border-radius: 4px;
 }
 
+.newsletter-scheduler h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.newsletter-scheduler label {
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
+
+.newsletter-scheduler select,
+.newsletter-scheduler input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #8a5a3b;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+}
+
+.newsletter-scheduler button {
+    width: 100%;
+    padding: 10px;
+    background: #a67c52;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.newsletter-scheduler button:hover {
+    background: #8a5a3b;
+}
+
+/* Hide custom date & time at beginning */
+.hidden {
+    display: none;
+}

@@ -141,12 +141,23 @@ document.getElementById("set-schedule-btn").addEventListener("click", function (
   let customDate = "";
   let customTime = "";
 
-  if (frequency == "custom") {
-    customDate = document.getElementById("custom-date").value;
-    customTime = document.getElementById("custom-time").value;
-    if (!customDate || !customTime) {
-      alert("Please select a valid date and time.");
-      return;
-    }
+  if (frequency === "custom") {
+      customDate = document.getElementById("custom-date").value;
+      customTime = document.getElementById("custom-time").value;
+      if (!customDate || !customTime) {
+          alert("Please select a valid date and time.");
+          return;
+      }
   }
+
+  fetch("newsletter_scheduler.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ frequency, customDate, customTime })
+  })
+  .then(response => response.json())
+  .then(data => {
+      document.getElementById("schedule-status").textContent = data.message;
+  })
+  .catch(error => console.error("Error:", error));
 });

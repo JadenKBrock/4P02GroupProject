@@ -62,6 +62,7 @@ include "./views/header.php";
         </div>
       </div>
 
+      <!-- Newsletter Scheduler -->
       <div class="newsletter-scheduler">
         <h2>Newsletter Scheduler</h2>
         <label for="schedule-frequency">Select Frequency:</label>

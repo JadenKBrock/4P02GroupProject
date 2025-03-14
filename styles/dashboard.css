@@ -188,3 +188,12 @@
     background: #8a5a3b;
 }
 
+/* scheduler */
+.newsletter-scheduler {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+}
+

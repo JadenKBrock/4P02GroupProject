@@ -146,6 +146,17 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
     }
+
+    fetch("newsletter_scheduler.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ frequency, customDate, customTime })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("schedule-status").textContent = data.message;
+    })
+    .catch(error => console.error("Error:", error));
   });
 
   applyFilters();  

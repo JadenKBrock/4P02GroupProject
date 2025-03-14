@@ -61,23 +61,26 @@ include "./views/header.php";
           <button class="gen-filter" data-keyword="entertainment">Entertainment</button>
         </div>
       </div>
-      <h2>Newsletter Scheduler</h2>
-      <label for="schedule-frequency">Select Frequency:</label>
-      <select id="schedule-frequency">
-        <option value="daily">Daily</option>
-        <option value="weekly">Weekly</option>
-        <option value="custom">Custom Date & Time</option>
-      </select>
 
-      <div id="custom-date-time" class="hidden">
-        <label for="custom-date">Choose Date:</label>
-        <input type="date" id="custom-date">
-        <label for="custom-time">Choose Time:</label>
-        <input type="time" id="custom-time">
+      <div class="newsletter-scheduler">
+        <h2>Newsletter Scheduler</h2>
+        <label for="schedule-frequency">Select Frequency:</label>
+        <select id="schedule-frequency">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="custom">Custom Date & Time</option>
+        </select>
+
+        <div id="custom-date-time" class="hidden">
+          <label for="custom-date">Choose Date:</label>
+          <input type="date" id="custom-date">
+          <label for="custom-time">Choose Time:</label>
+          <input type="time" id="custom-time">
+        </div>
+
+        <button id="set-schedule-btn">Set Schedule</button>
+        <p id="schedule-status"></p>
       </div>
-
-      <button id="set-schedule-btn">Set Schedule</button>
-      <p id="schedule-status"></p>
     </aside>
   </main>
 

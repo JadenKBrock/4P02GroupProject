@@ -18,11 +18,7 @@
     background: #ded1c1;
     padding: 20px;
     border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
-
 
 
 /* Search Bar */
@@ -192,54 +188,88 @@
     background: #8a5a3b;
 }
 
-/* Newsletter Scheduler */
-.newsletter-scheduler {
-    width: 100%;
-    background: #f8f5f1;
-    padding: 15px;
-    border-radius: 4px;
-    margin-top: 20px;
+:root {
+    --primary-color: #13162a;
+    --secondary-color: #f2f2f2;
+    --nav-bg-color: #0d0e1b;
+    --nav-active-bg: #13162a;
+    --nav-active-color: #8b8b8b;
+    --btn-bg-color: #1a1e39;
 }
 
-.newsletter-scheduler h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    min-height: 100vh;
 }
 
-.newsletter-scheduler label {
-    font-size: 14px;
-    display: block;
-    margin-top: 10px;
+/* Nav bar content */
+#top-nav-bar {
+    background-color: var(--nav-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.newsletter-scheduler select,
-.newsletter-scheduler input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #8a5a3b;
-    border-radius: 4px;
-    font-size: 14px;
-    background: #fff;
-    color: #333;
+#nav-title {
+    margin: 0px;
+    padding: 0px;
 }
 
-.newsletter-scheduler button {
-    width: 100%;
+#main-nav-bar {
+    display: flex;
+}
+
+#main-nav-bar a{
     padding: 10px;
-    background: #a67c52;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
+    text-decoration: none; 
+    color: var(--secondary-color);
 }
 
-.newsletter-scheduler button:hover {
+#main-nav-bar a:hover{
+    background-color: var(--nav-active-bg);
+    border-radius: 25%;
+}
+
+.active {
+    background-color: var(--nav-active-bg);
+    color: var(--nav-active-color);
+    border-radius: 25%;
+}
+
+/* Arrow Icon Styling */
+.arrow-icon {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: middle;
+    color: white; /* Ensures the arrow icon is white */
+}
+
+/* General Buttons */
+button {
+    background-color: var(--btn-bg-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+button:hover {
     background: #8a5a3b;
 }
 
-/* Hide custom date & time at beginning */
+button.active {
+    background: #8a5a3b;
+}
+
+/* Hidden Elements */
 .hidden {
     display: none;
 }

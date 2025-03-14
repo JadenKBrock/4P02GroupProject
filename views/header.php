@@ -28,6 +28,7 @@ function isActive($page) {
     <div id="nav-title"><h2>News Portal</h2></div>
     <nav id="main-nav-bar">
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('index.php');?>">Dashboard</a>
+        <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         <a href="<?php echo $base_url;?>src/Login/login_page.php" class="<?php echo isActive('login_page.php');?>">Login</a>

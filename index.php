@@ -12,7 +12,7 @@ include "./views/header.php";
 <div class="main-container">
   <div id=news-container class="news-grid">
   <div class="sharethis-inline-share-buttons"
-     data-url=""
+     data-url="about:blank"
      data-title=""
      data-description="">
 </div>

@@ -21,6 +21,8 @@ function isActive($page) {
             }
         }
     ?>
+
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=67d6417b86189a0019fafc7a&product=sop' async='async'></script>
 </head>
 <body>
 

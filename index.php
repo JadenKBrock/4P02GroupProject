@@ -11,7 +11,11 @@ include "./views/header.php";
 
 <div class="main-container">
   <div id=news-container class="news-grid">
-  <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+  <div class="sharethis-inline-share-buttons"
+     data-url=""
+     data-title=""
+     data-description="">
+</div>
   </div>
   <div class="sidebar">
     <h2>Filter News</h2>

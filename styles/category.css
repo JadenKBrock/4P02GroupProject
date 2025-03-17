@@ -1,0 +1,153 @@
+/* Header Styling */
+.dashboard-header {
+    background: #ded1c1;
+    border-bottom: 2px solid #8a5a3b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  .dashboard-header .header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .dashboard-header .header-nav ul li {
+    margin-right: 20px;
+  }
+  .dashboard-header .header-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  .dashboard-header .header-nav ul li a.active,
+  .dashboard-header .header-nav ul li a:hover {
+    font-weight: bold;
+  }
+  
+  /* Container similar to your dashboard's content styling */
+  .category-container {
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  /* Heading styling for the category container */
+  .category-container h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Styling for the select container */
+  .select-container {
+    margin-bottom: 15px;
+  }
+  
+  .select-container label {
+    font-size: 14px;
+    margin-right: 8px;
+    color: #333;
+  }
+  
+  .select-container select {
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #8a5a3b;
+    border-radius: 4px;
+    background: #ded1c1;
+    color: #333;
+  }
+  
+  .select-container button {
+    padding: 6px 12px;
+    margin-left: 10px;
+    background: #a67c52;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .select-container button:hover {
+    background: #8a5a3b;
+  }
+  
+  /* Styling for the sources list */
+  #sourcesContainer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #sourcesContainer li {
+    padding: 8px;
+    border-bottom: 1px solid #8a5a3b;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  #sourcesContainer li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Styling for saved categories */
+  .saved-categories {
+    background: #ded1c1;
+    border: 2px solid #8a5a3b;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .saved-categories h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .saved-categories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .saved-categories li {
+    padding: 6px;
+    border-bottom: 1px solid #8a5a3b;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .saved-categories li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Navigation Styling for Sidebar */
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-list li {
+    margin-bottom: 10px;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .nav-list li a.active,
+  .nav-list li a:hover {
+    font-weight: bold;
+  }
+  

@@ -6,14 +6,14 @@ include "../../views/header.php";
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<h2>Send Data to Azure Function</h2>
+<h2>Testing LLM</h2>
 <label for="contentType">Content Type:</label>
-<input type="text" id="contentType" placeholder="Enter content type (e.g., text)">
+<input type="text" id="contentType">
 <br><br>
 <label for="contentText">Content Text:</label>
-<input type="text" id="contentText" placeholder="Enter content text">
+<input type="text" id="contentText">
 <br><br>
-<button id="sendRequest">Send to Azure Function</button>
+<button id="sendRequest">Get Response</button>
 
 <p>Response: <span id="responseText"></span></p>
 

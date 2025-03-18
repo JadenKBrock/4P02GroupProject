@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <p>This is your dashboard.</p>
+
+    <!-- 新闻总结 -->
+    <form id="summary-form">
+        <textarea id="content" placeholder="Enter news content..." rows="5" cols="50"></textarea><br>
+        <button type="button" onclick="summarize()">Summarize</button>
+    </form>
+
+    <h3>AI Summary:</h3>
+    <p id="summary-result"></p>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <script>
+        async function summarize() {
+            const content = document.getElementById('content').value;
+            const response = await fetch('/summarize', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({content})
+            });
+            const data = await response.json();
+            document.getElementById('summary-result').textContent = data.summary;
+        }
+    </script>
+</body>
+</html>

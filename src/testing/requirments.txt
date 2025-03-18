@@ -1,0 +1,3 @@
+pip install Flask-Session
+pip install flask flask-sqlalchemy pyodbc
+pip install pyodbc

@@ -1,44 +1,24 @@
+<!-- Currently this index.php page is the DASHBOARD PAGE.-->
+<!-- This index.php page should be our landing page (whatever page that may be).-->
+<!-- That being said, the stylesheet(s) and script(s) which are in the variables, page_styles and page_scripts belong only to the dashboard page. -->
+<!-- If we change this landing page to be something other than the dashboard page, we need to change the values of those variables to reflect the change.-->
+
 <?php
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 include "./views/header.php";
 ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News Portal</title>
-  <link rel="stylesheet" href="dashboard.styles.css">
-</head>
-<body>
-
-  <header>
-    <h1>News Portal</h1>
-    <nav class="header-nav">
-      <button id="about-btn">About Us</button>
-      <button id="faq-btn">FAQ</button>
-      <button id="contact-btn">Contact Us</button>
-      <div class="user-selector">
-        <button id="user-selector-btn">
-          Users <span class="arrow-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
-              <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
-            </svg>
-          </span>
-        </button>
-        <div id="user-options" class="user-options hidden">
-          <button id="login-btn" class="user-option">Login</button>
-          <button id="signup-btn" class="user-option">Sign Up</button>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section id="news-container" class="news-grid"></section>
-
-    <aside class="sidebar">
-      <h2>Filter News</h2>
+<div class="main-container">
+  <div id=news-container class="news-grid">
+  <div class="sharethis-inline-share-buttons"
+     data-url=""
+     data-title=""
+     data-description="">
+</div>
+  </div>
+  <div class="sidebar">
+    <h2>Filter News</h2>
       <div class="search-container">
         <input type="text" id="search-input" placeholder="Search articles...">
         <button id="search-btn">Search</button>
@@ -70,30 +50,14 @@ include "./views/header.php";
       </div>
 
       <button id="clear-btn">Clear Filters</button>
+  </div>
+</div>
 
-      <!-- New Content Generator Section -->
-      <div class="content-generator">
-        <h2>Generate Content</h2>
-        <input type="text" id="generate-input" placeholder="Enter news ideas...">
-        <button id="generate-btn">Generate</button>
-        <div class="generator-filters">
-          <p>Hot Topics:</p>
-          <button class="gen-filter" data-keyword="politics">Politics</button>
-          <button class="gen-filter" data-keyword="technology">Technology</button>
-          <button class="gen-filter" data-keyword="sports">Sports</button>
-          <button class="gen-filter" data-keyword="entertainment">Entertainment</button>
-        </div>
-      </div>
-
-    </aside>
-  </main>
-
-  <script src="dashboard.script.js"></script>
-</body>
 
 <?php
 $page_scripts = ["dashboard_script.js"];
 include "./views/footer.php";
 ?>
+
 
 

@@ -34,8 +34,8 @@ function applyFilters() {
 
   // Render articles
   filteredArticles.forEach(article => {
-    const tagsHTML = article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join(", ");
-    newsContainer.innerHTML += `
+    const tagsHTML = article.tags.map(tag => <span class="article-tag">${tag}</span>).join(", ");
+    newsContainer.innerHTML += 
       <article class="news-item">
         <h3>${article.title}</h3>
         <p class="preview">${article.content.substring(0, 100)}...</p>
@@ -45,12 +45,12 @@ function applyFilters() {
           <p><strong>Tags:</strong> ${tagsHTML}</p>
           <p><strong>Date:</strong> ${article.date}</p>
         </div>
-      </article>`;
+      </article>;
   });
 }
 
 function toggleArticle(id) {
-  const articleContent = document.getElementById(`article-${id}`);
+  const articleContent = document.getElementById(article-$, {id});
   const btn = articleContent.previousElementSibling;
   articleContent.classList.toggle("hidden");
   btn.innerText = articleContent.classList.contains("hidden") ? "Read More" : "Show Less";
@@ -68,22 +68,22 @@ function generateContent() {
   const idea = document.getElementById("generate-input").value.trim();
   if (idea === "") return;
   const newsContainer = document.getElementById("news-container");
-  newsContainer.innerHTML = `
+  newsContainer.innerHTML = 
     <article class="news-item">
       <h3>Generated: ${idea}</h3>
       <p class="preview">This is generated content based on your idea: ${idea} ...</p>
       <button class="expand-btn" onclick="alert('More details coming soon')">Read More</button>
-    </article>`;
+    </article>;
 }
 
 function generateContentByKeyword(keyword) {
   const newsContainer = document.getElementById("news-container");
-  newsContainer.innerHTML = `
+  newsContainer.innerHTML = 
     <article class="news-item">
       <h3>Generated: ${keyword}</h3>
       <p class="preview">This is a generated article for the hot topic: ${keyword}.</p>
       <button class="expand-btn" onclick="alert('More details coming soon')">Read More</button>
-    </article>`;
+    </article>;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".gen-filter").forEach(button => {
     button.addEventListener("click", () => {
       const keyword = button.getAttribute("data-keyword");
-      generateContentByKeyword(keyword);
+      generateContentByKAeyword(keyword);
     });
   });
 

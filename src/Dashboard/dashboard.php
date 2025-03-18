@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$page_title = "News Portal";
+$page_styles = ["dashboard.css"];
+include "./views/header.php";
+?>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +11,6 @@
   <link rel="stylesheet" href="dashboard.styles.css">
 </head>
 <body>
-
-  <header>
-    <h1>News Portal</h1>
-    <nav class="header-nav">
-      <button id="about-btn">About Us</button>
-      <button id="faq-btn">FAQ</button>
-      <button id="contact-btn">Contact Us</button>
-      <div class="user-selector">
-        <button id="user-selector-btn">
-          Users <span class="arrow-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
-              <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
-            </svg>
-          </span>
-        </button>
-        <div id="user-options" class="user-options hidden">
-          <button id="login-btn" class="user-option">Login</button>
-          <button id="signup-btn" class="user-option">Sign Up</button>
-        </div>
-      </div>
-    </nav>
-  </header>
-
   <main>
     <section id="news-container" class="news-grid"></section>
 
@@ -82,8 +63,15 @@
       </div>
 
     </aside>
+
+    <automated_scheduler class="sidebar">
+    <h2>Newsletter Scheduler</h2>
+      
+
+    </automated_scheduler>
   </main>
 
-  <script src="dashboard.script.js"></script>
-</body>
-</html>
+<?php
+$page_scripts = ["dashboard_script.js"];
+include "./views/footer.php";
+?>

@@ -11,22 +11,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Extract data from request
-    $content_type = trim($data['content_type'] ?? 'text');  // Default to 'text' if missing
-    $content_text = trim($data['content_text'] ?? '');
+    $keyword = trim($data['keyword'] ?? '');
 
     // Validate input
-    if (empty($content_text)) {
-        echo json_encode(["error" => "Missing 'content_text' in request"]);
+    if (empty($keyword)) {
+        echo json_encode(["error" => "Missing 'keyword' in request"]);
         exit;
     }
 
     // Azure Function URL
-    $azure_function_url = "https://llmfunctionapp2.azurewebsites.net/api/llm-call?code=PCoE-HGnTYpC7XgL9p0I9glgIeUY8MpozIn2Ljeq0LsOAzFuZA7zkA==";
+    $azure_function_url = "https://llmfunctionapp2.azurewebsites.net/api/get_urls?code=tNj_7CzAU4N3LvACejo__-gfQTw9d_wsKDVUQUF6O8D2AzFuOJP2MQ==";
 
     // Prepare JSON payload
     $json_data = json_encode([
-        "content_type" => $content_type,
-        "content_text" => $content_text
+        "keyword" => $keyword,
     ]);
 
     // Initialize cURL

@@ -28,7 +28,7 @@ $(document).ready(function() {
             type: "POST",
             data: JSON.stringify({ 
                 content_type: contentType, 
-                content_text: contentText 
+                keyword: contentText 
             }),
             contentType: "application/json",
             dataType: "json",  // Ensure response is treated as JSON

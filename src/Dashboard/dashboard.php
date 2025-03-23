@@ -63,12 +63,6 @@ include "./views/header.php";
       </div>
 
     </aside>
-
-    <automated_scheduler class="sidebar">
-    <h2>Newsletter Scheduler</h2>
-      
-
-    </automated_scheduler>
   </main>
 
 <?php

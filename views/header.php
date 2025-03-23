@@ -36,7 +36,7 @@ function isActive($page) {
         
         <?php if (isset($_SESSION['user_id'])): ?>  
             <div class="profile-dropdown">
-                <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile.png'; ?>" 
+                <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile-pic.png'; ?>" 
                     alt="Profile" class="profile-icon" id="profile-icon">
                 <div class="dropdown-menu hidden" id="profile-dropdown">
                     <a href="profile.php">My Profile</a>

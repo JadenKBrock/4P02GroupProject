@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 include "./views/header.php";

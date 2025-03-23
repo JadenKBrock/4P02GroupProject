@@ -269,6 +269,41 @@ button.active {
     background: #8a5a3b;
 }
 
+/* Profile dropdown */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+}
+  
+.dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+  
+.dropdown-menu a:hover {
+    background: #f2f2f2;
+}
+
 /* Hidden Elements */
 .hidden {
     display: none;

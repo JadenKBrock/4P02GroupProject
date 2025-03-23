@@ -35,5 +35,19 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         <a href="<?php echo $base_url;?>src/Login/login_page.php" class="<?php echo isActive('login_page.php');?>">Login</a>
         <a href="<?php echo $base_url;?>src/Register/register_page.php" class="<?php echo isActive('register_page.php');?>">Sign Up</a>
+        <div id="user-nav">
+            <?php if (isset($_SESSION['user_id'])): ?>  
+                <div class="profile-dropdown">
+                    <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile.png'; ?>" 
+                        alt="Profile" class="profile-icon" id="profile-icon">
+                    <div class="dropdown-menu hidden" id="profile-dropdown">
+                        <a href="profile.php">My Profile</a>
+                        <a href="logout.php">Log Out</a>
+                    </div>
+                </div>
+            <?php else: ?>
+                <a href="login.php" class="nav-btn">Login</a>
+                <a href="register.php" class="nav-btn">Register</a>
+            <?php endif; ?>
+        </div>
     </nav>
-</div>

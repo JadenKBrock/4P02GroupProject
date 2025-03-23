@@ -5,6 +5,8 @@
 
 <?php
 session_start();
+$_SESSION['user_id'] = $user_id;
+$_SESSION['profile_pic'] = $profile_pic_url;
 
 
 $page_title = "News Portal";

@@ -1,6 +1,6 @@
 <?php
-ob_start();              // Start output buffering
-session_start();         // Start the session
+ob_start();
+session_start();
 
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
@@ -31,8 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
         if ($user && password_verify($password, $user['password'])) {
-            // Successful login: set session variables and redirect to dashboard (index.php)
+            // Set session variables for logged in user
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
             header("Location: " . $base_url . "index.php");
             exit();
         } else {
@@ -42,12 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     sqlsrv_free_stmt($stmt);
 }
 
-// Set page variables for header/footer
 $page_title  = "Login";
 $page_styles = ["login-register.css"];
 include "../../views/header.php";
 ?>
-
+<!-- Your login form HTML follows -->
 <div class="main-container">
     <div class="content-container">
         <h2>Login</h2>
@@ -67,9 +67,8 @@ include "../../views/header.php";
         </div>
     </div>
 </div>
-
 <?php
 $page_scripts = ["login_script.js"];
 include "../../views/footer.php";
-ob_end_flush(); // End output buffering
+ob_end_flush();
 ?>

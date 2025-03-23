@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt === false) {
             $message = "Registration error: " . print_r(sqlsrv_errors(), true);
         } else {
-            $message = "Registration successful! You can now <a href='login_page.php'>login</a>.";
+            $message = "Registration successful! You can now <a href='login_pageNew.php'>login</a>.";
         }
         sqlsrv_free_stmt($stmt);
     }
@@ -58,7 +58,7 @@ include "./views/header.php";
             </form>
             <div class="login-signup-redirect">
                 <p>Already have an account?</p>
-                <a href="<?php echo $base_url; ?>src/Login/login_page.php" class="login-signup-link">Login Here</a>
+                <a href="<?php echo $base_url; ?>src/Login/login_pageNew.php" class="login-signup-link">Login Here</a>
             </div>
         </div>
     </div>

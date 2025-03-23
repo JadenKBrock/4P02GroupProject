@@ -1,0 +1,20 @@
+<?php
+session_start();
+include '../../includes/db_connection.php'; // Adjust path as necessary
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['category'])) {
+    $user_id = $_SESSION['user_id']; // Ensure user session is properly managed
+    $category = $_POST['category'];
+
+    $stmt = $conn->prepare("INSERT INTO saved_categories (user_id, category) VALUES (?, ?)");
+    $stmt->bind_param("is", $user_id, $category);
+
+    if ($stmt->execute()) {
+        echo "Category saved successfully!";
+    } else {
+        echo "Error saving category.";
+    }
+
+    $stmt->close();
+}
+?>

@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt === false) {
             $message = "Registration error: " . print_r(sqlsrv_errors(), true);
         } else {
-            $message = "Registration successful! You can now <a href='login_pageNew.php'>login</a>.";
+            $message = "Registration successful! You can now <a href='" . $base_url . "src/Login/login_pageNew.php'>login</a>.";
         }
         sqlsrv_free_stmt($stmt);
     }

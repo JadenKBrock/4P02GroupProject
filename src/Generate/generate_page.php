@@ -1,11 +1,11 @@
 <?php
 $page_title = "Generate";
-$page_styles = [""];
+$page_styles = ["main.css"]; // Ensure this matches your CSS file
 include "../../views/header.php";
 session_start();
-include '../../includes/db_connection.php'; // Adjust this path if necessary
+include '../../includes/db_connection.php'; // Adjust if necessary
 
-// Fetch random article clearly with category
+// Fetch random article with category
 $query = "SELECT article_id, title, content, category FROM articles ORDER BY RAND() LIMIT 1";
 $result = mysqli_query($conn, $query);
 $article = mysqli_fetch_assoc($result);
@@ -17,7 +17,7 @@ $article = mysqli_fetch_assoc($result);
 
 <h3><?php echo htmlspecialchars($article['title']); ?></h3>
 <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
-<p><strong>Category:</strong> <span id="articleCategory"><?php echo htmlspecialchars($article['category']); ?></span></p>
+<p><span class="article-category" id="articleCategory"><?php echo htmlspecialchars($article['category']); ?></span></p>
 
 <button id="saveCategoryBtn">Save Category</button>
 
@@ -35,8 +35,8 @@ $article = mysqli_fetch_assoc($result);
 <p>Response: <span id="responseText"></span></p>
 
 <script>
-// AJAX to handle LLM request
 $(document).ready(function() {
+    // AJAX handler for LLM requests with clear error messages
     $("#sendRequest").click(function() {
         var contentType = $("#contentType").val();
         var contentText = $("#contentText").val();
@@ -54,16 +54,16 @@ $(document).ready(function() {
                 if (response && response.response) {
                     $("#responseText").text(response.response);
                 } else {
-                    $("#responseText").text("Error: Unexpected response format");
+                    $("#responseText").text("Unexpected response format. Please try again.");
                 }
             },
             error: function(xhr, status, err) {
-                $("#responseText").text("Error: Could not execute request.");
+                $("#responseText").text("An error occurred: " + err + ". Please try again.");
             }
         });
     });
 
-    // AJAX to handle category saving
+    // AJAX handler for saving category with clear error messages
     $("#saveCategoryBtn").click(function() {
         var category = $("#articleCategory").text();
 
@@ -74,8 +74,8 @@ $(document).ready(function() {
             success: function(response) {
                 alert(response);
             },
-            error: function() {
-                alert('Error saving category.');
+            error: function(xhr, status, err) {
+                alert("An error occurred: " + err + ". Please try again.");
             }
         });
     });

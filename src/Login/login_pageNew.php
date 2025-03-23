@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Set page variables for header/footer
 $page_title  = "Login";
 $page_styles = ["login-register.css"];
-include "./views/header.php";
+include "../../views/header.php";
 ?>
 
 <div class="main-container">
@@ -63,5 +63,5 @@ include "./views/header.php";
 
 <?php
 $page_scripts = ["login_script.js"];
-include "./views/footer.php";
+include "../../views/footer.php";
 ?>

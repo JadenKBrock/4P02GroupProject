@@ -4,6 +4,9 @@
 <!-- If we change this landing page to be something other than the dashboard page, we need to change the values of those variables to reflect the change.-->
 
 <?php
+session_start();
+
+
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 include "./views/header.php";

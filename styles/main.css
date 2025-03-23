@@ -83,3 +83,30 @@ button.active {
 .hidden {
     display: none;
 }
+
+/* Article Category Styling */
+.article-category {
+    font-weight: 600;
+    color: #007BFF;
+    background-color: #E9F5FF;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* Save Category Button Styling */
+#saveCategoryBtn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#saveCategoryBtn:hover {
+    background-color: #218838;
+}
+

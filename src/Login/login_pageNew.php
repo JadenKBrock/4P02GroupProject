@@ -1,4 +1,6 @@
 <?php
+$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
+
 // Process login logic
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(

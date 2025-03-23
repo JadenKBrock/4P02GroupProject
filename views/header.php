@@ -5,6 +5,9 @@ $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 function isActive($page) {
     return basename($_SERVER["PHP_SELF"]) == $page ? "active" : "";
 }
+session_start();
+$_SESSION['user_id'] = $user_id;
+$_SESSION['profile_pic'] = $profile_pic_url;
 ?>
 <!DOCTYPE html>
 <html lang="en">

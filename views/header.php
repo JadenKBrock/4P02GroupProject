@@ -44,8 +44,8 @@ function isActive($page) {
                     </div>
                 </div>
             <?php else: ?>
-                <a href="src/Login/login_page.php" class="nav-btn">Login</a>
-                <a href="src/Register/register_page.php" class="nav-btn">Register</a>            
+                <a href="src/Login/login_pageNew.php" class="nav-btn">Login</a>
+                <a href="src/Register/register_pageNew.php" class="nav-btn">Register</a>            
             <?php endif; ?>
         </div>
     </nav>

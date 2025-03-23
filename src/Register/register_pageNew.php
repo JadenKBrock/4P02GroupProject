@@ -1,4 +1,5 @@
 <?php
+$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 // Process registration logic
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(

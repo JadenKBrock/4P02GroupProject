@@ -48,14 +48,14 @@ include "./views/header.php";
             <div class="message"><?php echo $message; ?></div>
         <?php endif; ?>
         <div class="form-container">
-            <form action="login_page.php" method="post" class="main-form">
+            <form action="login_pageNew.php" method="post" class="main-form">
                 <input type="text" id="username" name="username" placeholder="Username" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
             <div class="login-signup-redirect">
                 <p>Don't have an account?</p>
-                <a href="<?php echo $base_url; ?>src/Register/register_page.php" class="login-signup-link">Register Here</a>
+                <a href="<?php echo $base_url; ?>src/Register/register_pageNew.php" class="login-signup-link">Register Here</a>
             </div>
         </div>
     </div>

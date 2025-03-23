@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session if it's not already started
+session_start();
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 function isActive($page) {
@@ -11,7 +11,7 @@ function isActive($page) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($page_title) ? $page_title : "Default"?></title>
+    <title><?= isset($page_title) ? $page_title : "Default" ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo $base_url;?>styles/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <?php
@@ -34,13 +34,10 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         
         <?php if (isset($_SESSION['user_id'])): ?>
-            <!-- If user is logged in, show a profile circle with a dropdown for Logout -->
+            <!-- Display profile circle with dropdown if logged in -->
             <div class="profile-menu">
                 <div class="profile-icon">
-                    <?php 
-                        // Display the first letter of the username if available, else a default letter
-                        echo isset($_SESSION['username']) ? strtoupper(substr($_SESSION['username'], 0, 1)) : "U"; 
-                    ?>
+                    <?php echo isset($_SESSION['username']) ? strtoupper(substr($_SESSION['username'], 0, 1)) : "U"; ?>
                 </div>
                 <div class="dropdown-menu">
                     <a href="<?php echo $base_url; ?>logout.php">Logout</a>

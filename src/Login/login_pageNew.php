@@ -1,4 +1,7 @@
 <?php
+ob_start();              // Start output buffering
+session_start();         // Start the session
+
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 // Process login logic
@@ -28,8 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
         if ($user && password_verify($password, $user['password'])) {
-            $message = "Login successful! Welcome, " . htmlspecialchars($username) . ".";
-            // Optionally start a session and redirect the user here
+            // Successful login: set session variables and redirect to dashboard (index.php)
+            $_SESSION['user_id'] = $user['id'];
+            header("Location: " . $base_url . "index.php");
+            exit();
         } else {
             $message = "Invalid username or password.";
         }
@@ -66,4 +71,5 @@ include "../../views/header.php";
 <?php
 $page_scripts = ["login_script.js"];
 include "../../views/footer.php";
+ob_end_flush(); // End output buffering
 ?>

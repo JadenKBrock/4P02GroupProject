@@ -51,3 +51,4 @@ function isActive($page) {
             <?php endif; ?>
         </div>
     </nav>
+</div>

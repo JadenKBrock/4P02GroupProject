@@ -128,11 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  applyFilters();
-});
-
-//add event listener for profile icon event handling
-document.addEventListener("DOMContentLoaded", function () {
   const profileIcon = document.getElementById("profile-icon");
   const dropdownMenu = document.getElementById("profile-dropdown");
 
@@ -148,4 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  applyFilters();
 });

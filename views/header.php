@@ -33,7 +33,7 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
-        <a href="<?php echo $base_url;?>src/Login/login_page.php" class="<?php echo isActive('login_page.php');?>">Login</a>
-        <a href="<?php echo $base_url;?>src/Register/register_page.php" class="<?php echo isActive('register_page.php');?>">Sign Up</a>
+        <a href="<?php echo $base_url;?>src/Login/login_pageNew.php" class="<?php echo isActive('login_pageNew.php');?>">Login</a>
+        <a href="<?php echo $base_url;?>src/Register/register_pageNew.php" class="<?php echo isActive('register_pageNew.php');?>">Sign Up</a>
     </nav>
 </div>

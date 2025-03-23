@@ -33,20 +33,19 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
-        <div id="user-nav">
-            <?php if (isset($_SESSION['user_id'])): ?>  
-                <div class="profile-dropdown">
-                    <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile.png'; ?>" 
-                        alt="Profile" class="profile-icon" id="profile-icon">
-                    <div class="dropdown-menu hidden" id="profile-dropdown">
-                        <a href="profile.php">My Profile</a>
-                        <a href="logout.php">Log Out</a>
-                    </div>
+    
+        <?php if (isset($_SESSION['user_id'])): ?>  
+            <div class="profile-dropdown">
+                <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile.png'; ?>" 
+                    alt="Profile" class="profile-icon" id="profile-icon">
+                <div class="dropdown-menu hidden" id="profile-dropdown">
+                    <a href="profile.php">My Profile</a>
+                    <a href="logout.php">Log Out</a>
                 </div>
-            <?php else: ?>
-                <a href="src/Login/login_pageNew.php" class="nav-btn">Login</a>
-                <a href="src/Register/register_pageNew.php" class="nav-btn">Register</a>            
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php else: ?>
+            <a href="src/Login/login_pageNew.php" class="nav-btn">Login</a>
+            <a href="src/Register/register_pageNew.php" class="nav-btn">Register</a>            
+        <?php endif; ?>
     </nav>
 </div>

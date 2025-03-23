@@ -222,6 +222,7 @@ body {
 
 #main-nav-bar {
     display: flex;
+    align-items: center;
 }
 
 #main-nav-bar a{

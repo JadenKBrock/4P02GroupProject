@@ -50,7 +50,7 @@ include "./views/header.php";
             <div class="message"><?php echo $message; ?></div>
         <?php endif; ?>
         <div class="form-container">
-            <form action="register_page.php" method="post" class="main-form">
+            <form action="register_pageNew.php" method="post" class="main-form">
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <input type="text" id="username" name="username" placeholder="Username" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>

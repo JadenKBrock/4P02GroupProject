@@ -1,9 +1,15 @@
 <?php
 session_start();
-include '../../includes/db_connection.php'; // Adjust path as necessary
+include '../../includes/db_connection.php'; // Adjust path if necessary
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['category'])) {
-    $user_id = $_SESSION['user_id']; // Ensure user session is properly managed
+    // Check if user is logged in clearly
+    if (!isset($_SESSION['user_id'])) {
+        echo "Please log in to save categories.";
+        exit;
+    }
+
+    $user_id = $_SESSION['user_id'];
     $category = $_POST['category'];
 
     $stmt = $conn->prepare("INSERT INTO saved_categories (user_id, category) VALUES (?, ?)");

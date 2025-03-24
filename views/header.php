@@ -15,7 +15,7 @@ function isActive($page) {
 
     <meta property="og:title" content="<?= isset($page_title) ? $page_title : 'Default Title'; ?>" />
     <meta property="og:description" content="<?= isset($page_description) ? $page_description : 'Default description for the page.'; ?>" />
-    <meta property="og:image" content="<?= isset($page_image) ? $page_image : $base_url . 'images/default-image.jpg'; ?>" />
+    <meta property="og:image" content="<?= isset($page_image) ? $page_image : $base_url . 'https://raw.githubusercontent.com/JadenKBrock/4P02GroupProject/refs/heads/deploy/default-profile-pic.png'; ?>" />
     <meta property="og:url" content="<?= isset($page_url) ? $page_url : $base_url . basename($_SERVER['PHP_SELF']); ?>" />
     <meta property="og:type" content="website" />
     

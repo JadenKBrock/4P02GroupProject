@@ -128,5 +128,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  const profileIcon = document.getElementById("profile-icon");
+  const dropdownMenu = document.getElementById("profile-dropdown");
+
+  if (profileIcon) {
+    profileIcon.addEventListener("click", function () {
+      dropdownMenu.classList.toggle("hidden");
+    });
+
+    //Close the profile dropdown when clicked outside of it
+    document.addEventListener("click", function (event) {
+      if (!profileIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add("hidden");
+      }
+    });
+  }
+
   applyFilters();
 });

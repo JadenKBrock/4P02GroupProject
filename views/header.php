@@ -40,13 +40,13 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         
-        <?php if (!empty($_SESSION['user_id'])): ?>  
+        <?php if (isset($_SESSION['user_id'])): ?>  
             <div class="profile-dropdown">
-                <img src="<?php echo $_SESSION['profile_pic'] ?? $base_url . 'default-profile-pic.png'; ?>" 
-                    alt="Profile" class="profile-icon">
-                <div class="dropdown-menu">
+                <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile-pic.png'; ?>" 
+                    alt="Profile" class="profile-icon" id="profile-icon">
+                <div class="dropdown-menu hidden" id="profile-dropdown">
                     <a href="profile.php">My Profile</a>
-                    <a href="logout.php">Logout</>
+                    <a href="logout.php">Log Out</a>
                 </div>
             </div>
         <?php else: ?>

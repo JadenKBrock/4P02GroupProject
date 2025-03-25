@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 
-//$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 // Process login logic

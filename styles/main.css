@@ -80,48 +80,6 @@ button.active {
     background: #8a5a3b;
 }
 
-.profile-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.profile-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    min-width: 150px;
-    z-index: 1000;
-}
-
-.profile-dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
-    display: block;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-    background-color: #f0f0f0;
-}
-
 /* Hidden Elements */
 .hidden {
     display: none;

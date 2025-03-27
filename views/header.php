@@ -12,11 +12,11 @@ function isActive($page) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($page_title) ? $page_title : "Default"?></title>
-
-    <meta property="og:title" content="<?= isset($page_title) ? $page_title : 'News Portal'; ?>" />
-    <meta property="og:description" content="<?= isset($page_description) ? $page_description : 'Default description for the page.'; ?>" />
+    <meta property="og:title" content="AI-Powered Newsletter & Social Media Content Generator" />
+    <meta property="og:description" content="Create engaging newsletters and social media posts effortlessly with AI-driven automation, summarization, and scheduling." />
     <meta property="og:url" content="<?= isset($page_url) ? $page_url : $base_url . basename($_SERVER['PHP_SELF']); ?>" />
-    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content="AI-Powered Newsletter & Social Media Content Generator" />
+    <meta name="twitter:description" content="Create engaging newsletters and social media posts effortlessly with AI-driven automation, summarization, and scheduling." />
     
     <link rel="stylesheet" type="text/css" href="<?php echo $base_url;?>styles/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,8 +27,6 @@ function isActive($page) {
             }
         }
     ?>
-
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=67d6417b86189a0019fafc7a&product=sop' async='async'></script>
 </head>
 <body>
 

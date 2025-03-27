@@ -16,11 +16,26 @@ include "./views/header.php";
 
 <div class="main-container">
   <div id=news-container class="news-grid">
-  <div class="sharethis-inline-share-buttons"
-     data-url=""
-     data-title=""
-     data-description="">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_x"></a>
+<a class="a2a_button_email"></a>
+<script>
+var a2a_config = a2a_config || {};
+a2a_config.templates = a2a_config.templates || {};
+a2a_config.templates.email = {
+    subject: "Subject Preset Text Here: ${title}",
+    body: "Body Preset Text Here: \n${link}",
+};
+a2a_config.templates.x = {
+    text: "X Preset Text Here: ${title} ${link}",
+};
+</script>
 </div>
+<script defer src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
   </div>
   <div class="sidebar">
     <h2>Filter News</h2>

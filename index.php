@@ -15,6 +15,7 @@ include "./views/header.php";
 ?>
 
 <div class="main-container">
+
   <div id=news-container class="news-grid">
 <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -22,6 +23,7 @@ include "./views/header.php";
 <a class="a2a_button_facebook"></a>
 <a class="a2a_button_x"></a>
 <a class="a2a_button_email"></a>
+
 <script>
 var a2a_config = a2a_config || {};
 a2a_config.templates = a2a_config.templates || {};
@@ -36,6 +38,49 @@ a2a_config.templates.x = {
 </div>
 <script defer src="https://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
+  </div>
+  <div class="middle-container">
+    <div id="app">
+      <div id="news-list">
+        <div id="card-container" class="card-container"></div>
+      </div>
+    </div>
+    <script>
+      // TODO: Replace this with actual news data from the database
+      const items = [
+        { 
+          title: "新闻标题1", 
+          content: "这是第一条新闻的内容描述...",
+          image: "https://picsum.photos/400/200?random=1"
+        },
+        { 
+          title: "新闻标题2", 
+          content: "这是第二条新闻的内容描述...",
+          image: "https://picsum.photos/400/200?random=2"
+        },
+        { 
+          title: "新闻标题3", 
+          content: "这是第三条新闻的内容描述...",
+          image: "https://picsum.photos/400/200?random=3"
+        }
+      ];
+      
+      const cardContainer = document.getElementById("card-container");
+      items.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-image">
+            <img src="${item.image}" alt="${item.title}">
+          </div>
+          <div class="card-content">
+            <h3>${item.title}</h3>
+            <p>${item.content}</p>
+          </div>
+        `;
+        cardContainer.appendChild(card);
+      });
+    </script>
   </div>
   <div class="sidebar">
     <h2>Filter News</h2>

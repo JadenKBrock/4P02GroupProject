@@ -46,8 +46,8 @@ function isActive($page) {
             <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
             <a href="<?php echo $base_url;?>logout.php" class="nav-btn" style="margin-left: 10px; color: red;">Logout</a>
         <?php else: ?>
-            <a href="src/Login/login_pageNew.php" class="nav-btn">Login</a>
-            <a href="src/Register/register_pageNew.php" class="nav-btn">Register</a>
+            <a href="<?php echo $base_url;?>src/Login/login_pageNew.php" class="<?php echo isActive('login_pageNew.php');?>">Login</a>
+            <a href="<?php echo $base_url;?>src/Register/register_pageNew.php" class="<?php echo isActive('register_pageNew.php');?>">Register</a>
         <?php endif; ?>
     </nav>
 </div>

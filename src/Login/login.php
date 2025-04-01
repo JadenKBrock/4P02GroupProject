@@ -16,7 +16,6 @@ if($con->connect_error) {
     if($stmt_result->num_rows > 0) {
         $data = $stmt_result->fetch_assoc();
         if($data['password'] === $password) {
-            session_start();
             $_SESSION['user_id'] = $data['id']; // assume that the primary key of the login table is 'id'
 
             // 向 Flask 应用发送 user_id

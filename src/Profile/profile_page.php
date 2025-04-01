@@ -6,7 +6,7 @@ $base_url = "http://localhost:8080/";
 //$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 if (!isset($_SESSION["user_id"])) {
-     header("Location:" . $base_url . "src/Login/login_page.php");
+     header("Location:" . $base_url . "src/Login/login_pageNew.php");
      exit();
 }
 

@@ -1,7 +1,4 @@
 <?php
-session_start();
-
-$_SESSION['user_id'] = $data['id'];
 
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";

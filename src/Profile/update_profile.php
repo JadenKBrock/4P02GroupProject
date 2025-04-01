@@ -1,7 +1,7 @@
 <?php
 
-//$base_url = "http://localhost:8080/";
-$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/"; 
+$base_url = "http://localhost:8080/";
+//$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/"; 
 
 $page_title = "Update Profile";
 //$page_styles = ["update_profile.css"];

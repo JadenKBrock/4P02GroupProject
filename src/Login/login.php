@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ob_start(); // 启用输出缓冲
 
 $email = $_POST['email'];

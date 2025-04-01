@@ -27,7 +27,7 @@ if($con->connect_error) {
             $response = curl_exec($ch);
             curl_close($ch);
 
-            header("Location: index.php");
+            header("Location: {$base_url}index.php");
             exit();
         } else {
             echo "Invalid email or password";

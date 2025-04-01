@@ -1,6 +1,6 @@
 <?php
-
-$user_id = $_SESSION['id'];  
+session_start();
+$user_id = $_SESSION['user_id']; 
 //$email = $_POST['email'];
 //$password = $_POST['password'];
 

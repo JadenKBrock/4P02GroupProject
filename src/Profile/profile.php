@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-$user_id = $_SESSION['user_id'];  
-$email = $_POST['email'];
-$password = $_POST['password'];
+$user_id = $_SESSION['id'];  
+//$email = $_POST['email'];
+//$password = $_POST['password'];
 
 $con = new mysqli("localhost", "root", "Tsj123456+", "4p02_group_login_db");
 

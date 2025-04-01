@@ -15,9 +15,7 @@ include "../../views/header.php";
 
         <div class="form-container">
             <form id="profile-form" action="update_profile.php" method="post">
-                <label>Email:</label>
-                <input type="text" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
-                
+                        
                 <label>Newsletter Frequency:</label>
                 <select name="newsletter_frequency" id="newsletter-frequency" onchange="toggleCustomDateTime()">
                     <option value="daily" <?= $user['newsletter_frequency'] === 'daily' ? 'selected' : '' ?>>Daily</option>

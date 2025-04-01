@@ -1,7 +1,7 @@
 <?php
-
-$base_url = "http://localhost:8080/";
-//$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/"; 
+session_start();
+//$base_url = "http://localhost:8080/";
+$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/"; 
 
 $page_title = "Update Profile";
 //$page_styles = ["update_profile.css"];
@@ -48,7 +48,7 @@ if ($exists) {
 }
 
 if ($stmt->execute()) {
-    header("Location: /profile_page.php");
+    header("Location: " . $base_url . "src/Profile/profile_page.php");
     exit();
 } else {
     echo "Error updating preferences.";

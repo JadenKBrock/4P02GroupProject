@@ -23,7 +23,6 @@ include "../../views/header.php";
                     <option value="monthly" <?= $user['frequency'] === 'monthly' ? 'selected' : '' ?>>Monthly</option>
                 </select>
 
-                <!-- Weekly selection -->
                 <div id="weekly-options" class="<?= $user['frequency'] === 'weekly' ? '' : 'hidden' ?>">
                     <label>Day of the Week:</label>
                     <select name="day_of_week">

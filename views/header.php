@@ -14,7 +14,7 @@ function isActive($page) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($page_title) ? $page_title : "Default"?></title>
-    <meta property="og:title" content="AI-Powered Newsletter & Social Media Content Generator" />
+    <meta property="og:title" content="SmartSummaries: AI-Powered Newsletter & Social Media Content Generator" />
     <meta property="og:description" content="Create engaging newsletters and social media posts effortlessly with AI-driven automation, summarization, and scheduling." />
     <meta property="og:url" content="<?= isset($page_url) ? $page_url : $base_url . basename($_SERVER['PHP_SELF']); ?>" />
     <meta name="twitter:title" content="AI-Powered Newsletter & Social Media Content Generator" />

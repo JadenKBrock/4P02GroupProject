@@ -42,7 +42,7 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
         
-        <?php if (!empty($_SESSION['user_id'])): ?>
+        <?php if (!isset($_SESSION['user_id'])): ?>
             <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
             <a href="<?php echo $base_url;?>logout.php" class="nav-btn" style="margin-left: 10px; color: red;">Logout</a>
         <?php else: ?>

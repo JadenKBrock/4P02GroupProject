@@ -1,10 +1,13 @@
 <?php
-$base_url = "http://localhost:8000/";
+session_start();
+
+$base_url = "http://localhost:8080/";
 // $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 function isActive($page) {
     return basename($_SERVER["PHP_SELF"]) == $page ? "active" : "";
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,19 +40,14 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
+        <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
         
-        <?php if (isset($_SESSION['user_id'])): ?>  
-            <div class="profile-dropdown">
-                <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile-pic.png'; ?>" 
-                    alt="Profile" class="profile-icon" id="profile-icon">
-                <div class="dropdown-menu hidden" id="profile-dropdown">
-                    <a href="profile.php">My Profile</a>
-                    <a href="logout.php">Log Out</a>
-                </div>
-            </div>
+        <?php if (!empty($_SESSION['user_id'])): ?>
+            <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
+            <a href="<?php echo $base_url;?>logout.php" class="nav-btn" style="margin-left: 10px; color: red;">Logout</a>
         <?php else: ?>
-            <a href="<?php echo $base_url; ?>src/Login/login_pageNew.php" class="nav-btn">Login</a>
-            <a href="<?php echo $base_url; ?>src/Register/register_pageNew.php" class="nav-btn">Register</a>            
+            <a href="src/Login/login_page.php" class="nav-btn">Login</a>
+            <a href="src/Register/register_page.php" class="nav-btn">Register</a>
         <?php endif; ?>
     </nav>
 </div>

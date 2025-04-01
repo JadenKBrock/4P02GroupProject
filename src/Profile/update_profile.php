@@ -9,7 +9,6 @@ $page_title = "Update Profile";
 include "../../views/header.php";
 
 $user_id = $_SESSION["user_id"];
-$email = $_POST['email'];
 $newsletter_frequency = $_POST['newsletter_frequency'];
 $custom_date = $_POST['custom_date'] ?? null;
 $custom_time = $_POST['custom_time'] ?? null;
@@ -22,10 +21,10 @@ if ($con->connect_error) {
 
 // Prepare SQL with custom date and time handling
 $sql = "UPDATE users 
-        SET email = ?, newsletter_frequency = ?, custom_date = ?, custom_time = ? 
+        SET newsletter_frequency = ?, custom_date = ?, custom_time = ? 
         WHERE id = ?";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("ssssi", $email, $newsletter_frequency, $custom_date, $custom_time, $user_id);
+$stmt->bind_param("sssi", $newsletter_frequency, $custom_date, $custom_time, $user_id);
 
 if ($stmt->execute()) {
     header("Location: " . $base_url . "index.php");

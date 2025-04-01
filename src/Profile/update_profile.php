@@ -27,7 +27,7 @@ $stmt = $con->prepare($sql);
 $stmt->bind_param("sssi", $newsletter_frequency, $custom_date, $custom_time, $user_id);
 
 if ($stmt->execute()) {
-    header("Location: http://127.0.0.1:5000");
+    header("Location: $base_url . dashboard.php");
     exit();
 } else {
     echo "Error updating profile.";

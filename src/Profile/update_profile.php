@@ -9,9 +9,20 @@ $page_title = "Update Profile";
 include "../../views/header.php";
 
 $user_id = $_SESSION["user_id"];
-$newsletter_frequency = $_POST['newsletter_frequency'];
-$custom_date = $_POST['custom_date'] ?? null;
-$custom_time = $_POST['custom_time'] ?? null;
+$frequency = $_POST['frequency'];
+$day_of_week = $_POST['day_of_week'] ?? null;
+$day_of_month = $_POST['day_of_month'] ?? null;
+$generation_time = $_POST['generation_time'] ?? '00:00:00';
+
+if ($frequency === 'daily') {
+    $generation_time = '00:00:00';
+    $day_of_week = null;
+    $day_of_month = null;
+} elseif ($frequency === 'weekly') {
+    $day_of_month = null;
+} elseif ($frequency === 'monthly') {
+    $day_of_week = null;
+}
 
 $con = new mysqli("localhost", "root", "Tsj123456+", "4p02_group_login_db");
 
@@ -19,21 +30,30 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
-// Prepare SQL with custom date and time handling
-$sql = "UPDATE users 
-        SET newsletter_frequency = ?, custom_date = ?, custom_time = ? 
-        WHERE id = ?";
-$stmt = $con->prepare($sql);
-$stmt->bind_param("sssi", $newsletter_frequency, $custom_date, $custom_time, $user_id);
+$check_sql = "SELECT id FROM content_generation_frequency WHERE user_id = ?";
+$stmt = $con->prepare($check_sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$exists = $result->num_rows > 0;
+$stmt->close();
 
-if ($stmt->execute()) {
-    header("Location: {$base_url}dashboard.php");
-    exit();
+if ($exists) {
+    $sql = "UPDATE content_generation_frequency SET frequency = ?, day_of_week = ?, day_of_month = ?, generation_time = ? WHERE user_id = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("ssssi", $frequency, $day_of_week, $day_of_month, $generation_time, $user_id);
 } else {
-    echo "Error updating profile.";
+    $sql = "INSERT INTO content_generation_frequency (user_id, frequency, day_of_week, day_of_month, generation_time) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("issss", $user_id, $frequency, $day_of_week, $day_of_month, $generation_time);
 }
 
-sqlsrv_free_stmt($stmt);
+if ($stmt->execute()) {
+    header("Location: /profile_page.php");
+    exit();
+} else {
+    echo "Error updating preferences.";
+}
 
 $stmt->close();
 $con->close();

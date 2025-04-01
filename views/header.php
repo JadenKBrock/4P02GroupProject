@@ -38,8 +38,8 @@ function isActive($page) {
     <nav id="main-nav-bar">
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('index.php');?>">Dashboard</a>
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
-        <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
-        <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
+        <a href="<?php echo $base_url;?>about_us.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
+        <a href="<?php echo $base_url;?>faq.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         
         <?php if (isset($_SESSION['id'])): ?>
             <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>

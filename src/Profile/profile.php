@@ -16,7 +16,7 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 if ($conn === false) {
     die("Connection failed: " . print_r(sqlsrv_errors(), true));
 } else {
-    $sql = "SELECT email, newsletter_frequency, custom_date, custom_time FROM users WHERE id = ?";
+    $sql = "SELECT newsletter_frequency, custom_date, custom_time FROM users WHERE id = ?";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("i", $user_id);
     $stmt->execute();

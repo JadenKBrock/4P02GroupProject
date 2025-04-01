@@ -1,5 +1,6 @@
 <?php 
 // faq.php
+$page_title = "FAQ";
 include "./views/header.php";
 ?>
 <!-- Hero Section -->

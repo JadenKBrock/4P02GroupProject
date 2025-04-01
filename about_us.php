@@ -1,4 +1,5 @@
 <?php 
+$page_title = "About Us";
 include "./views/header.php";
 ?>
 <!-- Hero Section -->

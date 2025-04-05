@@ -8,6 +8,7 @@ session_start();
 $_SESSION['user_id'] = $user_id;
 $_SESSION['profile_pic'] = isset($profile_pic_url) ? $profile_pic_url : 'default-profile-pic.png';
 
+
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 

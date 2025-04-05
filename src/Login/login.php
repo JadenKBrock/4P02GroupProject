@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ob_start(); // 启用输出缓冲
 
 $email = $_POST['email'];
@@ -16,7 +16,6 @@ if($con->connect_error) {
     if($stmt_result->num_rows > 0) {
         $data = $stmt_result->fetch_assoc();
         if($data['password'] === $password) {
-            session_start();
             $_SESSION['user_id'] = $data['id']; // assume that the primary key of the login table is 'id'
 
             // 向 Flask 应用发送 user_id
@@ -28,6 +27,7 @@ if($con->connect_error) {
             $response = curl_exec($ch);
             curl_close($ch);
 
+            session_write_close(); // Save session changes
             header("Location: http://127.0.0.1:5000");
             exit();
         } else {

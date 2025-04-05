@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connection parameters – update these with your actual details
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(

@@ -1,7 +1,8 @@
 <?php
-ob_start();
 session_start();
+ob_start();
 
+//$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 // Process login logic
@@ -34,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Set session variables for logged in user
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            session_write_close();
             header("Location: " . $base_url . "index.php");
             exit();
         } else {

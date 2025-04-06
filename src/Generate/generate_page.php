@@ -27,12 +27,13 @@ include "../../views/header.php";
     </div>
     <div class="output_container" id="responseBox">
         <div class="output_main_text">Choose a post to save</div>
-        <!--<div class="post_card_container">
-            <p class="post_content">This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing</p>
-            <button class="save_btn">Save</button>
-        </div>-->
     </div>
 </div>
+
+<!--<div class="post_card_container">
+            <p class="post_content">This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing</p>
+            <button class="save_btn">Save</button>
+</div>-->
 
 
 <script>

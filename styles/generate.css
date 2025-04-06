@@ -1,11 +1,20 @@
+:root {
+    --output-container-bg: #0d0e1b; /*#0d0e1b   #191b35*/
+    --post-card-container-bg: #191b35;
+    --light-blue-btn: #3498DB;
+}
+
 .generate-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid rebeccapurple;
 }
 
 .input-outer-container {
     width: 50%;
+    border: 1px solid red;
 }
 
 .input-outer-container > h3 {
@@ -44,7 +53,7 @@
 
 .formatbtn {
     cursor: pointer;
-    background-color: #3498DB;
+    background-color: var(--light-blue-btn);
 }
 
 .formatbtn:hover, .formatbtn:focus {
@@ -77,4 +86,36 @@
 
 #format-selection {
     font-size: 0.85rem;
+}
+
+.output_container {
+    background-color: var(--output-container-bg);
+    flex-direction: column;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    gap: 20px;
+    display: flex;  /* change to display none*/
+}
+
+.output_main_text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+.post_card_container {
+    width: 700px;
+    border-radius: 20px;
+    background-color: var(--post-card-container-bg);
+    padding: 10px;
+}
+
+.post_content {
+    text-align: center;
+}
+
+.save_btn {
+    background-color: var(--light-blue-btn);
+    float: right;
 }

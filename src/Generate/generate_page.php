@@ -25,12 +25,15 @@ include "../../views/header.php";
             <button id="sendRequest">Generate</button>
         </div>
     </div>
-    <div class="output_container">
-        
+    <div class="output_container" id="responseBox">
+        <div class="output_main_text">Choose a post to save</div>
+        <div class="post_card_container">
+            <p class="post_content">This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing</p>
+            <button class="save_btn">Save</button>
+        </div>
     </div>
 </div>
 
-<p>Response: <span id="responseText"></span></p>
 
 <script>
 
@@ -57,7 +60,15 @@ $(document).ready(function() {
                 
                 // Ensure we correctly access the response
                 if (response && response.response) {
-                    $("#responseText").text(response.response);  // Show response from Azure
+                    $(".output_container").css("display", "flex");
+                    let postResponse = `
+                    <div class="post_card_container">
+                        <p class="post_content">${response.response}</p>
+                        <button class="save_btn">Save</button>
+                    </div>
+                    `;
+
+                    $("#responseBox").append(postResponse);
                 } else {
                     $("#responseText").text("Error: Unexpected response format");
                 }
@@ -70,6 +81,36 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).on("click", ".save_btn", function () {
+    var postContent = $(this).siblings(".post_content").text();
+    var postType = $("#format-selection").text();
+
+    console.log(postContent);
+    console.log(postType);
+
+    $.ajax({
+            url: "save_post.php",  // Calls updated PHP script
+            type: "POST",
+            data: JSON.stringify({ 
+                post_content: postContent, 
+                post_type: postType 
+            }),
+            contentType: "application/json",
+            dataType: "json",  // Ensure response is treated as JSON
+            success: function(response) {
+                alert("Post saved!");
+                console.log("Saved response:", response);
+            },
+            error: function(xhr, status, err) {
+                console.error("Save error:", status, err);
+                console.log("Response text:", xhr.responseText);
+                alert("Failed to save post.");
+            }
+        });
+
+});
+
 </script>
 
 <?php

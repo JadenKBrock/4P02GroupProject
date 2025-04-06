@@ -1,7 +1,7 @@
 <?php
 session_start();
-//$base_url = "http://localhost:8080/";
-$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
+$base_url = "http://localhost:8000/";
+// $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 function isActive($page) {
     return basename($_SERVER["PHP_SELF"]) == $page ? "active" : "";

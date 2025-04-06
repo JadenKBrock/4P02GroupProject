@@ -9,12 +9,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rebeccapurple;
 }
 
 .input-outer-container {
     width: 50%;
-    border: 1px solid red;
 }
 
 .input-outer-container > h3 {
@@ -81,7 +79,7 @@
 }
 
 .dropdown-content button:hover {
-    background-color: rebeccapurple;
+    
 }
 
 #format-selection {
@@ -95,7 +93,7 @@
     padding: 2rem;
     border-radius: 15px;
     gap: 20px;
-    display: flex;  /* change to display none*/
+    display: none;  /* change to display none*/
 }
 
 .output_main_text {

@@ -41,11 +41,14 @@ function isActive($page) {
         <a href="<?php echo $base_url;?>about_us.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
         <a href="<?php echo $base_url;?>faq.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         
-        <!-- DEBUG -->
-        <?php if (isset($_SESSION['user_id'])) {
-            echo "<!-- Logged in as user ID: " . $_SESSION['user_id'] . " -->";
-        } else {
+        <?php if (!isset($_SESSION['user_id'])): ?>
             echo "<!-- Not logged in -->";
-        } ?>
+            <a href="<?php echo $base_url;?>src/Login/login_pageNew.php" class="<?php echo isActive('login_pageNew.php');?>">Login</a>
+            <a href="<?php echo $base_url;?>src/Register/register_pageNew.php" class="<?php echo isActive('register_pageNew.php');?>">Register</a>
+        <?php else: ?>
+            echo "<!-- Logged in as user ID: " . $_SESSION['user_id'] . " -->";
+            <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
+            <a href="<?php echo $base_url;?>logout.php" class="nav-btn" style="margin-left: 10px; color: red;">Logout</a>
+        <?php endif; ?>
     </nav>
 </div>

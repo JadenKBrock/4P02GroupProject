@@ -5,9 +5,6 @@
 
 <?php
 session_start();
-if (isset($user_id)) {
-  $_SESSION['user_id'] = $user_id;
-}
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];

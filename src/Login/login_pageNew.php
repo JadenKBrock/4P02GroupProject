@@ -72,4 +72,5 @@ include "../../views/header.php";
 <?php
 $page_scripts = ["login_script.js"];
 include "../../views/footer.php";
+ob_end_flush()
 ?>

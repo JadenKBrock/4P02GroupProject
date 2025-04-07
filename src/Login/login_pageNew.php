@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 //$base_url = "http://localhost:8080/";

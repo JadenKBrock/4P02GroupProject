@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
         if ($user && password_verify($password, $user['password'])) {
             // Set session variables for logged in user
-            $_SESSION['user_id'] = $data['id'];
+            $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             session_write_close();
             header("Location: " . $base_url . "index.php");

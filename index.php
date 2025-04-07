@@ -5,10 +5,6 @@
 
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: src/Login/login_pageNew.php");
-    exit();
-}
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];

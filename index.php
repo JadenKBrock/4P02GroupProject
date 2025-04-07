@@ -4,6 +4,7 @@
 <!-- If we change this landing page to be something other than the dashboard page, we need to change the values of those variables to reflect the change.-->
 
 <?php
+ob_start();
 session_start();
 
 $page_title = "News Portal";

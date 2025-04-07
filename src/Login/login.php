@@ -26,9 +26,7 @@ if($con->connect_error) {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
             curl_close($ch);
-
-            $_SESSION['user_id'] = $user['id'];
-            session_write_close();
+            
             header("Location: http://127.0.0.1:5000");
             exit();
         } else {

@@ -3,6 +3,7 @@ session_start();
 
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
+$_SESSION['user_id'] = $user['id'];
 
 function isActive($page) {
     return basename($_SERVER["PHP_SELF"]) == $page ? "active" : "";

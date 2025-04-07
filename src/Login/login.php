@@ -28,7 +28,6 @@ if($con->connect_error) {
             curl_close($ch);
 
             $_SESSION['user_id'] = $data['id'];
-            session_write_close(); // Save session changes
             header("Location: http://127.0.0.1:5000");
             exit();
         } else {

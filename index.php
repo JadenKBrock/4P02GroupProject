@@ -8,13 +8,6 @@ session_set_cookie_params([
   'httponly' => true,
   'samesite' => 'Lax'
 ]);
-session_start();
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
-
-echo "This is your user id: " .$_SESSION['user_id'] . ".";
-echo "test";
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];

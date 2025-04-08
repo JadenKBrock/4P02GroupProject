@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             session_write_close();
-            header("Location: " . $base_url . "index.php");
+            header("Location: http://127.0.0.1:5000");
             exit();
         } else {
             $message = "Invalid username or password.";

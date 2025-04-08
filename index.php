@@ -23,6 +23,7 @@ print_r($_SESSION);
 echo "</pre>";
 
 echo $_SESSION['user_id'];
+echo "test";
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];

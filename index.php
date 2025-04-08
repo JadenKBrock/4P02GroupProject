@@ -1,11 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 //ob_start();
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-header("Expires: 0");
-
 session_set_cookie_params([
   'lifetime' => 0,
   'path' => '/',
@@ -25,62 +19,62 @@ echo "test";
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 
-// $serverName = "ts19cpsqldb.database.windows.net";
-// $connectionOptions = array(
-//     "Database" => "ts19cpdb3p96",
-//     "Uid" => "ts19cp",
-//     "PWD" => "@Group93p96",
-//     "TrustServerCertificate" => true
-// );
+$serverName = "ts19cpsqldb.database.windows.net";
+$connectionOptions = array(
+    "Database" => "ts19cpdb3p96",
+    "Uid" => "ts19cp",
+    "PWD" => "@Group93p96",
+    "TrustServerCertificate" => true
+);
 
-// $conn = sqlsrv_connect($serverName, $connectionOptions);
-
-
-// // 测试表查询
-// $test_sql = "SELECT TOP 1 * FROM Posts";
-// $test_stmt = sqlsrv_query($conn, $test_sql);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
 
-// // Get news data
-// $sql = "SELECT post_id, user_id, post_content, creation_date, post_type FROM Posts";
-// $stmt = sqlsrv_query($conn, $sql);
-// if ($stmt === false) {
-//     die(print_r(sqlsrv_errors(), true));
-// }
+// 测试表查询
+$test_sql = "SELECT TOP 1 * FROM Posts";
+$test_stmt = sqlsrv_query($conn, $test_sql);
 
-// $newsItems = [];
 
-// while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-//     // Process content
-//     $content = $row['post_content'];
-//     $type = $row['post_type'];
+// Get news data
+$sql = "SELECT post_id, user_id, post_content, creation_date, post_type FROM Posts";
+$stmt = sqlsrv_query($conn, $sql);
+if ($stmt === false) {
+    die(print_r(sqlsrv_errors(), true));
+}
+
+$newsItems = [];
+
+while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+    // Process content
+    $content = $row['post_content'];
+    $type = $row['post_type'];
     
-//     // Clean invalid UTF-8 characters
-//     $content = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '', $content);
-//     $content = preg_replace('/\xEF\xBF\xBD/', '', $content);
-//     $content = mb_convert_encoding($content, 'UTF-8', 'UTF-8');
+    // Clean invalid UTF-8 characters
+    $content = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '', $content);
+    $content = preg_replace('/\xEF\xBF\xBD/', '', $content);
+    $content = mb_convert_encoding($content, 'UTF-8', 'UTF-8');
     
-//     $type = mb_convert_encoding($type, 'UTF-8', 'UTF-8');
+    $type = mb_convert_encoding($type, 'UTF-8', 'UTF-8');
     
-//     $newsItems[] = [
-//         'id' => $row['post_id'],
-//         'userId' => $row['user_id'],
-//         'content' => $content,
-//         'date' => $row['creation_date']->format('Y-m-d H:i:s'),
-//         'type' => $type
-//     ];
-// }
+    $newsItems[] = [
+        'id' => $row['post_id'],
+        'userId' => $row['user_id'],
+        'content' => $content,
+        'date' => $row['creation_date']->format('Y-m-d H:i:s'),
+        'type' => $type
+    ];
+}
 
-// // Convert to JSON
-// $json_data = json_encode($newsItems, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
-// if ($json_data === false) {
-//     $newsItems = [];
-//     $json_data = '[]';
-// }
+// Convert to JSON
+$json_data = json_encode($newsItems, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
+if ($json_data === false) {
+    $newsItems = [];
+    $json_data = '[]';
+}
 
 
-// sqlsrv_free_stmt($stmt);
-// sqlsrv_close($conn);
+sqlsrv_free_stmt($stmt);
+sqlsrv_close($conn);
 
 include "./views/header.php";
 ?>

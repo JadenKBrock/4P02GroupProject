@@ -55,7 +55,7 @@ if ($exists) {
 }
 
 if ($stmt->execute()) {\
-    header("Location: " . $base_url . "src/Profile/profile_page.php?status=success");
+    header("Location: src/Profile/profile_page.php?status=success");
     exit();
 } else {
     echo "Error updating profile.";

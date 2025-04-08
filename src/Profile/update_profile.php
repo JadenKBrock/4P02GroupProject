@@ -54,11 +54,11 @@ if ($exists) {
     $stmt->bind_param("issss", $user_id, $frequency, $day_of_week, $day_of_month, $generation_time);
 }
 
-if ($stmt->execute()) {
-    header("Location: " . $base_url . "src/Profile/profile_page.php");
+if ($stmt->execute()) {\
+    header("Location: " . $base_url . "src/Profile/profile_page.php?status=success");
     exit();
 } else {
-    echo "Error updating preferences.";
+    echo "Error updating profile.";
 }
 
 $stmt->close();

@@ -1,5 +1,7 @@
 <?php
 session_start();
+$status_message = isset($_GET['status']) && $_GET['status'] === 'success' ? 'Changes saved!' : '';
+
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 $page_title = "My Profile";
@@ -10,6 +12,14 @@ include "../../views/header.php";
 <div class="main-container">
     <div class="content-container">
         <h2>My Profile</h2>
+
+        <!-- Show status message if exists -->
+        <?php if ($status_message): ?>
+            <div class="status-message">
+                <p><?= htmlspecialchars($status_message) ?></p>
+            </div>
+        <?php endif; ?>
+
         <div class="form-container">
             <form id="profile-form" action="update_profile.php" method="post">
                 <label>First Name:</label>

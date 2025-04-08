@@ -55,6 +55,14 @@ button[type="submit"]:hover {
     background-color: #8a5a3b;
 }
 
+.status-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .hidden {
     display: none;
 }

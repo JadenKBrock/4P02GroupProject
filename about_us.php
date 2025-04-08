@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo $_SESSION['user_id'];
 $page_title = "About Us";
 include "./views/header.php";
 ?>

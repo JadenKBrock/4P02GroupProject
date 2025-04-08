@@ -7,6 +7,8 @@
 //ob_start();
 session_start();
 
+echo $_SESSION['user_id'];
+
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
 

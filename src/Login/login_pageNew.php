@@ -1,5 +1,5 @@
 <?php
-ob_start();
+//ob_start();
 session_start();
 
 //$base_url = "http://localhost:8080/";
@@ -72,5 +72,5 @@ include "../../views/header.php";
 <?php
 $page_scripts = ["login_script.js"];
 include "../../views/footer.php";
-ob_end_flush()
+//ob_end_flush()
 ?>

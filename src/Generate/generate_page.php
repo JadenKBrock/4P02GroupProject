@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_title = "Generate";
 $page_styles = ["generate.css"];
 include "../../views/header.php";

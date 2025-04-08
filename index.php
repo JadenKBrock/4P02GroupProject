@@ -4,7 +4,7 @@
 <!-- If we change this landing page to be something other than the dashboard page, we need to change the values of those variables to reflect the change.-->
 
 <?php
-ob_start();
+//ob_start();
 session_start();
 
 $page_title = "News Portal";
@@ -17,7 +17,6 @@ $connectionOptions = array(
     "PWD" => "@Group93p96",
     "TrustServerCertificate" => true
 );
-
 
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
@@ -299,5 +298,5 @@ include "./views/header.php";
 <?php
 $page_scripts = ["dashboard_script.js"];
 include "./views/footer.php";
-ob_end_flush();
+//ob_end_flush();
 ?>

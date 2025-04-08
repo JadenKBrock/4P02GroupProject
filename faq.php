@@ -1,5 +1,6 @@
 <?php 
 // faq.php
+session_start();
 $page_title = "FAQ";
 include "./views/header.php";
 ?>

@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 $page_title = "About Us";
 include "./views/header.php";
 ?>

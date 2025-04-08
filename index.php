@@ -18,33 +18,14 @@ $connectionOptions = array(
     "TrustServerCertificate" => true
 );
 
-// 连接数据库
+
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-// if ($conn === false) {
-//     die(print_r(sqlsrv_errors(), true));
-// } else {
-//     echo "<div style='color: green; padding: 10px; border: 1px solid green; margin: 10px;'>数据库连接成功！</div>";
-// }
+
 
 // 测试表查询
 $test_sql = "SELECT TOP 1 * FROM Posts";
 $test_stmt = sqlsrv_query($conn, $test_sql);
-// if ($test_stmt === false) {
-//     echo "<div style='color: red; padding: 10px; border: 1px solid red; margin: 10px;'>表查询失败：" . print_r(sqlsrv_errors(), true) . "</div>";
-// } else {
-//     echo "<div style='color: green; padding: 10px; border: 1px solid green; margin: 10px;'>Posts表查询成功！</div>";
-    
-//     // 检查表结构
-//     $columns = sqlsrv_field_metadata($test_stmt);
-//     echo "<div style='color: blue; padding: 10px; border: 1px solid blue; margin: 10px;'>";
-//     echo "表结构：<br>";
-//     foreach ($columns as $column) {
-//         echo "列名: " . $column['Name'] . "<br>";
-//     }
-//     echo "</div>";
-    
-//     sqlsrv_free_stmt($test_stmt);
-// }
+
 
 // Get news data
 $sql = "SELECT post_id, user_id, post_content, creation_date, post_type FROM Posts";
@@ -83,29 +64,7 @@ if ($json_data === false) {
     $json_data = '[]';
 }
 
-// 显示数据统计信息
-// echo "<div style='color: blue; padding: 10px; border: 1px solid blue; margin: 10px;'>";
-// echo "查询到的记录数: " . count($newsItems);
-// echo "</div>";
 
-// 如果数据为空，显示SQL语句以便调试
-// if (count($newsItems) == 0) {
-//     // 检查表中是否有数据
-//     $check_sql = "SELECT COUNT(*) as count FROM Posts";
-//     $check_stmt = sqlsrv_query($conn, $check_sql);
-//     $row = sqlsrv_fetch_array($check_stmt, SQLSRV_FETCH_ASSOC);
-    
-//     echo "<div style='color: orange; padding: 10px; border: 1px solid orange; margin: 10px;'>";
-//     echo "警告：没有找到任何数据<br>";
-//     echo "Posts表中的总记录数: " . $row['count'] . "<br>";
-//     echo "执行的SQL语句: " . $sql;
-//     echo "</div>";
-// }
-
-// // 调试：打印PHP中的数据
-// echo "<script>console.log('PHP中的数据:', " . $json_data . ");</script>";
-
-// 关闭连接
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);
 

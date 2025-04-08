@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $user['username'];
             //session_write_close();
             sqlsrv_free_stmt($stmt);
-            header($base_url . "index.php");
+            header("Location: " . $base_url . "index.php");
             exit();
         } else {
             $message = "Invalid username or password.";

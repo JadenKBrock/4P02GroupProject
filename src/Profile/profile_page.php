@@ -12,7 +12,6 @@ include "../../views/header.php";
         <h2>My Profile</h2>
         <div class="form-container">
             <form id="profile-form" action="update_profile.php" method="post">
-
                 <label>First Name:</label>
                 <input type="text" name="first_name" value="<?= htmlspecialchars($user_info['first_name']) ?>" required />
 

@@ -22,7 +22,7 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
-echo $_SESSION['user_id'];
+echo "This is your user id: " .$_SESSION['user_id'] . ".";
 echo "test";
 
 $page_title = "News Portal";

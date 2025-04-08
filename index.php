@@ -1,8 +1,3 @@
-<!-- Currently this index.php page is the DASHBOARD PAGE.-->
-<!-- This index.php page should be our landing page (whatever page that may be).-->
-<!-- That being said, the stylesheet(s) and script(s) which are in the variables, page_styles and page_scripts belong only to the dashboard page. -->
-<!-- If we change this landing page to be something other than the dashboard page, we need to change the values of those variables to reflect the change.-->
-
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

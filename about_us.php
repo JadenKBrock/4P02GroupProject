@@ -9,10 +9,6 @@ session_set_cookie_params([
 ]);
 session_start();
 
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
-echo $_SESSION['user_id'];
 $page_title = "About Us";
 include "./views/header.php";
 ?>

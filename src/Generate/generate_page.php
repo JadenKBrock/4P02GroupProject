@@ -8,7 +8,6 @@ session_set_cookie_params([
     'samesite' => 'Lax'
 ]);
 session_start();
-echo $_SESSION['user_id'];
 $page_title = "Generate";
 $page_styles = ["generate.css"];
 include "../../views/header.php";

@@ -1,12 +1,8 @@
 <?php
 session_start();
 $user_id = $_SESSION['user_id']; 
-//$email = $_POST['email'];
-//$password = $_POST['password'];
 
 $con = new mysqli("localhost", "root", "Tsj123456+", "4p02_group_login_db");
-
-
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(
     "Database" => "ts19cpdb3p96",
@@ -14,8 +10,8 @@ $connectionOptions = array(
     "PWD" => "@Group93p96",
     "TrustServerCertificate" => true
 );
-
 $conn = sqlsrv_connect($serverName, $connectionOptions);
+
 if ($conn === false) {
     die("Connection failed: " . print_r(sqlsrv_errors(), true));
 } else {
@@ -26,6 +22,12 @@ if ($conn === false) {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
     $stmt->close();
+
+    $user_sql = "SELECT first_name, last_name, username, email FROM users WHERE id = ?";
+    $user_stmt = sqlsrv_prepare($conn, $user_sql, array(&$user_id));
+    sqlsrv_execute($user_stmt);
+    $user_info = sqlsrv_fetch_array($user_stmt, SQLSRV_FETCH_ASSOC);
+
     $con->close();
 }
 ?>

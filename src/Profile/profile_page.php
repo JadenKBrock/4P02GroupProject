@@ -2,18 +2,27 @@
 session_start();
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
-
 $page_title = "My Profile";
-//$page_styles = ["profile.css"];
 include "../../views/header.php";
 ?>
 
 <div class="main-container">
     <div class="content-container">
         <h2>My Profile</h2>
-
         <div class="form-container">
             <form id="profile-form" action="update_profile.php" method="post">
+
+                <label>First Name:</label>
+                <input type="text" name="first_name" value="<?= htmlspecialchars($user_info['first_name']) ?>" required />
+
+                <label>Last Name:</label>
+                <input type="text" name="last_name" value="<?= htmlspecialchars($user_info['last_name']) ?>" required />
+
+                <label>Username:</label>
+                <input type="text" value="<?= htmlspecialchars($user_info['username']) ?>" disabled />
+
+                <label>Email:</label>
+                <input type="email" value="<?= htmlspecialchars($user_info['email']) ?>" disabled />
 
                 <label>Content Generation Frequency:</label>
                 <select name="frequency" id="frequency" onchange="toggleFrequencyOptions()">
@@ -50,13 +59,13 @@ include "../../views/header.php";
 </div>
 
 <script>
-    function toggleFrequencyOptions() {
-        const frequency = document.getElementById("frequency").value;
-        document.getElementById("weekly-options").classList.toggle("hidden", frequency !== "weekly");
-        document.getElementById("monthly-options").classList.toggle("hidden", frequency !== "monthly");
-    }
+function toggleFrequencyOptions() {
+    const frequency = document.getElementById("frequency").value;
+    document.getElementById("weekly-options").classList.toggle("hidden", frequency !== "weekly");
+    document.getElementById("monthly-options").classList.toggle("hidden", frequency !== "monthly");
+}
 </script>
 
-<?php
-include "../../views/footer.php";
+<?php 
+include "../../views/footer.php"; 
 ?>

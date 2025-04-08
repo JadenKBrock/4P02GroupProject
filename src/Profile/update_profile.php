@@ -2,12 +2,11 @@
 session_start();
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/"; 
-
-$page_title = "Update Profile";
-//$page_styles = ["update_profile.css"];
 include "../../views/header.php";
 
 $user_id = $_SESSION["user_id"];
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
 $frequency = $_POST['frequency'];
 $day_of_week = $_POST['day_of_week'] ?? null;
 $day_of_month = $_POST['day_of_month'] ?? null;
@@ -29,6 +28,14 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
+// Update names
+$update_user_sql = "UPDATE users SET first_name = ?, last_name = ? WHERE id = ?";
+$update_user_stmt = $con->prepare($update_user_sql);
+$update_user_stmt->bind_param("ssi", $first_name, $last_name, $user_id);
+$update_user_stmt->execute();
+$update_user_stmt->close();
+
+// Update content generation frequency
 $check_sql = "SELECT id FROM content_generation_frequency WHERE user_id = ?";
 $stmt = $con->prepare($check_sql);
 $stmt->bind_param("i", $user_id);

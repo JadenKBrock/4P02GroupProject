@@ -3,6 +3,7 @@ session_start();
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 $page_title = "My Profile";
+$page_styles = ["login-register.css"];
 include "../../views/header.php";
 ?>
 

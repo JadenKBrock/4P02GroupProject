@@ -1,4 +1,12 @@
 <?php
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'domain' => $_SERVER['HTTP_HOST'],
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";

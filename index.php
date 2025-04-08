@@ -5,7 +5,18 @@
 
 <?php
 //ob_start();
+session_set_cookie_params([
+  'lifetime' => 0,
+  'path' => '/',
+  'domain' => $_SERVER['HTTP_HOST'],
+  'secure' => true,
+  'httponly' => true,
+  'samesite' => 'Lax'
+]);
 session_start();
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 
 echo $_SESSION['user_id'];
 

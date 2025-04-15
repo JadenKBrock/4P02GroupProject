@@ -11,7 +11,7 @@ session_set_cookie_params([
 session_start();
 
 // 测试用的user_id，方便测试不同用户
-$test_user_id = 3;  // 可以随时修改这个值来测试不同用户
+// $test_user_id = 3;  // 可以随时修改这个值来测试不同用户
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];

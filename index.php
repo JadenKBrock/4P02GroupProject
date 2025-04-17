@@ -160,23 +160,6 @@ include "./views/header.php";
           card.appendChild(contentDiv);
           cardContainer.appendChild(card);
 
-          // Add custom behavior for X and Email buttons (exclude URL)
-          window.addEventListener('load', () => {
-          // Override the URL for X (formerly Twitter)
-          const xButton = document.querySelector('.a2a_button_x');
-          if (xButton) {
-            xButton.setAttribute('data-url', ''); // Remove the URL
-            xButton.href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(cleanContent); // Custom text for X (formerly Twitter)
-          }
-
-          // Override the URL for Email
-          const emailButton = document.querySelector('.a2a_button_email');
-          if (emailButton) {
-            emailButton.setAttribute('data-url', ''); // Remove the URL
-            emailButton.href = 'mailto:?subject=' + encodeURIComponent('Check out this post') + '&body=' + encodeURIComponent(cleanContent); // Custom email subject and body
-          }
-        });
-
           // 添加显示动画
           requestAnimationFrame(() => {
             card.style.opacity = '0';
@@ -193,6 +176,26 @@ include "./views/header.php";
           a2a.init_all();
         }
       }
+        // Override the behavior of the X (formerly Twitter) button and Email button after AddToAny initializes
+        const overrideShareButtons = () => {
+        // For X (formerly Twitter), remove URL and set custom content
+        const xButton = document.querySelector('.a2a_button_x');
+        if (xButton) {
+          xButton.setAttribute('data-url', ''); // Remove the URL
+          xButton.href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(cleanContent); // Custom text for X
+        }
+    
+        // For Email, remove URL and set custom email subject and body
+        const emailButton = document.querySelector('.a2a_button_email');
+        if (emailButton) {
+          emailButton.setAttribute('data-url', ''); // Remove the URL
+          emailButton.href = 'mailto:?subject=' + encodeURIComponent('Check out this post') + '&body=' + encodeURIComponent(cleanContent); // Custom email subject and body
+        }
+      };
+    
+      // Run the override function to modify the buttons after initialization
+      overrideShareButtons();
+    }
     </script>
     <script>
       // 编辑功能

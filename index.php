@@ -181,11 +181,11 @@ include "./views/header.php";
       var a2a_config = a2a_config || {};
       a2a_config.templates = a2a_config.templates || {};
       a2a_config.templates.email = {
-        subject: "",
-        body: "${contentP}"
+        subject: "Check out this news article",
+        body: "I found this interesting article:\n${link}"
       };
       a2a_config.templates.x = {
-        text: "${contentP}"
+        text: "Check out this news article: ${title}\n${link}"
       };
     </script>
     <script>

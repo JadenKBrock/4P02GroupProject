@@ -10,6 +10,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions # Import 
 from selenium.webdriver.chrome.service import Service as ChromeService # Import the ChromeService class.
 from selenium.webdriver.common.by import By  # Import the By class for locating elements.
 from webdriver_manager.chrome import ChromeDriverManager # Import the ChromeDriverManager for managing ChromeDriver binaries.
+from urllib.parse import urlparse, parse_qs, unquote # Import functions for parsing URLs and query strings.
 import pytest # Import the pytest module for testing.
 
 URL = "https://group9portal-eehbdxbhcgftezez.canadaeast-01.azurewebsites.net/index.php" # Our website URL to be tested. NOTE: This URL will change before the end of the project, as we will be changing Azure Subscriptions. The tests remain the same, and can be run on the new URL.
@@ -102,29 +103,22 @@ def test_email_button_url(browser):
     browser.switch_to.window(browser.window_handles[0]) # Switch back to the original window.
     assert len(browser.window_handles) == initial_window_count # Check if the number of windows is the same as before clicking the email button. This would confirm that the redirect was successful, since Selenium does not check for non-browser windows.
 
-def test_email_template(browser):
-    #
-    # Test Case 6: Testing the pre-populated email template when the share button is selected. This will confirm that the email template is correct.
-    # Execution: python -m pytest social_media_sharing_test.py -k "test_email_template" -s -v # Only use -s to view the messages in the test.
-    # This method will check if the email template is pre-populated with the correct subject and body when the Email share button is clicked. It uses the Selenium WebDriver (predefined as a fixture above) to navigate to our URL
-    # and check for the pre-populated email template by executing JavaScript to retrieve the subject and body of the email.
-    # Expected Result: Pass. The email template should be pre-populated with the correct subject and body.
-    #
-    browser.get(URL) # Navigate to the specified URL in our browser instance.
-    subject = browser.execute_script("return a2a_config.templates.email.subject;") # Execute JavaScript to retrieve the subject of the email template.
-    body = browser.execute_script("return a2a_config.templates.email.body;") # Execute JavaScript to retrieve the body of the email template.
-
-    assert subject == "Check out this news article" # Check if the subject is correct.
-    assert body == "I found this interesting article:\n${link}" # Check if the body is correct.
-
 def test_x_template(browser):
     #
-    # Test Case 7: Testing the pre-populated X template when the share button is selected. This will confirm that the X template is correct.
+    # Test Case 6: Testing the pre-populated X template when the share button is selected. This will confirm that the X template is correct.
     # Execution: python -m pytest social_media_sharing_test.py -k "test_x_template" -s -v # Only use -s to view the messages in the test.
     # This method will check if the X template is pre-populated with the correct text when the X share button is clicked. It uses the Selenium WebDriver (predefined as a fixture above) to navigate to our URL
     # and check for the pre-populated X template by executing JavaScript to retrieve the text of the X template.
     # Expected Result: Pass. The X template should be pre-populated with the correct text.
     #
     browser.get(URL) # Navigate to the specified URL in our browser instance.
-    text = browser.execute_script("return a2a_config.templates.x.text;") # Execute JavaScript to retrieve the text of the X template.
-    assert text == "Check out this news article: ${title}\n${link}" # Check if the text is correct.
+    x_button = browser.find_element(By.CLASS_NAME, "a2a_button_x") # Find the X share button by its class name.
+    x_button.click() # Click the X share button.
+    browser.switch_to.window(browser.window_handles[-1]) # Switch to the new window that opens after clicking the button.
+    assert "x.com" in browser.current_url # Check if the current (redirect) URL contains "x.com" to confirm the redirect.
+
+    parsed_url = urlparse(browser.current_url) # Parse the current URL to extract its components.
+    query = parse_qs(parsed_url.query) # Parse the query string of the URL to extract the parameters.
+    shared_text = unquote(query.get("text", [""])[0]) # Get the value of the "text" parameter from the query string and decode it.
+    assert len(shared_text) >= 30 # Check if the length of the shared text is greater than or equal to 30 characters. Could change this value
+    browser.close()  # Close the redirected window

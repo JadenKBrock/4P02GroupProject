@@ -135,7 +135,9 @@ include "./views/header.php";
           editButton.className = "edit-btn";
           editButton.textContent = "edit";
           editButton.onclick = function() {
-            editPost(item.id, cleanContent);
+            const card = this.closest('.card');
+            const currentContent = card.querySelector('p').textContent;
+            editPost(item.id, currentContent);
           };
           
           // Create share buttons
@@ -267,8 +269,6 @@ include "./views/header.php";
             const buttonContainer = card.querySelector('.edit-buttons');
             if (editArea) editArea.remove();
             if (buttonContainer) buttonContainer.remove();
-            const itemToUpdate = items.find(i => i.id === postId);
-            if (itemToUpdate) itemToUpdate.content = newContent;
           } else {
             alert('save failed: ' + data.message);
           }

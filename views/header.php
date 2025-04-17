@@ -30,6 +30,7 @@ function isActive($page) {
             }
         }
     ?>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
 </head>
 <body>
 

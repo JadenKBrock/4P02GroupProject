@@ -264,7 +264,6 @@ include "./views/header.php";
             }
             
             contentP.textContent = newContent;
-            currentContent = newContent;
             contentP.style.display = 'block';
             
             // 移除编辑区域

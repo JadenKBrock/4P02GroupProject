@@ -267,6 +267,8 @@ include "./views/header.php";
             const buttonContainer = card.querySelector('.edit-buttons');
             if (editArea) editArea.remove();
             if (buttonContainer) buttonContainer.remove();
+            const itemToUpdate = items.find(i => i.id === postId);
+            if (itemToUpdate) itemToUpdate.content = newContent;
           } else {
             alert('save failed: ' + data.message);
           }

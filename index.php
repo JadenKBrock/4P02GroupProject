@@ -213,6 +213,10 @@ include "./views/header.php";
         const saveButton = document.createElement('button');
         saveButton.textContent = 'save';
         saveButton.onclick = function() {
+           if (editArea.value.trim() === '') {
+            alert('Edit cannot be empty.');
+            return;
+          }    
           savePost(postId, editArea.value);
         };
         

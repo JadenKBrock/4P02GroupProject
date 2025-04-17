@@ -149,8 +149,6 @@ include "./views/header.php";
                 <a class="a2a_button_facebook"></a>
                 <a class="a2a_button_x"></a>
                 <a class="a2a_button_email"
-                   data-a2a-subject="Check out this post"
-                   data-a2a-body="${cleanContent}"></a>
             </div>
           `;
           
@@ -158,6 +156,16 @@ include "./views/header.php";
           contentDiv.appendChild(contentP);
           contentDiv.appendChild(editButton);
           contentDiv.appendChild(shareDiv);
+
+          // Add custom behavior for the Email button
+          window.addEventListener('load', () => {
+            const emailButton = document.querySelector('.a2a_button_email');
+            if (emailButton) {
+              const subject = 'Check out this post';
+              const body = encodeURIComponent(cleanContent); // Use cleanContent as the body
+              emailButton.href = `mailto:?subject=${subject}&body=${body}`; // Set the correct subject and body
+            }
+          });        
           
           card.appendChild(contentDiv);
           cardContainer.appendChild(card);

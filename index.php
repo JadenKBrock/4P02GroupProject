@@ -171,32 +171,29 @@ include "./views/header.php";
           });
         });
 
-        // Refresh AddToAny buttons
-        if (window.a2a) {
-          a2a.init_all();
-        }
-      }
-        // Override the behavior of the X (formerly Twitter) button and Email button after AddToAny initializes
-        const overrideShareButtons = () => {
-        // For X (formerly Twitter), remove URL and set custom content
-        const xButton = document.querySelector('.a2a_button_x');
-        if (xButton) {
-          xButton.setAttribute('data-url', ''); // Remove the URL
-          xButton.href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(cleanContent); // Custom text for X
-        }
-    
-        // For Email, remove URL and set custom email subject and body
-        const emailButton = document.querySelector('.a2a_button_email');
-        if (emailButton) {
-          emailButton.setAttribute('data-url', ''); // Remove the URL
-          emailButton.href = 'mailto:?subject=' + encodeURIComponent('Check out this post') + '&body=' + encodeURIComponent(cleanContent); // Custom email subject and body
-        }
-      };
-    
-      // Run the override function to modify the buttons after initialization
-      overrideShareButtons();
+            // Refresh AddToAny buttons
+    if (window.a2a) {
+      a2a.init_all();
     }
-    </script>
+
+    // Override the behavior of X (formerly Twitter) and Email buttons after the page is fully loaded
+    window.addEventListener('load', () => {
+      // For X (formerly Twitter), remove URL and set custom content
+      const xButton = document.querySelector('.a2a_button_x');
+      if (xButton) {
+        xButton.setAttribute('data-url', ''); // Remove the URL
+        xButton.href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(cleanContent); // Custom text for X
+      }
+
+      // For Email, remove URL and set custom email subject and body
+      const emailButton = document.querySelector('.a2a_button_email');
+      if (emailButton) {
+        emailButton.setAttribute('data-url', ''); // Remove the URL
+        emailButton.href = 'mailto:?subject=' + encodeURIComponent('Check out this post') + '&body=' + encodeURIComponent(cleanContent); // Custom email subject and body
+      }
+    });
+  }
+</script>
     <script>
       // 编辑功能
       function editPost(postId, currentContent) {

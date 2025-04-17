@@ -179,14 +179,14 @@ include "./views/header.php";
     // Override the behavior of X (formerly Twitter) and Email buttons after the page is fully loaded
     window.addEventListener('load', () => {
       // For X (formerly Twitter), remove URL and set custom content
-      const xButton = document.querySelector('.a2a_button_x');
+      const xButton = card.querySelector('.a2a_button_x');
       if (xButton) {
         xButton.setAttribute('data-url', ''); // Remove the URL
         xButton.href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(cleanContent); // Custom text for X
       }
 
       // For Email, remove URL and set custom email subject and body
-      const emailButton = document.querySelector('.a2a_button_email');
+      const emailButton = card.querySelector('.a2a_button_email');
       if (emailButton) {
         emailButton.setAttribute('data-url', ''); // Remove the URL
         emailButton.href = 'mailto:?subject=' + encodeURIComponent('Check out this post') + '&body=' + encodeURIComponent(cleanContent); // Custom email subject and body

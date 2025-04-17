@@ -142,7 +142,9 @@ include "./views/header.php";
           const shareDiv = document.createElement("div");
           shareDiv.className = "share-buttons";
           shareDiv.innerHTML = `
-            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <div 
+                class="a2a_kit a2a_kit_size_32 a2a_default_style" 
+                data-a2a-title="${cleanContent}">
                 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
                 <a class="a2a_button_facebook"></a>
                 <a class="a2a_button_x"></a>
@@ -174,19 +176,6 @@ include "./views/header.php";
           a2a.init_all();
         }
       }
-    </script>
-    <!-- AddToAny script -->
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
-    <script>
-      var a2a_config = a2a_config || {};
-      a2a_config.templates = a2a_config.templates || {};
-      a2a_config.templates.email = {
-        subject: "Check out this news article",
-        body: "I found this interesting article:\n${link}"
-      };
-      a2a_config.templates.x = {
-        text: "Check out this news article: ${title}\n${link}"
-      };
     </script>
     <script>
       // 编辑功能

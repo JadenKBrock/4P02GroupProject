@@ -182,10 +182,10 @@ include "./views/header.php";
       a2a_config.templates = a2a_config.templates || {};
       a2a_config.templates.email = {
         subject: "",
-        body: "${cleanContent}"
+        body: "${contentP}"
       };
       a2a_config.templates.x = {
-        text: "${cleanContent}"
+        text: "${contentP}"
       };
     </script>
     <script>

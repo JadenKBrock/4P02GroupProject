@@ -155,17 +155,7 @@ include "./views/header.php";
           contentDiv.appendChild(metaDiv);
           contentDiv.appendChild(contentP);
           contentDiv.appendChild(editButton);
-          contentDiv.appendChild(shareDiv);
-
-          // Add custom behavior for the Email button
-          window.addEventListener('load', () => {
-            const emailButton = document.querySelector('.a2a_button_email');
-            if (emailButton) {
-              const subject = 'Check out this post';
-              const body = encodeURIComponent(cleanContent); // Use cleanContent as the body
-              emailButton.href = `mailto:?subject=${subject}&body=${body}`; // Set the correct subject and body
-            }
-          });        
+          contentDiv.appendChild(shareDiv);     
           
           card.appendChild(contentDiv);
           cardContainer.appendChild(card);
@@ -185,6 +175,15 @@ include "./views/header.php";
     if (window.a2a) {
       a2a.init_all();
     }
+      // Add custom behavior for the Email button
+  window.addEventListener('load', () => {
+    const emailButton = document.querySelector('.a2a_button_email');
+    if (emailButton) {
+      const subject = 'Check out this post';
+      const body = encodeURIComponent(cleanContent); // Use cleanContent as the body
+      emailButton.href = `mailto:?subject=${subject}&body=${body}`; // Set the correct subject and body
+    }
+  });   
   }
 </script>
     <script>

@@ -11,7 +11,7 @@ session_set_cookie_params([
 session_start();
 
 // 测试用的user_id，方便测试不同用户
-// $test_user_id = 3;  // 可以随时修改这个值来测试不同用户
+$test_user_id = 3;  // 可以随时修改这个值来测试不同用户
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
@@ -181,11 +181,11 @@ include "./views/header.php";
       var a2a_config = a2a_config || {};
       a2a_config.templates = a2a_config.templates || {};
       a2a_config.templates.email = {
-        subject: "Check out this news article",
-        body: "I found this interesting article:\n${link}"
+        subject: "",
+        body: "{currentContent}"
       };
       a2a_config.templates.x = {
-        text: "Check out this news article: ${title}\n${link}"
+        text: "{currentContent}"
       };
     </script>
     <script>

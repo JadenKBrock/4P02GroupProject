@@ -175,34 +175,20 @@ include "./views/header.php";
         }
       }
     </script>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<script>
-  var a2a_config = a2a_config || {};
-  a2a_config.templates = a2a_config.templates || {};
-</script>
+    <!-- AddToAny script -->
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.a2a_kit').forEach(shareKit => {
-      shareKit.addEventListener('click', function () {
-        const postCard = this.closest('.post-card');
-        const textarea = postCard.querySelector('.post-content');
-
-        const content = textarea.value;
-
-        a2a_config.templates.email = {
-          subject: "",
-          body: content
-        };
-        a2a_config.templates.x = {
-          text: content
-        };
-
-        if (typeof a2a !== 'undefined') {
-          a2a.init_all(); // Optional but harmless
-        }
-      });
-    });
-  });
+      var a2a_config = a2a_config || {};
+      a2a_config.templates = a2a_config.templates || {};
+      a2a_config.templates.email = {
+        subject: "",
+        body: "${cleanContent}"
+      };
+      a2a_config.templates.x = {
+        text: "${cleanContent}"
+      };
+    </script>
+    <script>
       // 编辑功能
       function editPost(postId, currentContent) {
         const card = event.target.closest('.card');

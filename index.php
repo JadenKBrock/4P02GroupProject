@@ -159,7 +159,24 @@ include "./views/header.php";
           
           card.appendChild(contentDiv);
           cardContainer.appendChild(card);
-          
+
+          // Add custom behavior for X and Email buttons (exclude URL)
+          window.addEventListener('load', () => {
+          // Override the URL for X (formerly Twitter)
+          const xButton = document.querySelector('.a2a_button_x');
+          if (xButton) {
+            xButton.setAttribute('data-url', ''); // Remove the URL
+            xButton.href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(cleanContent); // Custom text for X (formerly Twitter)
+          }
+
+          // Override the URL for Email
+          const emailButton = document.querySelector('.a2a_button_email');
+          if (emailButton) {
+            emailButton.setAttribute('data-url', ''); // Remove the URL
+            emailButton.href = 'mailto:?subject=' + encodeURIComponent('Check out this post') + '&body=' + encodeURIComponent(cleanContent); // Custom email subject and body
+          }
+        });
+
           // 添加显示动画
           requestAnimationFrame(() => {
             card.style.opacity = '0';

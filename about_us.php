@@ -10,6 +10,7 @@ session_set_cookie_params([
 session_start();
 
 $page_title = "About Us";
+$page_styles = ["about-us.css"];
 include "./views/header.php";
 ?>
 <!-- Hero Section -->

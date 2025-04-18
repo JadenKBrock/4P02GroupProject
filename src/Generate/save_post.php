@@ -1,4 +1,13 @@
 <?php
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'domain' => $_SERVER['HTTP_HOST'],
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax'
+  ]);
+  session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Azure SQL Database connection details
     $serverName = "ts19cpsqldb.database.windows.net";
@@ -38,9 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-
+    $user_id = $_SESSION['user_id'];
     $sql = "INSERT INTO Posts (user_id, post_content, post_type) VALUES (?, ?, ?)";
-    $params = array(3, $content, $type);
+    $params = array($user_id, $content, $type);
 
     $stmt = sqlsrv_prepare($conn, $sql, $params);
 

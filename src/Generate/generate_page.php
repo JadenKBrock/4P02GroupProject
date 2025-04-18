@@ -17,7 +17,7 @@ include "../../views/header.php";
 
 <div class="generate-container">
     <div class="input-outer-container">
-        <h3>Generate Post</h3>
+        <h3>Generate Post!</h3>
         <div class="format-container">
             <div class="dropdown-container">
                 <button onclick="dropdown()" class="formatbtn">Format</button>
@@ -55,40 +55,48 @@ $(document).ready(function() {
     $("#sendRequest").click(function() {
         var format = $("#format-selection").val();  // Get content type
         var userInput = $("#userInput").val();  // Get content text
+        
+        let url_index = 0;
 
-        $.ajax({
-            url: "run_generate_py.php",  // Calls updated PHP script
-            type: "POST",
-            data: JSON.stringify({ 
-                format_type: format, 
-                keyword: userInput 
-            }),
-            contentType: "application/json",
-            dataType: "json",  // Ensure response is treated as JSON
-            success: function(response) {
-                console.log("Server Response: ", response);
-                
-                // Ensure we correctly access the response
-                if (response && response.response) {
-                    $(".output_container").css("display", "flex");
-                    let postResponse = `
-                    <div class="post_card_container">
-                        <p class="post_content">${response.response}</p>
-                        <button class="save_btn">Save</button>
-                    </div>
-                    `;
+        function callGenerate(urlIndex) {
+            if (urlIndex > 4) return;
+            $.ajax({
+                url: "run_generate_py.php",  // Calls updated PHP script
+                type: "POST",
+                data: JSON.stringify({ 
+                    format_type: format, 
+                    keyword: userInput,
+                    url_index: urlIndex
+                }),
+                contentType: "application/json",
+                dataType: "json",  // Ensure response is treated as JSON
+                success: function(response) {
+                    console.log(`Server Response for url ${urlIndex}: `, response);
+                    
+                    // Ensure we correctly access the response
+                    if (response && response.response) {
+                        $(".output_container").css("display", "flex");
+                        let postResponse = `
+                        <div class="post_card_container">
+                            <p class="post_content">${response.response}</p>
+                            <button class="save_btn">Save</button>
+                        </div>
+                        `;
 
-                    $("#responseBox").append(postResponse);
-                } else {
-                    $("#responseText").text("Error: Unexpected response format");
+                        $("#responseBox").append(postResponse);
+                    } else {
+                        $("#responseText").text("Error: Unexpected response format");
+                    }
+                    callGenerate(urlIndex + 1)
+                },
+                error: function(xhr, status, err) {
+                    console.error("AJAX Error: ", status, err);
+                    console.log("Server Response: ", xhr.responseText);
+                    $("#responseText").text("Error: Could not execute request.");
                 }
-            },
-            error: function(xhr, status, err) {
-                console.error("AJAX Error: ", status, err);
-                console.log("Server Response: ", xhr.responseText);
-                $("#responseText").text("Error: Could not execute request.");
-            }
-        });
+            });
+        }
+        callGenerate(url_index);
     });
 });
 

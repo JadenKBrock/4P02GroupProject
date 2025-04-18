@@ -11,7 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Extract data from request
+    $format = $data["format_type"] ?? "";
     $keyword = trim($data['keyword'] ?? '');
+    $url_index = $data["url_index"] ?? 0;
+
 
     // Validate input
     if (empty($keyword)) {
@@ -25,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare JSON payload
     $json_data = json_encode([
         "keyword" => $keyword,
+        "url_index" => $url_index,
     ]);
 
     // Initialize cURL

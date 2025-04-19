@@ -39,13 +39,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $tsql   = "INSERT INTO Users (username, email, password) VALUES (?, ?, ?)";
         $params = array($username, $email, $hashedPassword);
         $stmt   = sqlsrv_query($conn, $tsql, $params);
-
+        
         if ($stmt === false) {
-            $message = "Registration error: " . print_r(sqlsrv_errors(), true);
+            $errors = sqlsrv_errors();
+            if ($errors[0]['code'] == 2627) {
+                $message = "Username already exists!";
+            } else {
+                $message = "Registration failed. Please try again later.";
+            }
         } else {
             $message = "Registration successful! You can now <a href='" . $base_url . "src/Login/login_pageNew.php'>login</a>.";
         }
-        sqlsrv_free_stmt($stmt);
+        if ($stmt !== false) {
+            sqlsrv_free_stmt($stmt);
+        }    
     }
 }
 

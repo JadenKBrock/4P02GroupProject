@@ -10,11 +10,7 @@ session_set_cookie_params([
 ]);
 session_start();
 
-// 测试用的user_id，方便测试不同用户
-$test_user_id = 3;  // 可以随时修改这个值来测试不同用户
-
-$page_title = "News Portal";
-$page_styles = ["dashboard.css"];
+$user_id = $_SESSION['user_id'] ?? null;
 
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(
@@ -26,6 +22,9 @@ $connectionOptions = array(
 
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
+if ($conn == false) {
+  die(print_r(sqlsrv_errors(), true));
+}
 
 // 测试表查询
 $test_sql = "SELECT TOP 1 * FROM Posts";
@@ -34,7 +33,7 @@ $test_stmt = sqlsrv_query($conn, $test_sql);
 
 // Get news data
 $sql = "SELECT post_id, user_id, post_content, creation_date, post_type FROM Posts WHERE user_id = ?";
-$params = array($test_user_id);
+$params = array($user_id);
 $stmt = sqlsrv_query($conn, $sql, $params);
 if ($stmt === false) {
     die(print_r(sqlsrv_errors(), true));
@@ -74,6 +73,11 @@ if ($json_data === false) {
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);
 
+$base_url = "http://localhost:8080/";
+//$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
+
+$page_title = "News Portal";
+$page_styles = ["dashboard.css"];
 include "./views/header.php";
 ?>
 
@@ -90,11 +94,19 @@ include "./views/header.php";
     <script>
       const items = <?php echo $json_data; ?>;
       const cardContainer = document.getElementById("card-container");
+      const userId = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
       
       if (!cardContainer) {
         console.error('Card container not found');
       } else if (!items || items.length === 0) {
-        cardContainer.innerHTML = '<div class="no-data-message">No data available</div>';
+        
+        document.querySelector(".middle-container").classList.add("middle-container-no-posts");
+        cardContainer.classList.add("middle-container-no-posts");
+        if (!userId) {
+          cardContainer.innerHTML = '<div class="no-posts-message"><a href="<?php echo $base_url;?>src/Login/login_pageNew.php">Login</a> to see your saved posts or <a href="<?php echo $base_url;?>src/Register/register_pageNew.php">Register</a> now to create your first post!</div>';
+        } else {
+          cardContainer.innerHTML = '<div class="no-posts-message"><a href="<?php echo $base_url;?>src/Generate/generate_page.php">Generate</a> your first post!</div>';
+        }
       } else {
         // 按时间排序
         items.sort((a, b) => {
@@ -320,105 +332,6 @@ include "./views/header.php";
       <button id="clear-btn">Clear Filters</button>
   </div>
 </div>
-
-<style>
-/* 卡片动画效果 */
-.card {
-    transition: all 0.5s ease-in-out;
-    transform-origin: center;
-}
-
-.card.hiding {
-    transform: scale(0.98);
-    opacity: 0;
-}
-
-.card.showing {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* 过滤动画 */
-@keyframes filterIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes filterOut {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-}
-
-.card.filtering-in {
-    animation: filterIn 0.5s ease-out forwards;
-}
-
-.card.filtering-out {
-    animation: filterOut 0.5s ease-out forwards;
-}
-
-/* 排序动画 */
-@keyframes scaleIn {
-    from {
-        transform: scale(0.98);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.card.sorting {
-    animation: scaleIn 0.5s ease-out;
-}
-
-/* 平台选择器动画 */
-.role-options {
-    transition: all 0.5s ease-in-out;
-    transform-origin: top;
-}
-
-.role-options.hidden {
-    transform: scaleY(0);
-    opacity: 0;
-    display: none;
-}
-
-.role-options:not(.hidden) {
-    transform: scaleY(1);
-    opacity: 1;
-    display: block;
-}
-
-/* 搜索框焦点效果 */
-#search-input:focus {
-    transform: scale(1.01);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* 按钮悬停效果 */
-button {
-    transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-    transform: scale(1.02);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-</style>
 
 <?php
 include "./views/footer.php";

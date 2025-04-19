@@ -1,3 +1,118 @@
+:root {
+    --output-container-bg: #121325;
+    --outer-container-bg: #0f101f;
+}
+
+.card-container.middle-container-no-posts {
+    column-gap: 0px;
+    column-count: 1;
+}
+
+.no-posts-message {
+    display: block;
+    width: 100%;
+}
+
+
+
+
+/* 卡片动画效果 */
+.card {
+    transition: all 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+.card.hiding {
+    transform: scale(0.98);
+    opacity: 0;
+}
+
+.card.showing {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* 过滤动画 */
+@keyframes filterIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes filterOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.card.filtering-in {
+    animation: filterIn 0.5s ease-out forwards;
+}
+
+.card.filtering-out {
+    animation: filterOut 0.5s ease-out forwards;
+}
+
+/* 排序动画 */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.98);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.card.sorting {
+    animation: scaleIn 0.5s ease-out;
+}
+
+/* 平台选择器动画 */
+.role-options {
+    transition: all 0.5s ease-in-out;
+    transform-origin: top;
+}
+
+.role-options.hidden {
+    transform: scaleY(0);
+    opacity: 0;
+    display: none;
+}
+
+.role-options:not(.hidden) {
+    transform: scaleY(1);
+    opacity: 1;
+    display: block;
+}
+
+/* 搜索框焦点效果 */
+#search-input:focus {
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 按钮悬停效果 */
+button {
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 /* Main Layout */
 .main-container {
     display: flex;
@@ -14,7 +129,7 @@
 
 .middle-container {
     flex: 2;
-    background: #ded1c1;
+    background: var(--outer-container-bg);
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -432,7 +547,7 @@ button.active {
     column-count: 2;
     column-gap: 20px;
     margin: 0 auto;
-    background: #ded1c1;
+    background: var(--output-container-bg);
     border-radius: 10px;
     max-width: 880px;
     width: 100%;

@@ -1,10 +1,10 @@
 @media screen and (max-width: 768px) {
-  /* Navigation layout stacks vertically */
+  /* Stack nav bar vertically with tighter layout */
   #top-nav-bar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
-    gap: 10px;
+    padding: 8px;
+    gap: 6px;
   }
 
   #main-nav-bar {
@@ -14,13 +14,15 @@
 
   #main-nav-bar a {
     display: block;
-    padding: 10px 0;
+    padding: 6px 12px;
     width: 100%;
     text-align: left;
+    font-size: 14px;
     box-sizing: border-box;
+    word-break: break-word;
   }
 
-  /* Make cards stack and fit smaller screens */
+  /* Reduce card width */
   .card-container {
     column-count: 1 !important;
     padding: 10px;
@@ -35,23 +37,34 @@
     padding: 10px;
   }
 
-  /* Adjust sidebar to stack below content */
+  /* Stack sidebar under main content */
   .sidebar {
     flex: 1 1 100%;
     margin-top: 20px;
   }
 
-  /* Responsive input field and generator container */
+  /* Shrink input field area */
   .input-outer-container {
-    width: 90% !important;
+    width: 95% !important;
+  }
+
+  /* Smaller header/title */
+  .input-outer-container > h3 {
+    font-size: 1.4rem;
   }
 
   .output_container {
     padding: 1rem;
   }
 
-  /* Prevent horizontal overflow */
+  /* Smaller font in general */
   body {
+    font-size: 15px;
     overflow-x: hidden;
+  }
+
+  /* Adjust nav title if needed */
+  #nav-title h2 {
+    font-size: 1.2rem;
   }
 }

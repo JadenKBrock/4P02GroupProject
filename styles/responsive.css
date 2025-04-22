@@ -207,3 +207,46 @@
     border-radius: 4px;
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  /* Standardize all buttons */
+  .sidebar button,
+  .sidebar select,
+  .search-container button,
+  #role-selector-btn {
+    background-color: #242653 !important;  /* Matches desktop */
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .sidebar button:hover,
+  .search-container button:hover,
+  #role-selector-btn:hover {
+    background-color: #3a3e7c !important;
+  }
+
+  /* Input box (search bar) fix */
+  .search-container input {
+    background: #d1d1d1 !important;
+    color: #333 !important;
+    border: none !important;
+    outline: none !important;
+    padding: 8px !important;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  /* Dropdown itself if needed */
+  #role-options,
+  .role-option {
+    background-color: #2e3168 !important;
+    color: white !important;
+  }
+}
+

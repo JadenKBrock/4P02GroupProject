@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare JSON payload
     $json_data = json_encode([
         "keyword" => $keyword,
+        "format" => $format,
         "url_index" => $url_index,
     ]);
 

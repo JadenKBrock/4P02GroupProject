@@ -73,8 +73,8 @@ if ($json_data === false) {
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);
 
-$base_url = "http://localhost:8080/";
-//$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
+//$base_url = "http://localhost:8080/";
+$base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 $page_title = "News Portal";
 $page_styles = ["dashboard.css"];
@@ -82,6 +82,44 @@ include "./views/header.php";
 ?>
 
 <div class="main-container">
+  <div class="sidebar">
+    <div class="filter-sub-container">
+      <div class="filter-dropdowns">
+        <!-- New Sort Filter -->
+        <div class="sort-filter">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select">
+            <option value="desc" selected>Date:Most Recent</option>
+            <option value="asc">Date:Oldest</option>
+            <option value="asc">Relevance</option>
+          </select>
+        </div>
+        <!-- Role Selector Dropdown -->
+        <div class="role-selector">
+          <button id="role-selector-btn">
+            Choose Platform <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+                <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
+              </svg>
+            </span>
+          </button>
+          <div id="role-options" class="role-options hidden">
+            <button id="role-business-btn" class="role-option">Facebook</button>
+            <button id="role-influencer-btn" class="role-option">X (Twitter)</button>
+            <button id="role-email-btn" class="role-option">Email</button>
+          </div>
+        </div>
+        <button id="clear-btn">Clear Filters</button>
+      </div>
+    </div>
+    <div class="filter-sub-container">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search articles...">
+        <button id="search-btn">Search</button>
+      </div>
+    </div>  
+  </div>
+
 
   <div id=news-container class="news-grid">
   </div>
@@ -295,41 +333,6 @@ include "./views/header.php";
         });
       }
     </script>
-  </div>
-  <div class="sidebar">
-    <h2>Filter News</h2>
-      <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search articles...">
-        <button id="search-btn">Search</button>
-      </div>
-
-      <!-- Role Selector Dropdown -->
-      <div class="role-selector">
-        <button id="role-selector-btn">
-          Choose Platform <span class="arrow-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
-              <path fill="currentColor" d="M7 10l5 5 5-5H7z"/>
-            </svg>
-          </span>
-        </button>
-        <div id="role-options" class="role-options hidden">
-          <button id="role-business-btn" class="role-option">Facebook</button>
-          <button id="role-influencer-btn" class="role-option">X (Twitter)</button>
-          <button id="role-email-btn" class="role-option">Email</button>
-        </div>
-      </div>
-
-      <!-- New Sort Filter -->
-      <div class="sort-filter">
-        <label for="sort-select">Sort by:</label>
-        <select id="sort-select">
-          <option value="desc" selected>Date:Most Recent</option>
-          <option value="asc">Date:Oldest</option>
-          <option value="asc">Relevance</option>
-        </select>
-      </div>
-
-      <button id="clear-btn">Clear Filters</button>
   </div>
 </div>
 

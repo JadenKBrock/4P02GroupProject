@@ -1,6 +1,14 @@
 :root {
     --output-container-bg: #121325;
     --outer-container-bg: #0f101f;
+    --sidebar-bg: #0D0E1B;
+    --search-container-bg: #d1d1d1;
+    --search-container-border: #3e4074;
+    --filter-btn-bg: #242653;
+    --filter-btn-hover: #242653;
+    --filter-dropdown-bg: #2e3168;
+    --filter-option-hover-bg: #242653;
+    --filter-border: #0e0f20;
 }
 
 .card-container.middle-container-no-posts {
@@ -12,9 +20,6 @@
     display: block;
     width: 100%;
 }
-
-
-
 
 /* 卡片动画效果 */
 .card {
@@ -116,7 +121,9 @@ button:hover {
 /* Main Layout */
 .main-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
     flex: 1;
     gap: 20px;
@@ -246,22 +253,32 @@ button:hover {
 
 /* Sidebar */
 .sidebar {
-    flex: 0 0 320px;
-    background: #ded1c1;
-    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: var(--sidebar-bg);
+    padding: 5px 20px;
     border-radius: 4px;
     height: fit-content;
 }
 
+.filter-dropdowns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
 /* Search Bar */
 .search-container {
     display: flex;
     align-items: center;
-    background: #ded1c1;
-    border: 2px solid #8a5a3b;
+    background-color: var(--search-container-bg);
+    border: 2px solid var(--search-container-border);
     border-radius: 4px;
-    padding: 5px;
+    padding: 3px;
 }
 
 .search-container input {
@@ -279,7 +296,6 @@ button:hover {
 }
 
 .search-container button {
-    background: #a67c52;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -296,8 +312,8 @@ button:hover {
 
 #role-selector-btn {
     width: 100%;
-    padding: 10px;
-    background: #a67c52;
+    padding: 6px;
+    background-color: var(--filter-btn-bg);
     color: white;
     border: none;
     cursor: pointer;
@@ -307,7 +323,7 @@ button:hover {
 }
 
 #role-selector-btn:hover {
-    background: #8a5a3b;
+    background: var(--filter-btn-hover);
 }
 
 #role-options {
@@ -315,8 +331,8 @@ button:hover {
     top: 110%;
     left: 0;
     width: 100%;
-    background: #ded1c1;
-    border: 2px solid #8a5a3b;
+    background-color: var(--filter-dropdown-bg);
+    border: 2px solid var(--filter-border);
     border-radius: 4px;
     z-index: 10;
 }
@@ -324,16 +340,16 @@ button:hover {
 .role-option {
     width: 100%;
     padding: 10px;
-    background: #ded1c1;
+    background-color: var(--filter-dropdown-bg);
     border: none;
     cursor: pointer;
     text-align: left;
     font-size: 14px;
-    color: #333;
+    color: white;
 }
 
 .role-option:hover {
-    background: #c0b9a3;
+    background: var(--filter-option-hover-bg);
 }
 
 /* Sort Filter */
@@ -349,13 +365,13 @@ button:hover {
 .sort-filter select {
     padding: 6px;
     font-size: 14px;
-    border: 1px solid #8a5a3b;
+    border: 1px solid var(--filter-border);
     border-radius: 4px;
-    background: #ded1c1;
-    color: #333;
+    background-color: var(--filter-btn-bg);
+    color: white;
 }
 
-/* Content Generator Section */
+/* Content Generator Section 
 .content-generator {
     margin-top: 20px;
     padding: 10px;
@@ -391,9 +407,9 @@ button:hover {
 
 .content-generator button:hover {
     background: #8a5a3b;
-}
+}*/
 
-/* Generator Filters (Hot Topics) */
+/* Generator Filters (Hot Topics) 
 .generator-filters {
     margin-top: 15px;
 }
@@ -419,7 +435,7 @@ button:hover {
 
 .gen-filter:hover {
     background: #8a5a3b;
-}
+}*/
 
 :root {
     --primary-color: #13162a;
@@ -481,26 +497,6 @@ body {
     margin-left: 4px;
     vertical-align: middle;
     color: white; /* Ensures the arrow icon is white */
-}
-
-/* General Buttons */
-button {
-    background-color: var(--btn-bg-color);
-    color: var(--secondary-color);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    display: block;
-    transition: background 0.2s;
-    border-radius: 4px;
-}
-
-button:hover {
-    background: #8a5a3b;
-}
-
-button.active {
-    background: #8a5a3b;
 }
 
 /* Profile dropdown */

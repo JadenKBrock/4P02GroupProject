@@ -2,6 +2,7 @@
     --output-container-bg: #0d0e1b; /*#0d0e1b   #191b35*/
     --post-card-container-bg: #191b35;
     --light-blue-btn: #3498DB;
+    --format-btn-active: #252c53;
 }
 
 .generate-container {
@@ -54,17 +55,23 @@
     background-color: var(--light-blue-btn);
 }
 
-.formatbtn:hover, .formatbtn:focus {
-    
+.formatbtn:hover, .formatbtn:active {
+    background-color: var(--format-btn-active);
 }
+
 
 .dropdown-container:hover .dropdown-content {
     display: block;
 }
 
+.dropdown-btn {
+    background-color: var(--format-btn-active);
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
+    background-color: var(--format-btn-active);
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -76,10 +83,6 @@
     border: none;
     border-radius: 0;
     text-align: left;
-}
-
-.dropdown-content button:hover {
-    
 }
 
 #format-selection {

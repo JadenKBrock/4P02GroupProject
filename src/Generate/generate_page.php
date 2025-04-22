@@ -22,9 +22,9 @@ include "../../views/header.php";
             <div class="dropdown-container">
                 <button onclick="dropdown()" class="formatbtn">Format</button>
                 <div id="dropdown" class="dropdown-content">
-                    <button onclick="selectFormat('Facebook')">Facebook</button>
-                    <button onclick="selectFormat('Twitter')">Twitter</button>
-                    <button onclick="selectFormat('Email')">Email</button>
+                    <button onclick="selectFormat('Facebook')" class="dropdown-btn">Facebook</button>
+                    <button onclick="selectFormat('Twitter')" class="dropdown-btn">Twitter</button>
+                    <button onclick="selectFormat('Email')" class="dropdown-btn">Email</button>
                 </div>
             </div>
             <p id="format-selection">Facebook</p>
@@ -53,9 +53,10 @@ function selectFormat(format) {
 
 $(document).ready(function() {
     $("#sendRequest").click(function() {
-        var format = $("#format-selection").val();  // Get content type
+        var format = $("#format-selection").text();  // Get content type
         var userInput = $("#userInput").val();  // Get content text
-        
+        console.log(format);
+        console.log(userInput);
         let url_index = 0;
 
         function callGenerate(urlIndex) {

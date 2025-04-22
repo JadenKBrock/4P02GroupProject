@@ -5,8 +5,13 @@
     --nav-active-bg: #13162a;
     --nav-active-color: #8b8b8b;
     --btn-bg-color: #1a1e39;
+    --btn-bg-hover: #202546;
     --logout-color: #e63946;
     --profile-color: #457b9d;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -75,11 +80,11 @@ button {
 }
 
 button:hover {
-    background: #8a5a3b;
+    background-color: var(--btn-bg-hover);
 }
 
 button.active {
-    background: #8a5a3b;
+    background-color: var(--btn-bg-hover);
 }
 
 /* Hidden Elements */

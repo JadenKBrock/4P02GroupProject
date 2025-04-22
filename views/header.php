@@ -30,6 +30,10 @@ function isActive($page) {
             }
         }
     ?>
+
+    <!-- This will include responsive styling-->
+    <link rel="stylesheet" type "text/css" href="<?php echo $base_url; ?>styles/responsive.css">
+    
             <script async src="https://static.addtoany.com/menu/page.js"></script>
 </head>
 <body>

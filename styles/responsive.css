@@ -1,0 +1,142 @@
+/* =======================================
+   RESPONSIVE STYLES FOR MOBILE DEVICES
+   ======================================= */
+
+@media screen and (max-width: 768px) {
+
+  /* --------------------------
+     General Reset & Layout
+  --------------------------- */
+  body {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .main-container,
+  .content-container,
+  .middle-container,
+  .dashboard-container,
+  .generate-container {
+    flex-direction: column;
+    padding: 10px;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* --------------------------
+     Header Navigation
+  --------------------------- */
+  #top-nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  #main-nav-bar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  #main-nav-bar a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  #nav-title h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* --------------------------
+     About Page Container
+  --------------------------- */
+  .about-container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .about-container h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .about-container p,
+  .about-container ul {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .about-container ul {
+    padding-left: 20px;
+  }
+
+  /* --------------------------
+     Post Cards on Dashboard
+  --------------------------- */
+  .card-container {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+    padding: 10px;
+  }
+
+  .card {
+    width: 100% !important;
+    min-height: auto;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  /* --------------------------
+     Sidebar (Filter Panel)
+  --------------------------- */
+  .sidebar {
+    width: 100% !important;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  /* --------------------------
+     Generator Page Elements
+  --------------------------- */
+  .input-outer-container {
+    width: 100% !important;
+    padding: 10px;
+  }
+
+  .input-container,
+  .format-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #userInput {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .post_card_container {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .output_container {
+    padding: 10px !important;
+  }
+
+  /* --------------------------
+     Footer
+  --------------------------- */
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

@@ -166,3 +166,44 @@
     padding: 10px;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+
+  /* Match button styles with desktop */
+  .sidebar button,
+  .sidebar select,
+  .search-container button {
+    background-color: #242653;  /* Same as desktop filter button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .sidebar button:hover,
+  .search-container button:hover {
+    background-color: #3a3e7c;  /* Slight hover effect */
+  }
+
+  .search-container input {
+    background: #d1d1d1;
+    color: #333;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  select {
+    background-color: #242653;
+    color: white;
+    border: none;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+}

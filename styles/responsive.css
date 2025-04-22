@@ -250,3 +250,14 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  /* Remove light brown border/outline from search bar and button */
+  .search-container input,
+  .search-container button {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+

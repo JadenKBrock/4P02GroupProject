@@ -99,49 +99,35 @@
   }
 
   /* --------------------------
-     Sidebar (Filter Panel in Row on Mobile)
+     Sidebar (Filter Panel)
   --------------------------- */
   .sidebar {
     display: flex !important;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
     width: 100% !important;
-    gap: 8px;
+    margin-top: 10px;
     padding: 10px;
     background-color: var(--sidebar-bg);
     border-radius: 6px;
+    gap: 6px; /* Reduced vertical gap */
   }
 
   .filter-dropdowns {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    flex: 1;
+    flex-direction: column;
+    gap: 6px; /* Tighter spacing */
   }
 
   .search-container {
     display: flex;
-    flex-wrap: nowrap;
-    flex: 1;
-    min-width: 200px;
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .search-container input {
-    flex: 1;
-    font-size: 14px;
-    padding: 8px;
-  }
-
+  .search-container input,
   .search-container button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  .role-selector,
-  .sort-filter {
-    flex-shrink: 0;
+    width: 100%;
   }
 
   /* --------------------------

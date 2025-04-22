@@ -140,3 +140,34 @@
     padding: 10px;
   }
 }
+
+/* Responsive changes for dashboard on mobile */
+@media (max-width: 768px) {
+    /* Hide the sidebar filter box */
+    .sidebar {
+        display: none;
+    }
+
+    /* Adjust the main-container to remove spacing for the now-hidden sidebar */
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    /* Make cards take full width */
+    .card-container {
+        column-count: 1;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100% !important;
+    }
+
+    /* Optional: Reduce margins on card buttons if needed */
+    .share-buttons {
+        justify-content: center;
+    }
+}
+

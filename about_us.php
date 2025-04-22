@@ -22,7 +22,7 @@ include "./views/header.php";
 </div>
 
 <!-- Main Content -->
-<div class="container section" style="padding: 40px 20px;">
+<div class="about-container">
 
   <!-- Project Inspiration -->
   <h2>Project Inspiration &amp; Background</h2>

@@ -99,37 +99,49 @@
   }
 
   /* --------------------------
-     Sidebar (Filter Panel) - FIXED to SHOW and STACK on MOBILE
+     Sidebar (Filter Panel in Row on Mobile)
   --------------------------- */
   .sidebar {
     display: flex !important;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     width: 100% !important;
-    margin-top: 10px;
+    gap: 8px;
     padding: 10px;
     background-color: var(--sidebar-bg);
     border-radius: 6px;
-    gap: 10px;
   }
 
   .filter-dropdowns {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
   }
 
   .search-container {
-    flex-direction: column;
-    gap: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1;
+    min-width: 200px;
   }
 
   .search-container input {
-    width: 100%;
+    flex: 1;
+    font-size: 14px;
+    padding: 8px;
   }
 
   .search-container button {
-    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .role-selector,
+  .sort-filter {
+    flex-shrink: 0;
   }
 
   /* --------------------------

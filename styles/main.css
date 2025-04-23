@@ -25,6 +25,7 @@ body {
 }
 
 /* Nav bar content */
+
 #top-nav-bar {
     background-color: var(--nav-bg-color);
     display: flex;
@@ -32,9 +33,24 @@ body {
     justify-content: space-around;
 }
 
+.nav-title-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #nav-title {
     margin: 0px;
     padding: 0px;
+}
+
+.nav-icon {
+    display: none;
+    color: #ffffff;
+}
+
+.nav-icon:hover, .nav-icon:active {
+    color: #dbdbdb;
 }
 
 #main-nav-bar {

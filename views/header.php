@@ -23,6 +23,7 @@ function isActive($page) {
     
     <link rel="stylesheet" type="text/css" href="<?php echo $base_url;?>styles/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php
         if (isset($page_styles)) {
             foreach ($page_styles as $style) {
@@ -37,9 +38,12 @@ function isActive($page) {
 </head>
 <body>
 
-<div id="top-nav-bar">
-    <div id="nav-title"><h2>News Portal</h2></div>
-    <nav id="main-nav-bar">
+<div class="top-navbar" id="top-nav-bar">
+    <div class="nav-title-section" id="nav-title-sec">
+        <div id="nav-title"><h2>News Portal</h2></div>
+        <a href="javascript:void(0);" class="nav-icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </div>
+    <nav class="topnav" id="main-nav-bar">
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('index.php');?>">Dashboard</a>
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
         <a href="<?php echo $base_url;?>src/AboutUs/about_us.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
@@ -54,3 +58,14 @@ function isActive($page) {
         <?php endif; ?>
     </nav>
 </div>
+
+<script>
+function myFunction() {
+  var navbar = document.getElementById("main-nav-bar");
+  if (navbar.className === "topnav") {
+    navbar.className += " responsive";
+  } else {
+    navbar.className = "topnav";
+  }
+}
+</script>

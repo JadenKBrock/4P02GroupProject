@@ -440,9 +440,6 @@ button:hover {
 :root {
     --primary-color: #13162a;
     --secondary-color: #f2f2f2;
-    --nav-bg-color: #0d0e1b;
-    --nav-active-bg: #13162a;
-    --nav-active-color: #8b8b8b;
     --btn-bg-color: #1a1e39;
 }
 
@@ -454,41 +451,6 @@ body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     min-height: 100vh;
-}
-
-/* Nav bar content */
-#top-nav-bar {
-    background-color: var(--nav-bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#nav-title {
-    margin: 0px;
-    padding: 0px;
-}
-
-#main-nav-bar {
-    display: flex;
-    align-items: center;
-}
-
-#main-nav-bar a{
-    padding: 10px;
-    text-decoration: none; 
-    color: var(--secondary-color);
-}
-
-#main-nav-bar a:hover{
-    background-color: var(--nav-active-bg);
-    border-radius: 25%;
-}
-
-.active {
-    background-color: var(--nav-active-bg);
-    color: var(--nav-active-color);
-    border-radius: 25%;
 }
 
 /* Arrow Icon Styling */

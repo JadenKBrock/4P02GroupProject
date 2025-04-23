@@ -57,7 +57,6 @@ $page_title  = "Login";
 $page_styles = ["login-register.css"];
 include "../../views/header.php";
 ?>
-<!-- Your login form HTML follows -->
 <div class="main-container">
     <div class="content-container">
         <h2>Login</h2>

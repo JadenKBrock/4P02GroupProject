@@ -30,8 +30,6 @@ function isActive($page) {
             }
         }
     ?>
-
-    <!-- This will include responsive styling-->
     <link rel="stylesheet" type="text/css" href="<?php echo $base_url; ?>styles/responsive.css">
 
     
@@ -44,8 +42,8 @@ function isActive($page) {
     <nav id="main-nav-bar">
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('index.php');?>">Dashboard</a>
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
-        <a href="<?php echo $base_url;?>about_us.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
-        <a href="<?php echo $base_url;?>faq.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
+        <a href="<?php echo $base_url;?>src/AboutUs/about_us.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
+        <a href="<?php echo $base_url;?>src/FAQ/faq.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
         
         <?php if (isset($_SESSION['user_id'])): ?>
             <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>

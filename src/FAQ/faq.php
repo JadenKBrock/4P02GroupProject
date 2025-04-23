@@ -10,7 +10,7 @@ session_set_cookie_params([
 ]);
 session_start();
 $page_title = "FAQ";
-include "./views/header.php";
+include "../../views/header.php";
 ?>
 <!-- Hero Section -->
 <div class="hero" style="background: url('assets/images/hero_faq.jpg') no-repeat center center; background-size: cover; height: 200px; position: relative; color: #fff;">

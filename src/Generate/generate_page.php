@@ -51,18 +51,20 @@ function selectFormat(format) {
     $("#format-selection").text(format);
 }
 
+// Get a response from the LLM using run_generate_py.php and fill the page with the returned posts
 $(document).ready(function() {
     $("#sendRequest").click(function() {
-        var format = $("#format-selection").text();  // Get content type
-        var userInput = $("#userInput").val();  // Get content text
+        var format = $("#format-selection").text(); 
+        var userInput = $("#userInput").val();
         console.log(format);
         console.log(userInput);
         let url_index = 0;
 
+        // callGenerate is called 5 times, 1 time per url generated
         function callGenerate(urlIndex) {
             if (urlIndex > 4) return;
             $.ajax({
-                url: "run_generate_py.php",  // Calls updated PHP script
+                url: "run_generate_py.php",
                 type: "POST",
                 data: JSON.stringify({ 
                     format_type: format, 
@@ -70,11 +72,10 @@ $(document).ready(function() {
                     url_index: urlIndex
                 }),
                 contentType: "application/json",
-                dataType: "json",  // Ensure response is treated as JSON
+                dataType: "json",
                 success: function(response) {
                     console.log(`Server Response for url ${urlIndex}: `, response);
                     
-                    // Ensure we correctly access the response
                     if (response && response.response) {
                         $(".output_container").css("display", "flex");
                         let postResponse = `
@@ -108,15 +109,16 @@ $(document).on("click", ".save_btn", function () {
     console.log(postContent);
     console.log(postType);
 
+    // Save the post to the DB using save_post.php
     $.ajax({
-            url: "save_post.php",  // Calls updated PHP script
+            url: "save_post.php",  
             type: "POST",
             data: JSON.stringify({ 
                 post_content: postContent, 
                 post_type: postType 
             }),
             contentType: "application/json",
-            dataType: "json",  // Ensure response is treated as JSON
+            dataType: "json", 
             success: function(response) {
                 alert("Post saved!");
                 console.log("Saved response:", response);

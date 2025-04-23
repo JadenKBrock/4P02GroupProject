@@ -9,7 +9,7 @@ session_set_cookie_params([
   ]);
   session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Azure SQL Database connection details
+    // Azure SQL Database connection info
     $serverName = "ts19cpsqldb.database.windows.net";
     $connectionOptions = array(
         "Database" => "ts19cpdb3p96",
@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$content || !$type) {
         http_response_code(400);
         echo "Missing content." . $data;
-        var_dump($_POST);  // add this
+        var_dump($_POST);
         exit;
     }
 
-    // Establish the connection
+    // Establish the sqlsrv connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 
     if (!$conn) {
@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    // Execute query
     if (sqlsrv_execute($stmt)) {
         echo json_encode(["message" => "Post saved successfully."]);
     } else {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-ob_start(); // 启用输出缓冲
+ob_start();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -18,7 +18,6 @@ if($con->connect_error) {
         if($data['password'] === $password) {
             $_SESSION['user_id'] = $data['id']; // assume that the primary key of the login table is 'id'
 
-            // 向 Flask 应用发送 user_id
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://127.0.0.1:5000/set_user_id");
             curl_setopt($ch, CURLOPT_POST, 1);

@@ -146,11 +146,11 @@ include "./views/header.php";
           cardContainer.innerHTML = '<div class="no-posts-message"><a href="<?php echo $base_url;?>src/Generate/generate_page.php">Generate</a> your first post!</div>';
         }
       } else {
-        // 按时间排序
+        // Sort by date
         items.sort((a, b) => {
-          const dateA = new Date(a.date);
-          const dateB = new Date(b.date);
-          return dateB - dateA; // 降序排列，最新的在前
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA; // Sort in descending order, newest first
         });
 
         items.forEach(item => {
@@ -180,7 +180,7 @@ include "./views/header.php";
           const cleanContent = item.content.replace(/[\uFFFD]/g, '');
           contentP.textContent = cleanContent;
           
-          // 添加编辑按钮
+          // Add edit button
           const editButton = document.createElement("button");
           editButton.className = "edit-btn";
           editButton.textContent = "edit";
@@ -237,26 +237,26 @@ include "./views/header.php";
 
 </script>
     <script>
-      // 编辑功能
+      // Edit post function
       function editPost(postId, currentContent) {
         const card = event.target.closest('.card');
         if (!card) {
-          console.error('cant find card');
+          console.error('Card not found');
           return;
         }
         
         const contentP = card.querySelector('p');
         if (!contentP) {
-          console.error('cant find contentP');
+          console.error('Content paragraph not found');
           return;
         }
         
-        // 创建编辑区域
+        // Create edit area
         const editArea = document.createElement('textarea');
         editArea.value = currentContent;
         editArea.className = 'edit-textarea';
         
-        // 创建保存和取消按钮
+        // Create save and cancel buttons
         const buttonContainer = document.createElement('div');
         buttonContainer.className = 'edit-buttons';
         
@@ -281,15 +281,15 @@ include "./views/header.php";
         buttonContainer.appendChild(saveButton);
         buttonContainer.appendChild(cancelButton);
         
-        // 替换内容
+        // Replace content
         contentP.style.display = 'none';
         contentP.parentNode.insertBefore(editArea, contentP);
         contentP.parentNode.insertBefore(buttonContainer, editArea.nextSibling);
       }
       
-      // 保存功能
+      // Save post function
       function savePost(postId, newContent) {
-        // 发送到服务器
+        // Send to server
         fetch('update_post.php', {
           method: 'POST',
           headers: {
@@ -303,33 +303,33 @@ include "./views/header.php";
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            // 更新显示
+            // Update display
             const card = document.querySelector(`.card[data-id="${postId}"]`);
             if (!card) {
-              console.error('cant find card');
+              console.error('Card not found');
               return;
             }
             const contentP = card.querySelector('p');
             if (!contentP) {
-              console.error('cant find contentP');
+              console.error('Content paragraph not found');
               return;
             }
             
             contentP.textContent = newContent;
             contentP.style.display = 'block';
             
-            // 移除编辑区域
+            // Remove edit area
             const editArea = card.querySelector('.edit-textarea');
             const buttonContainer = card.querySelector('.edit-buttons');
             if (editArea) editArea.remove();
             if (buttonContainer) buttonContainer.remove();
           } else {
-            alert('save failed: ' + data.message);
+            alert('Save failed: ' + data.message);
           }
         })
         .catch(error => {
           console.error('Error:', error);
-          alert('save failed, please try again');
+          alert('Save failed, please try again');
         });
       }
     </script>

@@ -1,5 +1,5 @@
 <?php
-//ob_start();
+//sets secure session cookie parameters before starting the session
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
@@ -12,7 +12,7 @@ session_start();
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
-// Process login logic
+//Connects to Azure SQL db
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(
     "Database" => "ts19cpdb3p96",
@@ -26,24 +26,34 @@ if ($conn === false) {
 }
 
 $message = "";
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = trim($_POST['username']);
-    $password = $_POST['password'];
 
+//check if form was submitted via POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //Trim username input
+    $username = trim($_POST['username']);
+    $password = $_POST['password']; //raw password
+
+    //sql query to fetch user by username
     $tsql   = "SELECT * FROM Users WHERE username = ?";
-    $params = array($username);
-    $stmt   = sqlsrv_query($conn, $tsql, $params);
+    $params = array($username); //binds parameter which prevents SQL injection
+    $stmt   = sqlsrv_query($conn, $tsql, $params); //execute query
 
     if ($stmt === false) {
         $message = "Login error: " . print_r(sqlsrv_errors(), true);
     } else {
+
+        //fetch user record as associative array
         $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+
+        //verify password against hashed password
         if ($user && password_verify($password, $user['password'])) {
             // Set session variables for logged in user
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            //session_write_close();
+            
             sqlsrv_free_stmt($stmt);
+
+            //redirect to dashboard page
             header("Location: " . $base_url . "index.php");
             exit();
         } else {
@@ -53,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     sqlsrv_free_stmt($stmt);
 }
 
+//page title and styling
 $page_title  = "Login";
 $page_styles = ["login-register.css"];
 include "../../views/header.php";

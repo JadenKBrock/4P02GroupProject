@@ -26,10 +26,11 @@ if ($conn === false) {
 
 $message = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = trim($_POST['username']);
-    $email    = trim($_POST['email']);
-    $password = $_POST['password'];
+    $username = trim($_POST['username']); //clean username input
+    $email    = trim($_POST['email']); //clean email input
+    $password = $_POST['password']; //get raw password
 
+    //validates all fields are filled
     if(empty($username) || empty($email) || empty($password)) {
         $message = "All fields are required.";
     } else {
@@ -38,10 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Insert user data into the Users table
         $tsql   = "INSERT INTO Users (username, email, password) VALUES (?, ?, ?)";
         $params = array($username, $email, $hashedPassword);
-        $stmt   = sqlsrv_query($conn, $tsql, $params);
-        
+        $stmt   = sqlsrv_query($conn, $tsql, $params); //execute sql insert
+
+        //check if insert was successful
         if ($stmt === false) {
             $errors = sqlsrv_errors();
+
+            //checks for duplicate username error
             if ($errors[0]['code'] == 2627) {
                 $message = "Username already exists!";
             } else {
@@ -50,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $message = "Registration successful! You can now <a href='" . $base_url . "src/Login/login_pageNew.php'>login</a>.";
         }
+        
         if ($stmt !== false) {
             sqlsrv_free_stmt($stmt);
         }    

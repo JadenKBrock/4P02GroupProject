@@ -55,7 +55,7 @@ if ($exists) {
 }
 
 if ($stmt->execute()) {
-    header("Location: src/Profile/profile_page.php");
+    header("Location: http://127.0.0.1:5000");
     exit();
 } else {
     echo "Error updating profile.";

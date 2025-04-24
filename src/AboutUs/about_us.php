@@ -36,11 +36,7 @@ include "../../views/header.php";
     Our primary objective with SmartSummaries is to streamline the process of content sharing. We aim to empower users to quickly convert in-depth articles into summaries perfect for social media platforms like Facebook and Twitter. Through this project, we are also focused on expanding our technical skills—exploring web scraping, natural language processing, and responsive design. Ultimately, our goal is to create a functional tool that meets real user needs.
   </p>
 
-  <!-- Teams & Roles Section -->
-  <h2>Teams &amp; Roles</h2>
-  <p>
-    <!-- This section is intentionally left blank for now -->
-  </p>
+
 
   <!-- Technologies & Methodologies -->
   <h2>Technologies &amp; Methodologies</h2>

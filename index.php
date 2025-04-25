@@ -212,7 +212,7 @@ include "./views/header.php";
           card.appendChild(contentDiv);
           cardContainer.appendChild(card);
 
-          // 添加显示动画
+          // add display animation
           requestAnimationFrame(() => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
@@ -342,7 +342,7 @@ include "./views/footer.php";
 ?>
 
 <script>
-// 搜索、平台过滤和排序功能实现
+// search, platform filter and sort function
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const searchBtn = document.getElementById('search-btn');
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedPlatform = null;
     let initialCardOrder = Array.from(cardContainer.children);
     
-    // 初始加载动画
+    // initial loading animation
     function initializeCards() {
         const cards = Array.from(cardContainer.children);
         cards.forEach((card, index) => {
@@ -369,12 +369,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 显示/隐藏平台选项
+    // show/hide platform options
     roleSelectorBtn.addEventListener('click', function() {
         roleOptions.classList.toggle('hidden');
     });
     
-    // 选择平台
+    // select platform
     roleButtons.forEach(button => {
         button.addEventListener('click', function() {
             selectedPlatform = this.textContent;
@@ -384,28 +384,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 清除过滤器
+    // clear filters
     clearBtn.addEventListener('click', function() {
         searchInput.value = '';
         selectedPlatform = null;
         roleSelectorBtn.textContent = 'Choose Platform';
         sortSelect.value = 'desc';
         
-        // 先让所有卡片滑出
+        // first let all cards slide out
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.classList.remove('filtering-in');
             card.classList.add('filtering-out');
         });
         
-        // 等待动画完成后重新显示所有卡片
+        // wait for animation to complete, then show all cards
         setTimeout(() => {
-            // 清空当前容器
+            // clear current container
             cardContainer.innerHTML = '';
             
-            // 恢复初始卡片顺序并添加动画
+            // restore initial card order and add animation
             initialCardOrder.forEach((card, index) => {
-                // 重置所有动画相关的类
+                // reset all animation related classes
                 card.classList.remove('filtering-out');
                 card.classList.add('filtering-in');
                 card.style.display = 'block';
@@ -414,10 +414,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     cardContainer.appendChild(card);
                 }, index * 100);
             });
-        }, 500); // 从800ms缩短到500ms
+        }, 500); 
     });
     
-    // 排序函数
+    // sort function
     function sortCards(cards) {
         const sortBy = sortSelect.value;
         const cardArray = Array.from(cards);
@@ -449,20 +449,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return cardArray;
     }
     
-    // 过滤和排序函数
+    // filter and sort function
     function performFilter() {
         const searchTerm = searchInput.value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         
-        // 先让所有卡片滑出
+        // first let all cards slide out
         cards.forEach(card => {
             card.classList.remove('filtering-in');
             card.classList.add('filtering-out');
         });
         
-        // 等待动画完成后进行过滤和排序
+        // wait for animation to complete, then filter and sort
         setTimeout(() => {
-            // 先过滤
+            // first filter
             cards.forEach(card => {
                 const content = card.querySelector('p').textContent.toLowerCase();
                 const type = card.querySelector('.post-type').textContent;
@@ -482,14 +482,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // 再排序
+            // then sort
             const filteredCards = Array.from(cards).filter(card => card.style.display !== 'none');
             const sortedCards = sortCards(filteredCards);
             
-            // 清空容器
+            // clear container
             cardContainer.innerHTML = '';
             
-            // 重新排列并添加滑入动画
+            // rearrange and add slide in animation
             sortedCards.forEach((card, index) => {
                 card.classList.remove('filtering-out');
                 card.classList.add('filtering-in');
@@ -499,23 +499,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     cardContainer.appendChild(card);
                 }, index * 100);
             });
-        }, 500); // 从800ms缩短到500ms
+        }, 500); 
     }
     
-    // 监听搜索按钮点击
+    // listen to search button click
     searchBtn.addEventListener('click', performFilter);
     
-    // 监听输入框回车
+    // listen to input box enter
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             performFilter();
         }
     });
     
-    // 监听排序变化
+    // listen to sort change
     sortSelect.addEventListener('change', performFilter);
     
-    // 初始化卡片动画
+    // initialize card animation
     initializeCards();
 });
 </script>

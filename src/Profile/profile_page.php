@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// 检查用户是否已登录
+// check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../Login/login_pageNew.php");
     exit();
 }
 
-// Azure SQL数据库连接
+// Azure SQL connection
 $serverName = "ts19cpsqldb.database.windows.net";
 $connectionOptions = array(
     "Database" => "ts19cpdb3p96",
@@ -21,7 +21,7 @@ if ($conn === false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
-// 获取用户信息
+// get user information
 $tsql = "SELECT * FROM Users WHERE id = ?";
 $params = array($_SESSION['user_id']);
 $stmt = sqlsrv_query($conn, $tsql, $params);
@@ -31,7 +31,7 @@ if ($stmt === false) {
 }
 
 $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-$user_info = $user; // 为了保持代码兼容性
+$user_info = $user; // keep compatibility
 
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);

@@ -1,5 +1,41 @@
 <?php
 session_start();
+
+// 检查用户是否已登录
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../Login/login_pageNew.php");
+    exit();
+}
+
+// Azure SQL数据库连接
+$serverName = "ts19cpsqldb.database.windows.net";
+$connectionOptions = array(
+    "Database" => "ts19cpdb3p96",
+    "Uid" => "ts19cp",
+    "PWD" => "@Group93p96",
+    "TrustServerCertificate" => true
+);
+
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+if ($conn === false) {
+    die(print_r(sqlsrv_errors(), true));
+}
+
+// 获取用户信息
+$tsql = "SELECT * FROM Users WHERE id = ?";
+$params = array($_SESSION['user_id']);
+$stmt = sqlsrv_query($conn, $tsql, $params);
+
+if ($stmt === false) {
+    die(print_r(sqlsrv_errors(), true));
+}
+
+$user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+$user_info = $user; // 为了保持代码兼容性
+
+sqlsrv_free_stmt($stmt);
+sqlsrv_close($conn);
+
 $status_message = isset($_GET['status']) && $_GET['status'] === 'success' ? 'Changes saved!' : '';
 
 //$base_url = "http://localhost:8080/";

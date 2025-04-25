@@ -34,6 +34,10 @@ include "../../views/header.php";
             <button id="sendRequest">Generate</button>
         </div>
     </div>
+    <div class="loading-container" id="loadingContainer" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Generating post, please wait...</p>
+    </div>
     <div class="output_container" id="responseBox">
         <div class="output_main_text">Choose a post to save</div>
     </div>
@@ -44,6 +48,30 @@ include "../../views/header.php";
             <button class="save_btn">Save</button>
 </div>-->
 
+<style>
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
 
 <script>
 
@@ -56,13 +84,27 @@ $(document).ready(function() {
     $("#sendRequest").click(function() {
         var format = $("#format-selection").text(); 
         var userInput = $("#userInput").val();
+        
+        if (!userInput) {
+            alert("Please enter a topic or keyword!");
+            return;
+        }
+
+        // show loading animation
+        $("#loadingContainer").show();
+        $("#responseBox").empty();
+        
         console.log(format);
         console.log(userInput);
         let url_index = 0;
 
         // callGenerate is called 5 times, 1 time per url generated
         function callGenerate(urlIndex) {
-            if (urlIndex > 4) return;
+            if (urlIndex > 4) {
+                // all requests completed, hide loading animation
+                $("#loadingContainer").hide();
+                return;
+            }
             $.ajax({
                 url: "run_generate_py.php",
                 type: "POST",
@@ -95,6 +137,7 @@ $(document).ready(function() {
                     console.error("AJAX Error: ", status, err);
                     console.log("Server Response: ", xhr.responseText);
                     $("#responseText").text("Error: Could not execute request.");
+                    $("#loadingContainer").hide();
                 }
             });
         }

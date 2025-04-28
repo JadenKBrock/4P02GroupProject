@@ -1,0 +1,9 @@
+Test Case 1: Login Page Load
+- Navigate to /login.php
+- Verify form presence
+- Verify input fields for username and password
+
+Test Case 2: Invalid Login Attempt
+- Enter wrong username and password
+- Submit form
+- Verify "Invalid username or password" error message

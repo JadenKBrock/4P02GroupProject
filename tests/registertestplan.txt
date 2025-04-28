@@ -1,0 +1,15 @@
+Test Name: Register Page and User Registration Test
+Purpose: Verify that the registration page loads correctly and a new user can register successfully.
+Test Tools: PHP scripts using assert() for validation.
+Test Environment: Live production server (Azure hosted site).
+Tester: [Your Name]
+Date: [Insert Date]
+
+Inputs:
+- Randomly generated username
+- Password: TestPass123!
+- Confirm Password: TestPass123!
+
+Expected Output:
+- Registration page displays input fields correctly
+- Successful registration message after submitting valid input

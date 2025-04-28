@@ -1,10 +1,13 @@
 <?php
+//session_start();
+
 //$base_url = "http://localhost:8080/";
 $base_url = "https://" . $_SERVER['HTTP_HOST'] . "/";
 
 function isActive($page) {
     return basename($_SERVER["PHP_SELF"]) == $page ? "active" : "";
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +15,15 @@ function isActive($page) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($page_title) ? $page_title : "Default"?></title>
+    <meta property="og:title" content="SmartSummaries: AI-Powered Newsletter & Social Media Content Generator" />
+    <meta property="og:description" content="Create engaging newsletters and social media posts effortlessly with AI-driven automation, summarization, and scheduling." />
+    <meta property="og:url" content="<?= isset($page_url) ? $page_url : $base_url . basename($_SERVER['PHP_SELF']); ?>" />
+    <meta name="twitter:title" content="AI-Powered Newsletter & Social Media Content Generator" />
+    <meta name="twitter:description" content="Create engaging newsletters and social media posts effortlessly with AI-driven automation, summarization, and scheduling." />
+    
     <link rel="stylesheet" type="text/css" href="<?php echo $base_url;?>styles/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php
         if (isset($page_styles)) {
             foreach ($page_styles as $style) {
@@ -21,32 +31,41 @@ function isActive($page) {
             }
         }
     ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $base_url; ?>styles/responsive.css">
 
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=67d6417b86189a0019fafc7a&product=sop' async='async'></script>
+    
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
 </head>
 <body>
 
-<div id="top-nav-bar">
-    <div id="nav-title"><h2>News Portal</h2></div>
-    <nav id="main-nav-bar">
+<div class="top-navbar" id="top-nav-bar">
+    <div class="nav-title-section" id="nav-title-sec">
+        <div id="nav-title"><h2>News Portal</h2></div>
+        <a href="javascript:void(0);" class="nav-icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </div>
+    <nav class="topnav" id="main-nav-bar">
         <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('index.php');?>">Dashboard</a>
         <a href="<?php echo $base_url;?>src/Generate/generate_page.php" class="<?php echo isActive('generate_page.php');?>">Generate</a>
-        <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
-        <a href="<?php echo $base_url;?>index.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
-        <div id="user-nav">
-            <?php if (isset($_SESSION['user_id'])): ?>  
-                <div class="profile-dropdown">
-                    <img src="<?php echo $_SESSION['profile_pic'] ?? 'default-profile.png'; ?>" 
-                        alt="Profile" class="profile-icon" id="profile-icon">
-                    <div class="dropdown-menu hidden" id="profile-dropdown">
-                        <a href="profile.php">My Profile</a>
-                        <a href="logout.php">Log Out</a>
-                    </div>
-                </div>
-            <?php else: ?>
-                <a href="src/Login/login_page.php" class="nav-btn">Login</a>
-                <a href="src/Register/register_page.php" class="nav-btn">Register</a>
-            <?php endif; ?>
-        </div>
+        <a href="<?php echo $base_url;?>src/AboutUs/about_us.php" class="<?php echo isActive('about_us.php');?>">About Us</a>
+        <a href="<?php echo $base_url;?>src/FAQ/faq.php" class="<?php echo isActive('faq.php');?>">FAQ</a>
+        
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="<?php echo $base_url;?>src/Profile/profile_page.php" class="<?php echo isActive('profile_page.php');?>">Profile</a>
+            <a href="<?php echo $base_url;?>logout.php" class="nav-btn" style="margin-left: 10px; color: red;">Logout</a>
+        <?php else: ?>
+            <a href="<?php echo $base_url;?>src/Login/login_pageNew.php" class="<?php echo isActive('login_pageNew.php');?>">Login</a>
+            <a href="<?php echo $base_url;?>src/Register/register_pageNew.php" class="<?php echo isActive('register_pageNew.php');?>">Register</a>
+        <?php endif; ?>
     </nav>
 </div>
+
+<script>
+function myFunction() {
+  var navbar = document.getElementById("main-nav-bar");
+  if (navbar.className === "topnav") {
+    navbar.className += " responsive";
+  } else {
+    navbar.className = "topnav";
+  }
+}
+</script>

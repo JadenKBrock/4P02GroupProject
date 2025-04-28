@@ -1,5 +1,4 @@
-let selectedRole = "all";  // Tracks the selected audience/role
-let selectedPlatform = "all";  //Tracks the selected platform (email, Facebook,Twitter, etc)
+let selectedPlatform = "all";  // Tracks the selected platform
 
 const allArticles = [
   { id: 1, title: "AI in Banking", category: "Business", topic: "Tech Industry", tags: ["AI", "Banking"], content: "AI is transforming banking...", date: "2025-02-15" },
@@ -16,19 +15,14 @@ function applyFilters() {
   const searchInput = document.getElementById("search-input").value.trim().toLowerCase();
   const sortOrder = document.getElementById("sort-select").value;
 
-  // Filter articles based on search text and selected role
+  // Filter articles based on search text and selected platform
   let filteredArticles = allArticles.filter(article => {
     const matchesSearch = searchInput === "" ||
       article.title.toLowerCase().includes(searchInput) ||
       article.content.toLowerCase().includes(searchInput);
-    
-    const matchesRole = (selectedRole === "all" ||
-      article.category.toLowerCase() === selectedRole);
-
-  //Adding platform filtering
     const matchesPlatform = (selectedPlatform === "all" ||
-       (article.tags && article.tags.some(tag => tag.toLowerCase() === selectedPlatform.toLowerCase())));                      
-    return matchesSearch && matchesRole && matchesPlatform;
+      article.category.toLowerCase() === selectedPlatform);
+    return matchesSearch && matchesPlatform;
   });
 
   // Sort articles based on date
@@ -38,21 +32,11 @@ function applyFilters() {
     return sortOrder === "desc" ? dateB - dateA : dateA - dateB;
   });
 
-  //Adding platform filter functions
-  function filterByPlatform(platform) {
-    selectedPlatform = platform;
-    document.getElementById("platform-selector-btn").innerHTML = 
-      `${platform} <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>`;
-  document.getElementById("platform-options").classList.add("hidden");
-  applyFilters();
-  }
-  
-
   // Render articles
   filteredArticles.forEach(article => {
-    const tagsHTML = article.tags.map(tag => <span class="article-tag">${tag}</span>).join(", ");
+    const tagsHTML = article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join(", ");
     newsContainer.innerHTML += 
-      <article class="news-item">
+      `<article class="news-item">
         <h3>${article.title}</h3>
         <p class="preview">${article.content.substring(0, 100)}...</p>
         <button class="expand-btn" onclick="toggleArticle(${article.id})">Read More</button>
@@ -61,12 +45,12 @@ function applyFilters() {
           <p><strong>Tags:</strong> ${tagsHTML}</p>
           <p><strong>Date:</strong> ${article.date}</p>
         </div>
-      </article>;
+      </article>`;
   });
 }
 
 function toggleArticle(id) {
-  const articleContent = document.getElementById(article-$, {id});
+  const articleContent = document.getElementById(`article-${id}`);
   const btn = articleContent.previousElementSibling;
   articleContent.classList.toggle("hidden");
   btn.innerText = articleContent.classList.contains("hidden") ? "Read More" : "Show Less";
@@ -74,13 +58,8 @@ function toggleArticle(id) {
 
 function clearFilters() {
   document.getElementById("search-input").value = "";
-  selectedRole = "all";
   selectedPlatform = "all";
-  
-  document.getElementById("role-selector-btn").innerHTML = 
-    'Choose your audience/role <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
-  document.getElementById("platform-selector-btn").innerHTML = 
-    'All Platforms <span class="arrow-icon"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>;
+  document.getElementById("role-selector-btn").innerHTML = 'Choose Platform <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
   document.getElementById("sort-select").value = "desc";
   applyFilters();
 }
@@ -90,66 +69,72 @@ function generateContent() {
   if (idea === "") return;
   const newsContainer = document.getElementById("news-container");
   newsContainer.innerHTML = 
-    <article class="news-item">
+    `<article class="news-item">
       <h3>Generated: ${idea}</h3>
       <p class="preview">This is generated content based on your idea: ${idea} ...</p>
       <button class="expand-btn" onclick="alert('More details coming soon')">Read More</button>
-    </article>;
+    </article>`;
 }
 
 function generateContentByKeyword(keyword) {
   const newsContainer = document.getElementById("news-container");
   newsContainer.innerHTML = 
-    <article class="news-item">
+    `<article class="news-item">
       <h3>Generated: ${keyword}</h3>
       <p class="preview">This is a generated article for the hot topic: ${keyword}.</p>
       <button class="expand-btn" onclick="alert('More details coming soon')">Read More</button>
-    </article>;
+    </article>`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM Content Loaded");
+  
+  const roleSelectorBtn = document.getElementById("role-selector-btn");
+  const roleOptions = document.getElementById("role-options");
+  
+  console.log("Role Selector Button:", roleSelectorBtn);
+  console.log("Role Options:", roleOptions);
+  
+  if (!roleSelectorBtn) {
+    console.error("Role selector button not found");
+  }
+  
+  if (!roleOptions) {
+    console.error("Role options not found");
+  }
+
   document.getElementById("clear-btn").addEventListener("click", clearFilters);
   document.getElementById("search-btn").addEventListener("click", applyFilters);
   document.getElementById("sort-select").addEventListener("change", applyFilters);
 
-  // Sidebar role selector dropdown
-  document.getElementById("role-selector-btn").addEventListener("click", () => {
-    const options = document.getElementById("role-options");
-    options.classList.toggle("hidden");
+  // Platform selector dropdown
+  roleSelectorBtn.addEventListener("click", () => {
+    console.log("Role selector button clicked");
+    console.log("Current hidden state:", roleOptions.classList.contains("hidden"));
+    roleOptions.classList.toggle("hidden");
+    console.log("New hidden state:", roleOptions.classList.contains("hidden"));
   });
 
   document.getElementById("role-business-btn").addEventListener("click", () => {
-    selectedRole = "business";
-    document.getElementById("role-selector-btn").innerHTML = 'Business <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
+    selectedPlatform = "facebook";
+    document.getElementById("role-selector-btn").innerHTML = 'Facebook <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
     document.getElementById("role-options").classList.add("hidden");
     applyFilters();
   });
 
   document.getElementById("role-influencer-btn").addEventListener("click", () => {
-    selectedRole = "influencer";
-    document.getElementById("role-selector-btn").innerHTML = 'Influencer <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
+    selectedPlatform = "twitter";
+    document.getElementById("role-selector-btn").innerHTML = 'X (Twitter) <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
     document.getElementById("role-options").classList.add("hidden");
     applyFilters();
   });
 
-  // Add platform filter dropdown listeners
-document.getElementById("platform-selector-btn").addEventListener("click", () => {
-  const options = document.getElementById("platform-options");
-  options.classList.toggle("hidden");
-});
-
-// Add listeners for each platform button
-document.getElementById("platform-twitter-btn").addEventListener("click", () => {
-  filterByPlatform("Twitter");
-});
-
-document.getElementById("platform-facebook-btn").addEventListener("click", () => {
-  filterByPlatform("Facebook");
-});
-
-document.getElementById("platform-email-btn").addEventListener("click", () => {
-  filterByPlatform("Email");
-});
+  document.getElementById("role-email-btn").addEventListener("click", () => {
+    selectedPlatform = "email";
+    document.getElementById("role-selector-btn").innerHTML = 'Email <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M7 10l5 5 5-5H7z"/></svg></span>';
+    document.getElementById("role-options").classList.add("hidden");
+    applyFilters();
+  });
 
   // Header user dropdown for Login/Sign Up
   document.getElementById("user-selector-btn").addEventListener("click", () => {
@@ -164,25 +149,9 @@ document.getElementById("platform-email-btn").addEventListener("click", () => {
   document.querySelectorAll(".gen-filter").forEach(button => {
     button.addEventListener("click", () => {
       const keyword = button.getAttribute("data-keyword");
-      generateContentByKAeyword(keyword);
+      generateContentByKeyword(keyword);
     });
   });
-
-  const profileIcon = document.getElementById("profile-icon");
-  const dropdownMenu = document.getElementById("profile-dropdown");
-
-  if (profileIcon) {
-    profileIcon.addEventListener("click", function () {
-      dropdownMenu.classList.toggle("hidden");
-    });
-
-    //Close the profile dropdown when clicked outside of it
-    document.addEventListener("click", function (event) {
-      if (!profileIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.classList.add("hidden");
-      }
-    });
-  }
 
   applyFilters();
 });

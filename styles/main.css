@@ -5,6 +5,13 @@
     --nav-active-bg: #13162a;
     --nav-active-color: #8b8b8b;
     --btn-bg-color: #1a1e39;
+    --btn-bg-hover: #202546;
+    --logout-color: #e63946;
+    --profile-color: #457b9d;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -18,6 +25,7 @@ body {
 }
 
 /* Nav bar content */
+
 #top-nav-bar {
     background-color: var(--nav-bg-color);
     display: flex;
@@ -25,13 +33,29 @@ body {
     justify-content: space-around;
 }
 
+.nav-title-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #nav-title {
     margin: 0px;
     padding: 0px;
 }
 
+.nav-icon {
+    display: none;
+    color: #ffffff;
+}
+
+.nav-icon:hover, .nav-icon:active {
+    color: #dbdbdb;
+}
+
 #main-nav-bar {
     display: flex;
+    align-items: center;
 }
 
 #main-nav-bar a{
@@ -72,11 +96,11 @@ button {
 }
 
 button:hover {
-    background: #8a5a3b;
+    background-color: var(--btn-bg-hover);
 }
 
 button.active {
-    background: #8a5a3b;
+    background-color: var(--btn-bg-hover);
 }
 
 /* Hidden Elements */

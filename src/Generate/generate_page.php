@@ -1,6 +1,15 @@
 <?php
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'domain' => $_SERVER['HTTP_HOST'],
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
+session_start();
 $page_title = "Generate";
-$page_styles = ["main.css"]; // Ensure this matches your CSS file
+$page_styles = ["generate.css"];
 include "../../views/header.php";
 session_start();
 include '../../includes/db_connection.php'; // Adjust if necessary
@@ -13,108 +22,167 @@ $article = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<h2>Generated Article</h2>
+<div class="generate-container">
+    <div class="input-outer-container">
+        <h3>Generate Post!</h3>
+        <div class="format-container">
+            <div class="dropdown-container">
+                <button onclick="dropdown()" class="formatbtn">Format</button>
+                <div id="dropdown" class="dropdown-content">
+                    <button onclick="selectFormat('Facebook')" class="dropdown-btn">Facebook</button>
+                    <button onclick="selectFormat('Twitter')" class="dropdown-btn">Twitter</button>
+                    <button onclick="selectFormat('Email')" class="dropdown-btn">Email</button>
+                </div>
+            </div>
+            <p id="format-selection">Facebook</p>
+        </div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Enter a topic or keyword.">
+            <button id="sendRequest">Generate</button>
+        </div>
+    </div>
+    <div class="loading-container" id="loadingContainer" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>Generating post, please wait...</p>
+    </div>
+    <div class="output_container" id="responseBox">
+        <div class="output_main_text">Choose a post to save</div>
+    </div>
+</div>
 
-<!-- Sorting dropdown clearly added here -->
-<label for="sortOrder">Sort Articles:</label>
-<select id="sortOrder">
-    <option value="newest">Newest First</option>
-    <option value="oldest">Oldest First</option>
-</select>
+<!--<div class="post_card_container">
+            <p class="post_content">This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing This is a post about some random thing</p>
+            <button class="save_btn">Save</button>
+</div>-->
 
-<button id="loadArticle">Load Article</button>
+<style>
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
-<hr>
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
 
-<h3 id="articleTitle"><?php echo htmlspecialchars($article['title']); ?></h3>
-<p id="articleContent"><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
-<p><span class="article-category" id="articleCategory"><?php echo htmlspecialchars($article['category']); ?></span></p>
-
-<button id="saveCategoryBtn">Save Category</button>
-
-<hr>
-
-<h2>Testing LLM</h2>
-<label for="contentType">Content Type:</label>
-<input type="text" id="contentType">
-<br><br>
-<label for="contentText">Content Text:</label>
-<input type="text" id="contentText">
-<br><br>
-<button id="sendRequest">Get Response</button>
-
-<p>Response: <span id="responseText"></span></p>
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
 
 <script>
+
+function selectFormat(format) {
+    $("#format-selection").text(format);
+}
+
+// Get a response from the LLM using run_generate_py.php and fill the page with the returned posts
 $(document).ready(function() {
     // AJAX handler for LLM requests
     $("#sendRequest").click(function() {
-        var contentType = $("#contentType").val();
-        var contentText = $("#contentText").val();
+        var format = $("#format-selection").text(); 
+        var userInput = $("#userInput").val();
+        
+        if (!userInput) {
+            alert("Please enter a topic or keyword!");
+            return;
+        }
 
-        $.ajax({
-            url: "run_generate_py.php",
-            type: "POST",
-            data: JSON.stringify({ 
-                content_type: contentType, 
-                content_text: contentText 
-            }),
-            contentType: "application/json",
-            dataType: "json",
-            success: function(response) {
-                if (response && response.response) {
-                    $("#responseText").text(response.response);
-                } else {
-                    $("#responseText").text("Unexpected response format. Please try again.");
+        // show loading animation
+        $("#loadingContainer").show();
+        $("#responseBox").empty();
+        
+        console.log(format);
+        console.log(userInput);
+        let url_index = 0;
+
+        // callGenerate is called 5 times, 1 time per url generated
+        function callGenerate(urlIndex) {
+            if (urlIndex > 4) {
+                // all requests completed, hide loading animation
+                $("#loadingContainer").hide();
+                return;
+            }
+            $.ajax({
+                url: "run_generate_py.php",
+                type: "POST",
+                data: JSON.stringify({ 
+                    format_type: format, 
+                    keyword: userInput,
+                    url_index: urlIndex
+                }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function(response) {
+                    console.log(`Server Response for url ${urlIndex}: `, response);
+                    
+                    if (response && response.response) {
+                        $(".output_container").css("display", "flex");
+                        let postResponse = `
+                        <div class="post_card_container">
+                            <p class="post_content">${response.response}</p>
+                            <button class="save_btn">Save</button>
+                        </div>
+                        `;
+
+                        $("#responseBox").append(postResponse);
+                    } else {
+                        $("#responseText").text("Error: Unexpected response format");
+                    }
+                    callGenerate(urlIndex + 1)
+                },
+                error: function(xhr, status, err) {
+                    console.error("AJAX Error: ", status, err);
+                    console.log("Server Response: ", xhr.responseText);
+                    $("#responseText").text("Error: Could not execute request.");
+                    $("#loadingContainer").hide();
                 }
-            },
-            error: function(xhr, status, err) {
-                $("#responseText").text("An error occurred: " + err + ". Please try again.");
-            }
-        });
-    });
-
-    // AJAX handler for saving category
-    $("#saveCategoryBtn").click(function() {
-        var category = $("#articleCategory").text();
-
-        $.ajax({
-            url: "save_category.php",
-            type: "POST",
-            data: { category: category },
-            success: function(response) {
-                alert(response);
-            },
-            error: function(xhr, status, err) {
-                alert("An error occurred: " + err + ". Please try again.");
-            }
-        });
-    });
-
-    // AJAX handler to load sorted articles
-    $("#loadArticle").click(function() {
-        let sortOrder = $("#sortOrder").val();
-
-        $.ajax({
-            url: "fetch_sorted_article.php",
-            type: "POST",
-            data: { order: sortOrder },
-            dataType: "json",
-            success: function(response) {
-                if(response.status === "success"){
-                    $("#articleTitle").text(response.title);
-                    $("#articleContent").html(response.content.replace(/\n/g, '<br>'));
-                    $("#articleCategory").text(response.category);
-                } else {
-                    alert(response.message);
-                }
-            },
-            error: function(xhr, status, err) {
-                alert('Error fetching article: ' + err);
-            }
-        });
+            });
+        }
+        callGenerate(url_index);
     });
 });
+
+$(document).on("click", ".save_btn", function () {
+    var postContent = $(this).siblings(".post_content").text();
+    var postType = $("#format-selection").text();
+
+    console.log(postContent);
+    console.log(postType);
+
+    // Save the post to the DB using save_post.php
+    $.ajax({
+            url: "save_post.php",  
+            type: "POST",
+            data: JSON.stringify({ 
+                post_content: postContent, 
+                post_type: postType 
+            }),
+            contentType: "application/json",
+            dataType: "json", 
+            success: function(response) {
+                alert("Post saved!");
+                console.log("Saved response:", response);
+            },
+            error: function(xhr, status, err) {
+                console.error("Save error:", status, err);
+                console.log("Response text:", xhr.responseText);
+                alert("Failed to save post.");
+            }
+        });
+
+});
+
 </script>
 
 <?php

@@ -1,0 +1,5 @@
+Test Case 1: Registration Page Load
+Result: Passed
+
+Test Case 2: Successful New User Registration
+Result: Passed

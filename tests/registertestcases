@@ -1,0 +1,9 @@
+Test Case 1: Registration Page Load
+- Navigate to /register.php
+- Verify form presence
+- Verify input fields for username and password
+
+Test Case 2: Successful New User Registration
+- Fill registration form with valid new username and password
+- Submit form
+- Verify "Registration successful" message

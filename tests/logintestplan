@@ -1,0 +1,14 @@
+Test Name: Login Page and Authentication Test
+Purpose: Verify that the login page loads and that users receive correct feedback based on credentials.
+Test Tools: PHP scripts using assert() for validation.
+Test Environment: Live production server (Azure hosted site).
+Tester: [Your Name]
+Date: [Insert Date]
+
+Inputs:
+- Invalid username: wronguser_random
+- Invalid password: WrongPass!
+
+Expected Output:
+- Login page displays input fields correctly
+- "Invalid username or password" error shown for wrong login
